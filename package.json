@@ -38,23 +38,24 @@
     "react-merge-refs": "^2.1.1",
     "stripe": "^14.16.0",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
     "@types/react": "^18.2.55",
     "@types/react-dom": "^18.2.19",
-    "autoprefixer": "^10.4.17",
+    "autoprefixer": "^10.4.19",
+    "daisyui": "^4.11.1",
     "eslint": "^8.56.0",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-tailwindcss": "^3.14.2",
-    "postcss": "^8.4.35",
+    "postcss": "^8.4.38",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "supabase": "^1.142.2",
+    "tailwindcss": "^3.4.3",
     "typescript": "^5.3.3"
   }
 }

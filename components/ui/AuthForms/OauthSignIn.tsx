@@ -18,6 +18,11 @@ export default function OauthSignIn() {
       name: 'github',
       displayName: 'GitHub',
       icon: <Github className="h-5 w-5" />
+    },
+    {
+      name: 'google',
+      displayName: 'Google',
+      icon: <Github className="h-5 w-5" />
     }
     /* Add desired OAuth providers here */
   ];

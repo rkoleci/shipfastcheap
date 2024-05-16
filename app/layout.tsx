@@ -2,9 +2,12 @@ import { Metadata } from 'next';
 import Footer from '@/components/ui/Footer';
 import Navbar from '@/components/ui/Navbar';
 import { Toaster } from '@/components/ui/Toasts/toaster';
-import { PropsWithChildren, Suspense } from 'react';
+import { PropsWithChildren, Suspense, useState } from 'react';
 import { getURL } from '@/utils/helpers';
 import 'styles/main.css';
+import UserProvider from '@/components/context/UserProvider';
+import SupabaseClientProvider from '@/components/context/SupabaseClient';
+import NameForm from '@/components/ui/AccountForms/NameForm';
 
 const meta = {
   title: 'Next.js Subscription Starter',
@@ -50,6 +53,8 @@ export default async function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
       <body className="bg-black loading">
+        <SupabaseClientProvider>
+        <UserProvider>
         <Navbar />
         <main
           id="skip"
@@ -61,6 +66,8 @@ export default async function RootLayout({ children }: PropsWithChildren) {
         <Suspense>
           <Toaster />
         </Suspense>
+        </UserProvider>
+        </SupabaseClientProvider>
       </body>
     </html>
   );

@@ -6,10 +6,12 @@ import { updateName } from '@/utils/auth-helpers/server';
 import { handleRequest } from '@/utils/auth-helpers/client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useUser } from '@/components/context/UserProvider';
 
 export default function NameForm({ userName }: { userName: string }) {
   const router = useRouter();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const user = useUser()
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     setIsSubmitting(true);
@@ -21,6 +23,21 @@ export default function NameForm({ userName }: { userName: string }) {
     }
     handleRequest(e, updateName, router);
     setIsSubmitting(false);
+  };
+
+  const saveUser = async () => {
+    try {
+      const data = await fetch("/api/user", {
+        method: "POST",
+        body: JSON.stringify({
+          full_name: "full_name",
+        })
+        
+      });
+
+    } catch (e) {
+    } finally {
+    }
   };
 
   return (
@@ -52,6 +69,9 @@ export default function NameForm({ userName }: { userName: string }) {
             maxLength={64}
           />
         </form>
+        <div>
+          <button onClick={saveUser}>Save User </button>
+        </div>
       </div>
     </Card>
   );

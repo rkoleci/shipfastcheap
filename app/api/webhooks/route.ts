@@ -22,9 +22,11 @@ const relevantEvents = new Set([
 ]);
 
 export async function POST(req: Request) {
+  console.log(111,'POST webbook', )
   const body = await req.text();
   const sig = req.headers.get('stripe-signature') as string;
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
+  console.log(sig)
   let event: Stripe.Event;
 
   try {
@@ -38,6 +40,7 @@ export async function POST(req: Request) {
   }
 
   if (relevantEvents.has(event.type)) {
+    console.log(111,'Event', event.type)
     try {
       switch (event.type) {
         case 'product.created':

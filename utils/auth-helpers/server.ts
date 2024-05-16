@@ -305,10 +305,16 @@ export async function updateEmail(formData: FormData) {
   }
 }
 
+export async function getProducts() {
+  const supabase = createClient();
+  const { error, data } = await supabase.from('products').select('*')
+
+  return data
+}
+
 export async function updateName(formData: FormData) {
   // Get form data
-  const fullName = String(formData.get('fullName')).trim();
-
+  const fullName = String(formData.get('fullName')).trim(); 
   const supabase = createClient();
   const { error, data } = await supabase.auth.updateUser({
     data: { full_name: fullName }

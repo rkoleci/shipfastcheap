@@ -1,5 +1,6 @@
 import Pricing from '@/components/ui/Pricing/Pricing';
 import { createClient } from '@/utils/supabase/server';
+import { connected } from 'process';
 
 export default async function PricingPage() {
   const supabase = createClient();
@@ -13,6 +14,7 @@ export default async function PricingPage() {
     .select('*, prices(*, products(*))')
     .in('status', ['trialing', 'active'])
     .maybeSingle();
+     
 
   if (error) {
     console.log(error);

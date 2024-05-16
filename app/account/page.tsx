@@ -9,12 +9,7 @@ export default async function Account() {
 
   const {
     data: { user }
-  } = await supabase.auth.getUser();
-
-  const { data: userDetails } = await supabase
-    .from('users')
-    .select('*')
-    .single();
+  } = await supabase.auth.getUser(); 
 
   const { data: subscription, error } = await supabase
     .from('subscriptions')
@@ -44,7 +39,6 @@ export default async function Account() {
       </div>
       <div className="p-4">
         <CustomerPortalForm subscription={subscription} />
-        <NameForm userName={userDetails?.full_name ?? ''} />
         <EmailForm userEmail={user.email} />
       </div>
     </section>
