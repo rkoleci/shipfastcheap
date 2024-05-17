@@ -17,9 +17,9 @@ module.exports = {
       }
     },
     extend: {
-      fontFamily: {
-        sans: ['var(--font-sans)', ...fontFamily.sans]
-      },
+      // fontFamily: {
+      //   sans: ['var(--font-sans)', ...fontFamily.sans]
+      // },
       keyframes: {
         'accordion-down': {
           from: { height: 0 },
@@ -33,6 +33,12 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
+      },
+      colors: {
+        base: '#FFF',
+        baseContent: '#212121',
+        primary: '#FFBE1A',
+        primaryContent: '#FFFFFF'
       }
     }
   },
@@ -40,7 +46,7 @@ module.exports = {
 
   // daisyUI config (optional - here are the default values)
   daisyui: {
-    themes: false, // false: only light + dark | true: all themes | array: specific themes like this ["light", "dark", "cupcake"]
+    themes: ["light", "dark", "cupcake", "emerald"],
     darkTheme: "light", // name of one of the included themes for dark mode
     base: false, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components

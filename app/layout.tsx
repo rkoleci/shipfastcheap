@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
+import { Bricolage_Grotesque } from 'next/font/google'
 import Footer from '@/components/ui/Footer';
-import Navbar from '@/components/ui/Navbar';
+import Navbar from '@/app/landing/components/Navbar';
 import { Toaster } from '@/components/ui/Toasts/toaster';
 import { PropsWithChildren, Suspense, useState } from 'react';
 import { getURL } from '@/utils/helpers';
-import 'styles/main.css';
 import UserProvider from '@/components/context/UserProvider';
 import SupabaseClientProvider from '@/components/context/SupabaseClient';
 import NameForm from '@/components/ui/AccountForms/NameForm';
-
+import '../globals.css'
 const meta = {
   title: 'Next.js Subscription Starter',
   description: 'Brought to you by Vercel, Stripe, and Supabase.',
@@ -17,6 +17,10 @@ const meta = {
   favicon: '/favicon.ico',
   url: getURL()
 };
+
+const font = Bricolage_Grotesque({
+  subsets: ['latin'],
+})
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -50,19 +54,19 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function RootLayout({ children }: PropsWithChildren) {
+  
   return (
-    <html lang="en"> 
+    <html lang="en" data-theme="dark"> 
       <body>
         <SupabaseClientProvider>
           <UserProvider>
             <Navbar />
             <main
               id="skip"
-              className="min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)]"
+              className={`min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)] ${font.className}`}
             >
               {children}
             </main>
-            <Footer />
             <Suspense>
               <Toaster />
             </Suspense>
