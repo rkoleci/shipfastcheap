@@ -34,20 +34,34 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
       },
-      colors: {
-        base: '#FFF',
-        baseContent: '#212121',
-        primary: '#FFBE1A',
-        primaryContent: '#FFFFFF'
-      }
     }
   },
   plugins: [require('tailwindcss-animate'), require('daisyui')],
 
   // daisyUI config (optional - here are the default values)
   daisyui: {
-    themes: ["light", "dark", "cupcake", "emerald"],
-    darkTheme: "light", // name of one of the included themes for dark mode
+    themes: [
+      {
+        shipfast: {
+          "primary": "#FFBE1A",
+          "secondary": "#FFFFFF",
+          "accent": "#37cdbe",
+          "accent-main": "#cfcfcf",
+          "neutral": "#3d4451",
+          "base-100": "#212121",
+          "base-200": "#2F1A04",
+          "base-400": "#0F0F0F",
+          "red-100": "#B0A8A0",
+          "red-400": '#f87171'
+        },
+      },
+      "dark",
+      "cupcake",
+      "retro",
+      "emerald",
+      "wireframe"
+    ],
+    darkTheme: "dark", // name of one of the included themes for dark mode
     base: false, // applies background color and foreground color for root element by default
     styled: true, // include daisyUI colors and design decisions for all components
     utils: true, // adds responsive and modifier utility classes

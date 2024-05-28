@@ -56,7 +56,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: PropsWithChildren) {
   
   return (
-    <html lang="en" data-theme="dark"> 
+    <html lang="en" data-theme="shipfast"> 
       <body>
         <SupabaseClientProvider>
           <UserProvider>
