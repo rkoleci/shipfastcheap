@@ -34,6 +34,15 @@ module.exports = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
       },
+      colors:{
+        "secondary": "#FFFFFF",
+        "base-600": "#2E1a05",
+        "accent": "#37cdbe",
+        "accent-main": "#cfcfcf",
+        "base-400": "#0F0F0F",
+        "red-100": "#B0A8A0",
+        "red-400": '#f87171',
+      }
     }
   },
   plugins: [require('tailwindcss-animate'), require('daisyui')],
@@ -44,15 +53,10 @@ module.exports = {
       {
         shipfast: {
           "primary": "#FFBE1A",
-          "secondary": "#FFFFFF",
-          "accent": "#37cdbe",
-          "accent-main": "#cfcfcf",
           "neutral": "#3d4451",
           "base-100": "#212121",
           "base-200": "#2F1A04",
-          "base-400": "#0F0F0F",
-          "red-100": "#B0A8A0",
-          "red-400": '#f87171'
+          "error": '#f87171',
         },
       },
       "dark",
