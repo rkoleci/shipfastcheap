@@ -1,14 +1,14 @@
 import { Metadata } from 'next';
 import { Bricolage_Grotesque } from 'next/font/google'
 import Footer from '@/components/ui/Footer';
-import Navbar from '@/app/landing/components/Navbar';
+import Navbar from '@/app/(home)/landing/components/Navbar';
 import { Toaster } from '@/components/ui/Toasts/toaster';
 import { PropsWithChildren, Suspense, useState } from 'react';
 import { getURL } from '@/utils/helpers';
 import UserProvider from '@/components/context/UserProvider';
 import SupabaseClientProvider from '@/components/context/SupabaseClient';
 import NameForm from '@/components/ui/AccountForms/NameForm';
-import '../globals.css'
+import '../../globals.css'
 const meta = {
   title: 'Next.js Subscription Starter',
   description: 'Brought to you by Vercel, Stripe, and Supabase.',

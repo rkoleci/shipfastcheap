@@ -1,5 +1,5 @@
 import Image from "next/image";
-import shipfastAvatar2 from '../../../public/shipfast_avatar_2.webp'
+import shipfastAvatar2 from '../../../../public/shipfast_avatar_2.webp'
 
 export default function Pricing() {
 

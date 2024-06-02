@@ -1,6 +1,6 @@
 import Image from "next/image";
-import makerOfTheYear from '../../../public/maker-of-the-year-2023.webp'
-import shipfastAvatar2 from '../../../public/shipfast_avatar_2.webp'
+import makerOfTheYear from '../../../../public/maker-of-the-year-2023.webp'
+import shipfastAvatar2 from '../../../../public/shipfast_avatar_2.webp'
 
 export default function Intro() {
 

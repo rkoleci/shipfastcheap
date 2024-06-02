@@ -1,7 +1,7 @@
 import Image from "next/image";
-import shipfastTechstack from '../../../public/shipfast_techstack.webp'
-import shipfastAvatar from '../../../public/shipfast_avatar.webp'
-import shipfastAvatar2 from '../../../public/shipfast_avatar_2.webp'
+import shipfastTechstack from '../../../../public/shipfast_techstack.webp'
+import shipfastAvatar from '../../../../public/shipfast_avatar.webp'
+import shipfastAvatar2 from '../../../../public/shipfast_avatar_2.webp'
 
 export default function Hero() {
 
