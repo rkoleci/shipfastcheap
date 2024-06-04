@@ -54,7 +54,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="en" data-theme="shipfast">
-      <body className='flex justify-start '>
+      <body className={`flex justify-start ${font.className}`}>
 
         <div className="drawer lg:hidden">
           <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -79,7 +79,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Sidebar classes='hidden lg:block' />
 
-        <div className='hidden lg:block overflow-y-scroll ml-80 p-8 md:p-12'>
+        <div className='hidden lg:block overflow-y-auto ml-80 p-8 md:p-12 w-full'>
           {children}
         </div>
 
