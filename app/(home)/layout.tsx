@@ -1,8 +1,7 @@
 import { Metadata } from 'next';
 import { Bricolage_Grotesque } from 'next/font/google'
-import Footer from '@/components/ui/Footer';
 import { Toaster } from '@/components/ui/Toasts/toaster';
-import { PropsWithChildren, Suspense, useState } from 'react';
+import { PropsWithChildren, Suspense } from 'react';
 import { getURL } from '@/utils/helpers';
 import UserProvider from '@/components/context/UserProvider';
 import SupabaseClientProvider from '@/components/context/SupabaseClient';

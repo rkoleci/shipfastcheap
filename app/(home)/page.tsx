@@ -1,38 +1,28 @@
-import Pricing from '@/components/ui/Pricing/Pricing';
-import { createClient } from '@/utils/supabase/server';
-import { connected } from 'process';
+import Boost from '@/components/ui/Boost'
+import FAQ from '@/components/ui/FAQ'
+import FeaturedOn from '@/components/ui/FeaturedOn'
+import FeaturesListicle from '@/components/ui/FeaturesListicle'
+import Footer from '@/components/ui/Footer'
+import Hero from '@/components/ui/Hero'
+import Intro from '@/components/ui/Intro'
+import Pricing from '@/components/ui/Pricing'
+import Problem from '@/components/ui/Problem'
+import TestimonialTriple from '@/components/ui/TestimonialTriple'
+import Link from 'next/link'
 
-export default async function PricingPage() {
-  const supabase = createClient();
-
-  const {
-    data: { user }
-  } = await supabase.auth.getUser();
-
-  const { data: subscription, error } = await supabase
-    .from('subscriptions')
-    .select('*, prices(*, products(*))')
-    .in('status', ['trialing', 'active'])
-    .maybeSingle();
-     
-
-  if (error) {
-    console.log(error);
-  }
-
-  const { data: products } = await supabase
-    .from('products')
-    .select('*, prices(*)')
-    .eq('active', true)
-    .eq('prices.active', true)
-    .order('metadata->index')
-    .order('unit_amount', { referencedTable: 'prices' });
-
-  return (
-    <Pricing
-      user={user}
-      products={products ?? []}
-      subscription={subscription}
-    />
-  );
+export default function Landing() {
+    return (
+        <main>
+            <Hero />
+            <Problem />
+            <TestimonialTriple />
+            <FeaturedOn />
+            <FeaturesListicle />
+            <Intro />
+            <Pricing />
+            <FAQ />
+            <Boost />
+            <Footer />
+        </main>
+    )
 }

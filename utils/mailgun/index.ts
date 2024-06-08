@@ -8,7 +8,6 @@ const mg = mailgun.client({
 });
 
 export const sendEmail = (to: string, subject: string, text: string) => {
-  console.log(111, 'send', to, subject, text)
   const data = {
     from: 'Your Name <your-email@example.com>',
     to,

@@ -12,6 +12,13 @@ export default function Docs() {
             </div>
 
             <div className="docs-title">Hey maker, welcome to ShipFast 👋</div>
+
+
+
+
+            {/* 
+
+            <div className="docs-title">Hey maker, welcome to ShipFast 👋</div>
             <div className="docs-content">Here's a quick overview of the boilerplate. Follow along to get your app up and running.</div>
 
             <div className="docs-content">Once you're done, start with <Link className="link link-primary" href="/docs/tutorials/ship-in-5-minutes">this tutorial</Link> to launch your project in 5 minutes. Let's build that startup, FAST ⚡️</div>
@@ -50,7 +57,7 @@ export default function Docs() {
                 <div className="relative p-6 flex items-center justify-center h-full">
                     <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
                 </div>
-            </div>
+            </div> */}
 
 
         </div>

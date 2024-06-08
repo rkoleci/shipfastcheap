@@ -18,7 +18,8 @@ export const UserProvider  = ({ children }: IProps) => {
     const getUserdata = async () => {
       const response = await  supabase?.auth.getUser()
       setUser(response?.data?.user)
-    }
+    } 
+    // TODO logout?
 
     getUserdata()
   }, []);

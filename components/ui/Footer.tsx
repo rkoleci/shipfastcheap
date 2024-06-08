@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
 
     return (
@@ -5,7 +7,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-8 py-24  ">
                 <div className="flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
                     <div className="w-80 max-w-full flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
-                        <a
+                        <Link
                             aria-current="page"
                             className="flex gap-2 justify-center md:justify-start items-center"
                             href="/#"
@@ -25,13 +27,13 @@ export default function Footer() {
                             <strong className="font-extrabold tracking-tight text-base md:text-lg text-accent-main">
                                 ShipFast
                             </strong>
-                        </a>
+                        </Link>
                         <p className="mt-3 text-sm text-accent-main/80 leading-relaxed text-accent-main">
                             Ship your startup in days, not weeks
                             <br />
                             Copyright © 2024 - All rights reserved
                         </p>
-                        <a
+                        <Link
                             className="inline-block mt-4 text-sm border border-base-content/20 hover:border-base-content/40 hover:text-accent-main/90 hover:bg-base-300 duration-200 cursor-pointer rounded text-accent-main/80 px-2 py-1"
                             href="/"
                         >
@@ -53,7 +55,7 @@ export default function Footer() {
                                     ShipFast
                                 </span>
                             </div>
-                        </a>
+                        </Link>
                         <div className="mt-8 space-y-2 md:hidden">
                             <p className="font-medium text-sm">We build together on Discord!</p>
                             <div>
@@ -80,11 +82,11 @@ export default function Footer() {
                                 LINKS
                             </div>
                             <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                                <a className="link link-hover text-accent-main text-accent-main" href="/landing#pricing">Pricing</a>
-                                <a className="link link-hover text-accent-main text-accent-main" href="/leaderboard">Leaderboard</a>
-                                <a className="link link-hover text-accent-main text-accent-main" href="/docs">Documentation</a>
-                                <a href="mailto:marc@shipfa.st" target="_blank" className="link link-hove text-accent-main">Support</a>
-                                <a className="link link-hover text-accent-main text-accent-main" href="/affiliates">Affiliates — Earn up to $99 per sale</a>
+                                <Link className="link link-hover text-accent-main text-accent-main" href="#pricing">Pricing</Link>
+                                <Link className="link link-hover text-accent-main text-accent-main" href="/leaderboard">Leaderboard</Link>
+                                <Link className="link link-hover text-accent-main text-accent-main" href="/docs">Documentation</Link>
+                                <a href={`mailto:${process.env.NEXT_PUBLIC_MAILGUN_SUPPORT_EMAIL}`}  target="_blank" className="link link-hove text-accent-main">Support</a>
+                                <Link className="link link-hover text-accent-main text-accent-main" href="/affiliates">Affiliates — Earn up to $99 per sale</Link>
                                 <div>
                                     <button
                                         className="btn text-white border-[#7289da] bg-[#7289da] hover:bg-[#596dac] active:bg-[#596dac] hover:border-[#596dac] active:border-[#596dac] btn-sm max-md:hidden"
@@ -108,9 +110,9 @@ export default function Footer() {
                                 LEGAL
                             </div>
                             <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                                <a className="link link-hover text-accent-main" href="/tos">Terms of services</a>
-                                <a className="link link-hover text-accent-main" href="/privacy-policy">Privacy policy</a>
-                                <a className="link link-hover text-accent-main" href="/license">Licenses</a>
+                                <Link className="link link-hover text-accent-main" href="/tos">Terms of services</Link>
+                                <Link className="link link-hover text-accent-main" href="/privacy-policy">Privacy policy</Link>
+                                <Link className="link link-hover text-accent-main" href="/license">Licenses</Link>
                             </div>
                         </div>
                         <div className="lg:w-1/3 md:w-1/2 w-full px-4">
@@ -118,14 +120,14 @@ export default function Footer() {
                                 TEMPLATES
                             </div>
                             <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                                <a
+                                <Link
                                     href="https://launchvir.al/template"
                                     target="_blank"
                                     className="link link-hover text-accent-main"
                                     rel="noopener noreferrer"
                                 >
                                     Course
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <div className="lg:w-1/3 md:w-1/2 w-full px-4">
@@ -133,63 +135,63 @@ export default function Footer() {
                                 MORE
                             </div>
                             <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                                <a
+                                <Link
                                     href="https://marclou.beehiiv.com/"
                                     target="_blank"
                                     className="link link-hover text-accent-main"
                                     rel="noopener noreferrer"
                                 >
                                     Newsletter for makers
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="https://byedispute.com/"
                                     target="_blank"
                                     className="link link-hover text-accent-main"
                                     rel="noopener noreferrer"
                                 >
                                     ByeDispute
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="https://indiepa.ge/"
                                     target="_blank"
                                     className="link link-hover text-accent-main"
                                     rel="noopener noreferrer"
                                 >
                                     IndiePage
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="https://zenvoice.io/"
                                     target="_blank"
                                     className="link link-hover text-accent-main"
                                     rel="noopener noreferrer"
                                 >
                                     ZenVoice
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="https://gamifylist.com/"
                                     target="_blank"
                                     className="link link-hover text-accent-main"
                                     rel="noopener noreferrer"
                                 >
                                     GamifyList
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     href="https://poopup.co/"
                                     target="_blank"
                                     className="link link-hover text-accent-main"
                                     rel="noopener noreferrer"
                                 >
                                     PoopUp
-                                </a>
-                                <a className="link link-hover text-accent-main" href="/tools/fake-it-till-you-make-it">
+                                </Link>
+                                <Link className="link link-hover text-accent-main" href="/tools/fake-it-till-you-make-it">
                                     Fake It Till You Make It
-                                </a>
-                                <a className="link link-hover text-accent-main" href="/tools/logo-fast">
+                                </Link>
+                                <Link className="link link-hover text-accent-main" href="/tools/logo-fast">
                                     LogoFast
-                                </a>
-                                <a className="link link-hover text-accent-main" href="/logo-idea">
+                                </Link>
+                                <Link className="link link-hover text-accent-main" href="/logo-idea">
                                     Logo inspiration
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

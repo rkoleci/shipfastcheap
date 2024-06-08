@@ -4,34 +4,10 @@ import shipfastTechstack from '../../public/shipfast_techstack.webp'
 import shipfastAvatar from '../../public/shipfast_avatar.webp'
 import shipfastAvatar2 from '../../public/shipfast_avatar_2.webp'
 import Rating from '@components/ui/Rating'
-import { FormEvent } from "react";
 
 export default function Hero() {
-
-    const handleSubmit = async (e: FormEvent) => {
-        e.preventDefault();
-    
-        const res = await fetch('/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ to: "rkoleci14@gmail.com", subject: 'test', text: 'HI there' }),
-        });
-    
-        const data = await res.json();
-    
-        if (data.success) {
-          console.log('Email sent successfully!');
-        } else {
-            console.log(`Error: ${data.error}`);
-        }
-      };
-    
-
     return (
         <section className="w-full bg-base-100 flex justify-center">
-            <button onClick={handleSubmit}>Send Email</button>
             <div className="bg-base-100 flex flex-between gap-8 flex-col lg:flex-row max-w-7xl px-8 py-16">
                 <div className="gap-12 flex flex-col items-center  lg:items-start  ">
                     <Rating />
