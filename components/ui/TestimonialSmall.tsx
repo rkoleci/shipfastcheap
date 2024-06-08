@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import shipfastAvatar from '../../../../public/shipfast_avatar.webp'
+import shipfastAvatar from '../../public/shipfast_avatar.webp'
 
 export default function TestimonialSmall() {
 

@@ -1,28 +1,28 @@
-import Boost from './components/Boost'
-import FAQ from './components/FAQ'
-import FeaturedOn from './components/FeaturedOn'
-import FeaturesListicle from './components/FeaturesListicle'
-import Footer from './components/Footer'
-import Hero from './components/Hero'
-import Intro from './components/Intro'
-import Pricing from './components/Pricing' 
-import Problem from './components/Problem'
-import TestimonialSmall from './components/TestimonialSmall'
-import TestimonialTriple from './components/TestimonialTriple'
+import Boost from '@/components/ui/Boost'
+import FAQ from '@/components/ui/FAQ'
+import FeaturedOn from '@/components/ui/FeaturedOn'
+import FeaturesListicle from '@/components/ui/FeaturesListicle'
+import Footer from '@/components/ui/Footer'
+import Hero from '@/components/ui/Hero'
+import Intro from '@/components/ui/Intro'
+import Pricing from '@/components/ui/Pricing'
+import Problem from '@/components/ui/Problem'
+import TestimonialTriple from '@/components/ui/TestimonialTriple'
+import Link from 'next/link'
 
 export default function Landing() {
     return (
         <main>
-        <Hero />
-        <Problem />
-        <TestimonialTriple />
-        <FeaturedOn />
-        <FeaturesListicle />
-        <Intro /> 
-         <Pricing />
-         <FAQ />
-         <Boost />
-         <Footer />
+            <Hero />
+            <Problem />
+            <TestimonialTriple />
+            <FeaturedOn />
+            <FeaturesListicle />
+            <Intro />
+            <Pricing />
+            <FAQ />
+            <Boost />
+            <Footer />
         </main>
     )
 }

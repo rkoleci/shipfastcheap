@@ -5,10 +5,13 @@ import { getURL } from '@/utils/helpers';
 import { Metadata } from 'next';
 import { Bricolage_Grotesque } from 'next/font/google'
 import Sidebar from '@/components/ui/Docs/Sidebar';
+import getSEOTags from '@/utils/config';
+
+const seoTags = getSEOTags()
 
 const meta = {
-  title: 'Next.js Subscription Starter',
-  description: 'Brought to you by Vercel, Stripe, and Supabase.',
+  title: `${seoTags.appName} Docs`,
+  description: `It is where you configure your app. Each key is documented to know how and why it's used. Have a thorough look at it: it is the backbone of the app.`,
   cardImage: '/og.png',
   robots: 'follow, index',
   favicon: '/favicon.ico',

@@ -1,10 +1,10 @@
 import Image from "next/image";
-import shipfastAvatar2 from '../../../../public/shipfast_avatar_2.webp'
+import shipfastAvatar2 from '../../public/shipfast_avatar_2.webp'
 
 export default function Pricing() {
 
     return (
-        <section className="bg-base-400 py-24 px-8 flex flex-col justify-start items-center">
+        <section id="pricing" className="bg-base-400 py-24 px-8 flex flex-col justify-start items-center">
             <div className="max-w-5xl w-full flex flex-col items-center gap-4">
                 <p className="font-medium text-primary mb-8">Pricing</p>
                 <h2 className="font-bold text-3xl lg:text-5xl tracking-tight mb-8 max-w-2xl mx-auto">Save hours of repetitive code, ship fast, get profitable!</h2>

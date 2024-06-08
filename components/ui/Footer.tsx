@@ -80,7 +80,7 @@ export default function Footer() {
                                 LINKS
                             </div>
                             <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                                <a className="link link-hover text-accent-main text-accent-main" href="/index#pricing">Pricing</a>
+                                <a className="link link-hover text-accent-main text-accent-main" href="/landing#pricing">Pricing</a>
                                 <a className="link link-hover text-accent-main text-accent-main" href="/leaderboard">Leaderboard</a>
                                 <a className="link link-hover text-accent-main text-accent-main" href="/docs">Documentation</a>
                                 <a href="mailto:marc@shipfa.st" target="_blank" className="link link-hove text-accent-main">Support</a>

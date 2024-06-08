@@ -1,4 +1,4 @@
-import { createClient } from "../../utils/supabase/server"
+import { createClient } from "../../../utils/supabase/server"
 import Pricing from '@/components/ui/Pricing/Pricing';
 
 export const revalidate = 0

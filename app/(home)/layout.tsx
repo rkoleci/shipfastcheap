@@ -1,21 +1,26 @@
 import { Metadata } from 'next';
 import { Bricolage_Grotesque } from 'next/font/google'
 import Footer from '@/components/ui/Footer';
-import Navbar from '@/app/(home)/landing/components/Navbar';
 import { Toaster } from '@/components/ui/Toasts/toaster';
 import { PropsWithChildren, Suspense, useState } from 'react';
 import { getURL } from '@/utils/helpers';
 import UserProvider from '@/components/context/UserProvider';
 import SupabaseClientProvider from '@/components/context/SupabaseClient';
-import NameForm from '@/components/ui/AccountForms/NameForm';
 import '../../globals.css'
+import Navbar from '@/components/ui/Navbar';
+import PlausibleProvider from 'next-plausible'
+import getSeoTags from '@utils/config'
+
+const seoTags = getSeoTags()
+
 const meta = {
-  title: 'Next.js Subscription Starter',
-  description: 'Brought to you by Vercel, Stripe, and Supabase.',
+  title: seoTags.title,
+  description: seoTags.appDescription,
   cardImage: '/og.png',
   robots: 'follow, index',
   favicon: '/favicon.ico',
-  url: getURL()
+  url: getURL(),
+  canonicalUrlRelative: '/'
 };
 
 const font = Bricolage_Grotesque({
@@ -49,14 +54,21 @@ export async function generateMetadata(): Promise<Metadata> {
       title: meta.title,
       description: meta.description,
       images: [meta.cardImage]
+    },
+    alternates: {
+      canonical: meta.canonicalUrlRelative
     }
   };
 }
 
 export default async function RootLayout({ children }: PropsWithChildren) {
-  
+
   return (
-    <html lang="en" data-theme="shipfast"> 
+    <html lang="en" data-theme="shipfast">
+      <head>
+        <PlausibleProvider domain="yourdomain.com" />
+      </head>
+      <link rel="canonical" href={`https://www.shipfast.com${meta.canonicalUrlRelative}`} />
       <body>
         <SupabaseClientProvider>
           <UserProvider>
