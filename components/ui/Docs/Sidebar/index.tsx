@@ -113,11 +113,6 @@ export default function Sidebar({ classes }: SidebarProps) {
                             </li>
                             <li>
                                 <Link href="/" className="flex justify-start items-center gap-3">
-                                    <p>Magic Links</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
                                     <p>Customer support</p>
                                 </Link>
                             </li>
@@ -188,18 +183,6 @@ export default function Sidebar({ classes }: SidebarProps) {
 
                            <li>
                                <Link href="/" className="flex justify-start items-center gap-3">
-                                   <p>Features Grid</p>
-                               </Link>
-                           </li>
-                           
-                           <li>
-                               <Link href="/" className="flex justify-start items-center gap-3">
-                                   <p>CTA</p>
-                               </Link>
-                           </li>
-
-                           <li>
-                               <Link href="/" className="flex justify-start items-center gap-3">
                                    <p>Pricing</p>
                                </Link>
                            </li>
@@ -218,28 +201,64 @@ export default function Sidebar({ classes }: SidebarProps) {
                            
                            <li>
                                <Link href="/" className="flex justify-start items-center gap-3">
-                                   <p></p>
+                                   <p>Testimonial Small</p>
                                </Link>
                            </li>
 
                            <li>
                                <Link href="/" className="flex justify-start items-center gap-3">
-                                   <p></p>
+                                   <p>Testimonial Triple</p>
                                </Link>
                            </li>
                            
-                           <li>
-                               <Link href="/" className="flex justify-start items-center gap-3">
-                                   <p></p>
-                               </Link>
-                           </li>
-
                            <li>
                                <Link href="/" className="flex justify-start items-center gap-3">
                                    <p>Footer</p>
                                </Link>
                            </li>
 
+                           <li>
+                               <Link href="/" className="flex justify-start items-center gap-3">
+                                   <p>Button Lead</p>
+                               </Link>
+                           </li>
+
+                           <li>
+                               <Link href="/" className="flex justify-start items-center gap-3">
+                                   <p>Button Checkout</p>
+                               </Link>
+                           </li>
+
+                           <li>
+                               <Link href="/" className="flex justify-start items-center gap-3">
+                                   <p>Button Sign-in</p>
+                               </Link>
+                           </li>
+
+                           <li>
+                               <Link href="/" className="flex justify-start items-center gap-3">
+                                   <p>Button Account</p>
+                               </Link>
+                           </li>
+
+                           <li>
+                               <Link href="/" className="flex justify-start items-center gap-3">
+                                   <p>Better Icon</p>
+                               </Link>
+                           </li>
+
+                           <li>
+                               <Link href="/" className="flex justify-start items-center gap-3">
+                                   <p>Rating</p>
+                               </Link>
+                           </li>
+
+                           <li>
+                               <Link href="/" className="flex justify-start items-center gap-3">
+                                   <p>Modal</p>
+                               </Link>
+                           </li>
+                           
                         </ul>
                     </details>
                 </li>

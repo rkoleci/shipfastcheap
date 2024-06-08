@@ -40,6 +40,7 @@ module.exports = {
         "base-800": "#2b2b2b",
         "accent": "#37cdbe",
         "accent-main": "#cfcfcf",
+        "accent-secondary": "131616",
         "base-400": "#0F0F0F",
         "red-100": "#B0A8A0",
         "red-400": '#f87171',

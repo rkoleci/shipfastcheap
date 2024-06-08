@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 export default function Components() {
+   
+
     return (
         <div>
             <div className="max-w-xs  text-3xl text-accent-main font-bold leading-9 breadcrumbs">
@@ -13,7 +15,7 @@ export default function Components() {
                     </li>
 
                 </ul>
-                
+
             </div>
 
         </div>

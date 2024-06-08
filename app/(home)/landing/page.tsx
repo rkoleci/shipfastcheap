@@ -6,11 +6,16 @@ import Footer from './components/Footer'
 import Hero from './components/Hero'
 import Intro from './components/Intro'
 import Pricing from './components/Pricing' 
+import Problem from './components/Problem'
+import TestimonialSmall from './components/TestimonialSmall'
+import TestimonialTriple from './components/TestimonialTriple'
 
 export default function Landing() {
     return (
         <main>
         <Hero />
+        <Problem />
+        <TestimonialTriple />
         <FeaturedOn />
         <FeaturesListicle />
         <Intro /> 
