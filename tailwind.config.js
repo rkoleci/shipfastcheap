@@ -51,13 +51,13 @@ module.exports = {
   function ({ addComponents }) {
     const newComponents = {
       '.docs-title': {
-        '@apply text-lg text-accent-main font-medium leading-[1.75rem]': {},
+        '@apply text-lg text-accent-main font-medium leading-[1.75rem] mb-6': {},
       },
       '.docs-title-xl': {
-        '@apply text-xl text-accent-main font-bold leading-[1.75rem] mb-6': {},
+        '@apply text-xl text-accent-main font-bold leading-[1.75rem] mb-4': {},
       },
       '.docs-content': {
-        '@apply text-base leading-relaxed text-accent-main/80 font-normal': {}
+        '@apply text-base leading-relaxed text-accent-main/80 font-normal mb-4': {}
       }, 
       '.docs-tag': {
         '@apply bg-base-100 p-1 rounded text-accent-main text-base': {}
