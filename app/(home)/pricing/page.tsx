@@ -23,7 +23,7 @@ export default async function PricingPage() {
         .eq('prices.active', true)
         .order('metadata->index')
         .order('unit_amount', { referencedTable: 'prices' });
-    console.log(111, 'PricingPage', products)
+    console.log(111, 'PricingPage', products[0].prices)
 
     return (
         <div>

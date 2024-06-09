@@ -344,25 +344,23 @@ export async function updateName(formData: FormData) {
 }
 
 export async function storeWaitlist(formData: FormData) {
-  // Get form data
   const email = String(formData.get('email')).trim();
-  console.log(111, email)
   const supabase = createClient();
-  const { error, data } = await supabase.from('waitlist').insert([email]);
-  console.log(111, data, error)
-
+  const {status, error } = await supabase.from('waitlist').insert({
+    email
+  })
 
   if (error) {
     return getErrorRedirect(
       '/',
-      'Your name could not be updated.',
+      'Your email could not be saved!',
       error.message
     );
-  } else if (data.user) {
+  } else if (status === 201) {
     return getStatusRedirect(
-      '/account',
+      '/',
       'Success!',
-      'Your name has been updated.'
+      'Your email has been saved!.'
     );
   } else {
     return getErrorRedirect(

@@ -14,6 +14,9 @@ export default async function Dashboard() {
     }
 
     return (
-        <div>Welcome to Dashboad! {user?.email} </div>
+        <div className='bg-base-100'>
+            <h1>Welcome to Dashboad! {user?.email} </h1>
+            <h1>Welcome to Dashboad! {user?.email} </h1>
+        </div>
     )
 }
