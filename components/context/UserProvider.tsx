@@ -3,6 +3,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { useSupabaseClient } from './SupabaseClient';
 import { User } from '@supabase/supabase-js';
+import { redirect } from 'next/navigation';
 
 const UserContext = createContext<any>(null);
 
@@ -19,7 +20,6 @@ export const UserProvider  = ({ children }: IProps) => {
       const response = await  supabase?.auth.getUser()
       setUser(response?.data?.user)
     } 
-    // TODO logout?
 
     getUserdata()
   }, []);

@@ -2,7 +2,7 @@ import Image from "next/image";
 import shipfastAvatar2 from '../../public/shipfast_avatar_2.webp'
 
 export default function Pricing() {
-
+   
     return (
         <section id="pricing" className="bg-base-400 py-24 px-8 flex flex-col justify-start items-center">
             <div className="max-w-5xl w-full flex flex-col items-center gap-4">
