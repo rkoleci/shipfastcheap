@@ -305,6 +305,8 @@ export async function updateEmail(formData: FormData) {
   }
 }
 
+
+
 export async function getProducts() {
   const supabase = createClient();
   const { error, data } = await supabase.from('products').select('*')
@@ -314,7 +316,7 @@ export async function getProducts() {
 
 export async function updateName(formData: FormData) {
   // Get form data
-  const fullName = String(formData.get('fullName')).trim(); 
+  const fullName = String(formData.get('fullName')).trim();
   const supabase = createClient();
   const { error, data } = await supabase.auth.updateUser({
     data: { full_name: fullName }
@@ -337,6 +339,36 @@ export async function updateName(formData: FormData) {
       '/account',
       'Hmm... Something went wrong.',
       'Your name could not be updated.'
+    );
+  }
+}
+
+export async function storeWaitlist(formData: FormData) {
+  // Get form data
+  const email = String(formData.get('email')).trim();
+  console.log(111, email)
+  const supabase = createClient();
+  const { error, data } = await supabase.from('waitlist').insert([email]);
+  console.log(111, data, error)
+
+
+  if (error) {
+    return getErrorRedirect(
+      '/',
+      'Your name could not be updated.',
+      error.message
+    );
+  } else if (data.user) {
+    return getStatusRedirect(
+      '/account',
+      'Success!',
+      'Your name has been updated.'
+    );
+  } else {
+    return getErrorRedirect(
+      '/',
+      'Hmm... Something went wrong.',
+      'Your email could not be saved!'
     );
   }
 }

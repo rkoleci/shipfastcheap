@@ -1,9 +1,13 @@
+'use client'
+
 import Link from "next/link";
+import ButtonLead from "@components/ui/ButtonLead";
 
 export default function Footer() {
 
     return (
         <section className="bg-base-400 border-t border-gray-700">
+            <ButtonLead />
             <div className="max-w-7xl mx-auto px-8 py-24  ">
                 <div className="flex lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
                     <div className="w-80 max-w-full flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">

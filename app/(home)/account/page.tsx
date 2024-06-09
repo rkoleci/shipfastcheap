@@ -4,13 +4,12 @@ import NameForm from '@/components/ui/AccountForms/NameForm';
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 
-export default async function Account() {
+export default async function Account() { 
   const supabase = createClient();
 
   const {
     data: { user }
-  } = await supabase.auth.getUser(); 
-  console.log(111, 'user', user)
+  } = await supabase.auth.getUser();  
 
   const { data: subscription, error } = await supabase
     .from('subscriptions')
@@ -38,6 +37,7 @@ export default async function Account() {
           </p>
         </div>
       </div>
+      
       <div className="p-4">
         <CustomerPortalForm subscription={subscription} />
         <EmailForm userEmail={user.email} />
