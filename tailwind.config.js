@@ -60,13 +60,13 @@ module.exports = {
         '@apply text-base leading-relaxed text-accent-main/80 font-normal mb-6': {}
       }, 
       '.docs-tag': {
-        '@apply bg-base-100 px-2 py-1 rounded text-accent-main text-base ': {}
+        '@apply bg-base-100 px-2 py-1 rounded text-accent-main text-base': {}
       },
-      '.docs-hint': {
-        '@apply p-5 rounded-r-lg bg-primary/10  text-sm leading-5 text-accent-main/80  border-l-[3px] border-primary/20 mb-4': {}
-      },
+      // '.docs-hint': {
+      //   '@apply p-5 rounded-r-lg bg-primary/10  text-sm leading-5 text-accent-main/80  border-l-[3px] border-primary/20 mb-4': {}
+      // },
       '.docs-divider': {
-        '@apply   border-t border-base-content/20 pt-8': {}
+        '@apply border-t border-base-content/20 pt-8': {}
       },
 
     
