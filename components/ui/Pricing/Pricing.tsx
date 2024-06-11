@@ -33,7 +33,7 @@ interface Props {
 type BillingInterval = 'lifetime' | 'year' | 'month';
 
 export default function Pricing({ user, products, subscription }: Props) {
-  console.log(111, products)
+
   const intervals = Array.from(
     new Set(
       products.flatMap((product) =>
@@ -41,7 +41,7 @@ export default function Pricing({ user, products, subscription }: Props) {
       )
     )
   );
-
+  console.log(111, products[0].prices, products[1].prices,products[2].prices)
   const router = useRouter();
   const [billingInterval, setBillingInterval] =
     useState<BillingInterval>('month');
@@ -117,7 +117,7 @@ export default function Pricing({ user, products, subscription }: Props) {
               plans unlock additional features.
             </p>
             <div className="relative self-center mt-6 bg-zinc-900 rounded-lg p-0.5 flex sm:mt-8 border border-zinc-800">
-              {intervals.includes('month') && (
+              { (
                 <button
                   onClick={() => setBillingInterval('month')}
                   type="button"
@@ -147,9 +147,7 @@ export default function Pricing({ user, products, subscription }: Props) {
           </div>
           <div className="mt-12 space-y-4 sm:mt-16 sm:space-y-0 flex flex-wrap justify-center gap-6 lg:max-w-4xl lg:mx-auto xl:max-w-none xl:mx-0">
             {products.map((product) => {
-              const price = product?.prices?.find(
-                (price) => price.interval === billingInterval
-              );
+              const price = product?.prices[0]
               if (!price) return null;
               const priceString = new Intl.NumberFormat('en-US', {
                 style: 'currency',
@@ -181,7 +179,7 @@ export default function Pricing({ user, products, subscription }: Props) {
                         {priceString}
                       </span>
                       <span className="text-base font-medium text-zinc-100">
-                        /{billingInterval}
+                        /{price?.interval || 'One time'}
                       </span>
                     </p>
                     <Button

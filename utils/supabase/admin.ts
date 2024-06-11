@@ -3,6 +3,7 @@ import { stripe } from '@/utils/stripe/config';
 import { createClient } from '@supabase/supabase-js';
 import Stripe from 'stripe';
 import type { Database, Tables, TablesInsert } from 'types_db';
+import { v4 as uuidv4 } from 'uuid';
 
 type Product = Tables<'products'>;
 type Price = Tables<'prices'>;
@@ -24,7 +25,8 @@ const upsertProductRecord = async (product: Stripe.Product) => {
     name: product.name,
     description: product.description ?? null,
     image: product.images?.[0] ?? null,
-    metadata: product.metadata
+    metadata: product.metadata,
+
   };
 
   const { error: upsertError } = await supabaseAdmin
@@ -208,6 +210,58 @@ const copyBillingDetailsToCustomer = async (
   if (updateError) throw new Error(`Customer update failed: ${updateError.message}`);
 };
 
+const managePaymentCompleted = async (lineItems: Array<Stripe.LineItem>, customerId: string) => {
+  console.log(111, { customerId, lineItems: lineItems[0]?.price })
+
+  const lineItem = lineItems[0]?.price 
+
+  if (!lineItem?.id) {
+    throw new Error("Failed to make purchase!")
+  }
+
+  // Get customer's UUID from mapping table.
+  const { data: customerData, error: noCustomerError } = await supabaseAdmin
+    .from('customers')
+    .select('id')
+    .eq('stripe_customer_id', customerId)
+    .single();
+
+  if (noCustomerError)
+    throw new Error(`Customer lookup failed: ${noCustomerError.message}`);
+
+  const { id: uuid } = customerData!;
+
+  console.log(111, { customerData})
+
+  const subscriptionData: TablesInsert<'subscriptions'> = {
+    id: uuidv4(),
+    user_id: uuid,
+     status: 'active',
+    price_id: lineItem.id,
+    quantity: 1,
+    created: toDateTime(0).toISOString(),
+  };
+
+  const { error: upsertError } = await supabaseAdmin
+    .from('subscriptions')
+    .upsert([subscriptionData]);
+  if (upsertError)
+    throw new Error(`Subscription insert/update failed: ${upsertError.message}`);
+  console.log(
+    `Inserted/updated subscription/payment for user [${uuid}]`
+  );
+
+  // For a new subscription copy the billing details to the customer object.
+  // NOTE: This is a costly operation and should happen at the very end.
+  // if (createAction && subscription.default_payment_method && uuid)
+  //   //@ts-ignore
+  //   await copyBillingDetailsToCustomer(
+  //     uuid,
+  //     subscription.default_payment_method as Stripe.PaymentMethod
+  //   );
+
+}
+
 const manageSubscriptionStatusChange = async (
   subscriptionId: string,
   customerId: string,
@@ -288,5 +342,6 @@ export {
   deleteProductRecord,
   deletePriceRecord,
   createOrRetrieveCustomer,
-  manageSubscriptionStatusChange
+  manageSubscriptionStatusChange,
+  managePaymentCompleted
 };

@@ -29,7 +29,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                         </summary>
                         <ul>
                             <li>
-                                <Link href="/docs/components" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/tutorials/ship-in-five" className="flex justify-start items-center gap-3">
                                     <p>Ship in 5 minutes</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                                         <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd" />
@@ -38,32 +38,32 @@ export default function Sidebar({ classes }: SidebarProps) {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/tutorials/static-page" className="flex justify-start items-center gap-3">
                                     <p>Static page</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/tutorials/user-auth" className="flex justify-start items-center gap-3">
                                     <p>User Authentication</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/tutorials/api-call" className="flex justify-start items-center gap-3">
                                     <p>API Call</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/tutorials/private-page" className="flex justify-start items-center gap-3">
                                     <p>Private page</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/tutorials/stripe" className="flex justify-start items-center gap-3">
                                     <p>Stripe Subscriptions</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/tutorials/privacy-policy" className="flex justify-start items-center gap-3">
                                     <p>Privacy policy with GPT</p>
                                 </Link>
                             </li>
@@ -218,7 +218,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                            </li>
 
                            <li>
-                               <Link href="/" className="flex justify-start items-center gap-3">
+                               <Link href="/docs/components/button-lead" className="flex justify-start items-center gap-3">
                                    <p>Button Lead</p>
                                </Link>
                            </li>

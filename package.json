@@ -41,7 +41,8 @@
     "react-merge-refs": "^2.1.1",
     "stripe": "^14.16.0",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",

@@ -51,20 +51,25 @@ module.exports = {
   function ({ addComponents }) {
     const newComponents = {
       '.docs-title': {
-        '@apply text-lg text-accent-main font-medium leading-[1.75rem] mb-6': {},
+        '@apply text-lg text-accent-main font-medium leading-[1.75rem] mb-8': {},
       },
       '.docs-title-xl': {
-        '@apply text-xl text-accent-main font-bold leading-[1.75rem] mb-4': {},
+        '@apply text-xl text-accent-main font-bold leading-[1.75rem] mb-6': {},
       },
       '.docs-content': {
-        '@apply text-base leading-relaxed text-accent-main/80 font-normal mb-4': {}
+        '@apply text-base leading-relaxed text-accent-main/80 font-normal mb-6': {}
       }, 
       '.docs-tag': {
-        '@apply bg-base-100 p-1 rounded text-accent-main text-base': {}
+        '@apply bg-base-100 px-2 py-1 rounded text-accent-main text-base ': {}
       },
       '.docs-hint': {
-        '@apply p-5 rounded-r-lg bg-primary/10  text-sm leading-5 text-accent-main/80  border-l-[3px] border-primary/20': {}
+        '@apply p-5 rounded-r-lg bg-primary/10  text-sm leading-5 text-accent-main/80  border-l-[3px] border-primary/20 mb-4': {}
       },
+      '.docs-divider': {
+        '@apply   border-t border-base-content/20 pt-8': {}
+      },
+
+    
      
     };
 
