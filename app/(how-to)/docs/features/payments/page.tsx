@@ -3,15 +3,19 @@ import Link from "next/link";
 export default function Features() {
     return (
         <div>
-            <div className="text-3xl text-accent-main font-bold leading-[3rem] breadcrumbs ">
-                <ul>
+              <ul>
+                <div className="text-3xl text-accent-main font-bold  flex flex-row justify-start items-center gap-1 mb-10">
                     <li>
-                        <Link href="/docs/features" className="mb-8">Features</Link>
-                    </li> <li>
-                        <Link href="/docs/payments" className="mb-8">Payments</Link>
+                        <Link href="/docs/tutorials" className="mb-8">Tutorials</Link>
                     </li>
-                </ul>
-            </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
+                        <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+                    </svg>
+                    <li>
+                        <Link href="/docs/features/payments" className="mb-8">Payments</Link>
+                    </li>
+                </div>
+            </ul>
 
             <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
                 <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>

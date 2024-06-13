@@ -257,3 +257,25 @@ To run the project in live mode and process payments with Stripe, switch Stripe 
 Afterward, you will need to rebuild your production deployment for the changes to take effect. Within your project Dashboard, navigate to the "Deployments" tab, select the most recent deployment, click the overflow menu button (next to the "Visit" button) and select "Redeploy" (do NOT enable the "Use existing Build Cache" option).
 
 To verify you are running in production mode, test checking out with the [Stripe test card](https://stripe.com/docs/testing). The test card should not work.
+
+
+### Privacy Policy prompt
+Generate a privacy policy for a fictional company, "ShipFast", that respects user privacy regarding information collected across its website and other sites it owns. The policy should include the following elements:
+
+Information Collection: Explain the conditions under which personal information is requested, emphasizing fair and lawful collection, user knowledge, and consent. Include an example of a signup method, such as using a Google account, and specify what data is collected (e.g., username and public profile picture).
+
+Data Retention and Protection: Describe how long the information is retained and the measures taken to protect it from loss, theft, unauthorized access, disclosure, copying, use, or modification.
+
+Data Sharing: State that personal information is not shared publicly or with third parties except when legally required.
+
+Compliance: Clarify that ShipFast acts as a data controller and processor according to relevant data protection laws, including the EU GDPR.
+
+External Links: Note that the website may link to external sites not operated by ShipFast, and ShipFast is not responsible for their privacy policies.
+
+User Rights: Inform users they can refuse to provide personal information, with the understanding that it might limit the services available to them.
+
+Acceptance and Contact Information: Mention that continued use of the website implies acceptance of the privacy practices, and provide a way for users to contact ShipFast with questions about data handling and privacy.
+
+Effective Date: Include an effective date for the policy.
+
+The resulting privacy policy should be clear, concise, and in plain language.
