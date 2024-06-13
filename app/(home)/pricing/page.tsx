@@ -1,5 +1,5 @@
-import { createClient } from "../../../utils/supabase/server"
 import Pricing from '@/components/ui/Pricing/Pricing';
+import { createClient } from '@/utils/supabase/server';
 
 export const revalidate = 0
 
@@ -23,7 +23,6 @@ export default async function PricingPage() {
         .eq('prices.active', true)
         .order('metadata->index')
         .order('unit_amount', { referencedTable: 'prices' });
-    console.log(111, 'PricingPage', products[0].prices)
 
     return (
         <div>

@@ -5,12 +5,13 @@ import FeaturesListicle from '@/components/ui/FeaturesListicle'
 import Footer from '@/components/ui/Footer'
 import Hero from '@/components/ui/Hero'
 import Intro from '@/components/ui/Intro'
-import Pricing from '@/components/ui/Pricing'
+import Pricing from '@/components/server/Pricing'
 import Problem from '@/components/ui/Problem'
 import TestimonialTriple from '@/components/ui/TestimonialTriple'
 import Link from 'next/link'
 
 export default function Landing() {
+    
     return (
         <main>
             <Hero />

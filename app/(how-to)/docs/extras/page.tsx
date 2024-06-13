@@ -6,12 +6,12 @@ export default function DocsPage() {
     return (
         <div>
 
-<ul>
+            <ul>
                 <div className="text-3xl text-accent-main font-bold  flex flex-row justify-start items-center gap-1 mb-10">
                     <li>
                         <Link href="/docs/extras" className="mb-8">Extras</Link>
                     </li>
-                 
+
                 </div>
             </ul>
 

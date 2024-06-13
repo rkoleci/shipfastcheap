@@ -2,7 +2,6 @@ import { PriceRow } from "@/types_db";
 
 
 export default function PricesTable({ data }: { data: Array<PriceRow> }) {
-    console.log(11, data)
 
     return (
         <div className="overflow-x-auto">
@@ -28,7 +27,7 @@ export default function PricesTable({ data }: { data: Array<PriceRow> }) {
                 </thead>
                 <tbody>
                     {data.map((item: PriceRow, index: number) => (
-                        <tr className="bg-base-200">
+                        <tr className="bg-base-100">
                             <th>{index + 1}</th>
                             <td>{item.id}</td>
                             <td>{item.products?.name}</td>

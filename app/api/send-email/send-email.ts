@@ -2,7 +2,6 @@ import { sendEmail } from '@/utils/mailgun';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: any, res: any) {
-  console.log(111, 'SEND EMAIL')
   if (req.method === 'POST') {
     const { to, subject, text } = req.body;
 

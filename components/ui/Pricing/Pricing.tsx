@@ -41,7 +41,6 @@ export default function Pricing({ user, products, subscription }: Props) {
       )
     )
   );
-  console.log(111, products[0].prices, products[1].prices,products[2].prices)
   const router = useRouter();
   const [billingInterval, setBillingInterval] =
     useState<BillingInterval>('month');

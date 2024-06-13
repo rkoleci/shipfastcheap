@@ -1,8 +1,7 @@
 import Link from "next/link";
+import ButtonAccount from "./ButtonAccount";
 
 export default function Navbar() {
-   
-
     return (
         <div className="navbar bg-base-100 justify-center items-center px-8 py-5">
             <div className="flex items-center gap-8 md:gap-24 xl:ps-8  justify-center md:justify-start w-full max-w-7xl  ">
@@ -15,7 +14,10 @@ export default function Navbar() {
                     <a className="link leading-7 text-base font-normal link-accent-main  no-underline">Wall of Love</a>
                 </ul>
             </div>
-            <div className="flex-none"></div>
+            <div className="flex-none">
+                {/* {user?.id && <Link href="/logout">Logout</Link>} */}
+                <ButtonAccount />
+            </div>
         </div>
     );
 }

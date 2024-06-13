@@ -26,7 +26,7 @@ export default function SubscriptionsTable({ data }: { data: Array<SubscriptionR
                 </thead>
                 <tbody>
                     {data.map((item: SubscriptionRow, index: number) => (
-                        <tr className="bg-base-200">
+                        <tr className="bg-base-100">
                             <th>{index + 1}</th>
                             <td>{item.id}</td>
                             <td>{item.users.full_name}</td>

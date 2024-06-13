@@ -47,6 +47,8 @@ export async function checkoutWithStripe(
       throw new Error('Unable to access customer record.');
     }
 
+    // TODO Create new user account if not any and email user
+
     let params: Stripe.Checkout.SessionCreateParams = {
       allow_promotion_codes: true,
       billing_address_collection: 'required',
@@ -126,7 +128,8 @@ export async function createStripePortal(currentPath: string) {
       error,
       data: { user }
     } = await supabase.auth.getUser();
-
+    
+// TODO create fake user, update after checkout
     if (!user) {
       if (error) {
         console.error(error);

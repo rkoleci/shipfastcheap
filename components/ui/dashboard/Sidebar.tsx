@@ -7,7 +7,7 @@ interface SidebarProps {
 export default function Sidebar({ classes }: SidebarProps) {
 
     return (
-        <ul className={`menu p-4 w-80 min-h-screen max-h-screen bg-base-200 ${classes} overflow-y-scroll fixed `}>
+        <ul className={`menu p-4 w-64 min-h-screen max-h-screen bg-base-100 ${classes} overflow-y-scroll fixed `}>
             <div className="mb-8">Shipfast</div>
             <li>
                     <details open>

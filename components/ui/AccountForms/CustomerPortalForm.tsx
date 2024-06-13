@@ -7,6 +7,7 @@ import { createStripePortal } from '@/utils/stripe/server';
 import Link from 'next/link';
 import Card from '@/components/ui/Card';
 import { Tables } from '@/types_db';
+import { formatPrice } from '../Pricing';
 
 type Subscription = Tables<'subscriptions'>;
 type Price = Tables<'prices'>;
@@ -14,10 +15,10 @@ type Product = Tables<'products'>;
 
 type SubscriptionWithPriceAndProduct = Subscription & {
   prices:
-    | (Price & {
-        products: Product | null;
-      })
-    | null;
+  | (Price & {
+    products: Product | null;
+  })
+  | null;
 };
 
 interface Props {
@@ -36,6 +37,8 @@ export default function CustomerPortalForm({ subscription }: Props) {
       currency: subscription?.prices?.currency!,
       minimumFractionDigits: 0
     }).format((subscription?.prices?.unit_amount || 0) / 100);
+
+  const type = subscription && subscription?.prices?.type === 'one_time' ? 'Lifetime' : subscription?.prices?.interval
 
   const handleStripePortalRequest = async () => {
     setIsSubmitting(true);
@@ -66,11 +69,10 @@ export default function CustomerPortalForm({ subscription }: Props) {
       }
     >
       <div className="mt-8 mb-4 text-xl font-semibold">
-        {subscription ? (
-          `${subscriptionPrice}/${subscription?.prices?.interval}`
-        ) : (
+        {subscription ? subscriptionPrice : (
           <Link href="/">Choose your plan</Link>
         )}
+        {` ${type}`}
       </div>
     </Card>
   );

@@ -19,7 +19,8 @@ const relevantEvents = new Set([
   'checkout.session.completed',
   'customer.subscription.created',
   'customer.subscription.updated',
-  'customer.subscription.deleted'
+  'customer.subscription.deleted',
+  'charge.succeeded'
 ]);
 
 export async function POST(req: Request) {
@@ -27,7 +28,6 @@ export async function POST(req: Request) {
   const body = await req.text();
   const sig = req.headers.get('stripe-signature') as string;
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET;
-  console.log(sig)
   let event: Stripe.Event;
 
   try {
@@ -86,7 +86,16 @@ export async function POST(req: Request) {
                 checkoutSession.customer as string)
           }
           break;
-        default:
+          case 'charge.succeeded':
+            console.log(111, 'SUCESS')
+            const redirectUrl = '/docs'; // Replace with your desired redirect URL
+            return new Response(JSON.stringify({ redirectUrl }), {
+              status: 200,
+              headers: { 'Content-Type': 'application/json' }
+            });
+          break;
+        
+          default:
           throw new Error('Unhandled relevant event!');
       }
     } catch (error) {

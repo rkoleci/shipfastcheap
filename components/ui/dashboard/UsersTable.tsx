@@ -17,7 +17,7 @@ export default function UsersTable({ data }: { data: Array<UsersRow> }) {
                 </thead>
                 <tbody>
                     {data.map((item: UsersRow, index: number) => (
-                        <tr className="bg-base-200">
+                        <tr className="bg-base-100">
                             <th>{index + 1}</th>
                             <td>{item.id}</td>
                             <td>{item.full_name}</td>

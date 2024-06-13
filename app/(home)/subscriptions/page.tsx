@@ -27,6 +27,7 @@ export default async function PricingPage() {
     .order('metadata->index')
     .order('unit_amount', { referencedTable: 'prices' });
 
+
   return (
     <Pricing
       user={user}

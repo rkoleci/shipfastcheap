@@ -82,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <Sidebar classes='hidden lg:block' />
 
-        <div className='hidden lg:block overflow-y-auto ml-80 p-8 md:p-12 w-full'>
+        <div className='hidden lg:block overflow-y-auto ml-64 p-8 md:p-12 w-full'>
           {children}
         </div>
 
