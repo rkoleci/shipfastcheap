@@ -1,6 +1,9 @@
+'use client'
+
 import BetterIcon from "@/components/ui/BetterIcon";
 import ButtonLead from "@/components/ui/ButtonLead";
 import Link from "next/link";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 export default function Components() {
 
@@ -28,9 +31,14 @@ export default function Components() {
 
             <div className="py-10 max-w-xs pointer-events-none"><ButtonLead /></div>
 
-            <div className="mockup-code bg-base-800  mb-6">
-                <pre data-prefix="$"><code> import ButtonLead from "@/components/ButtonLead";</code></pre>
-            </div>
+            <CopyBlock
+                language={'jsx'}
+                text={`import ButtonLead from "@/components/ButtonLead";`}
+                
+                theme={dracula}
+                codeBlock
+            />
+
 
             <div className="docs-divider"></div>
 

@@ -1,4 +1,6 @@
+'use client'
 import Link from "next/link";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 export default function UseAuthenticationPage() {
     return (
@@ -20,22 +22,27 @@ export default function UseAuthenticationPage() {
 
             <div className="docs-content">A simple landing page can done like this:</div>
 
-            <div className="mockup-code bg-base-800  mb-6">
-                <pre data-prefix="$"><code>{`"use client";
 
-import Link from "next/link";
+            <CopyBlock
+                language={`tsx`}
+                text={`"use client";
 
-const SigninButton = () => {
-  return (
-    <Link className="btn btn-primary" href="/signin">
-      Login
-    </Link>
-  );
-};
-
-export default SigninButton;
-`}</code></pre>
-            </div>
+                import Link from "next/link";
+                
+                const SigninButton = () => {
+                  return (
+                    <Link className="btn btn-primary" href="/signin">
+                      Login
+                    </Link>
+                  );
+                };
+                
+                export default SigninButton;
+                `}
+                showLineNumbers
+                theme={dracula}
+                codeBlock
+            />
 
             <div className="docs-hint">The callbackUrl variable in the <span className="docs-tag">config.js</span> file is used accross the app to redirect the user at the right place after a successfull sign-up/login. It's usually a private page like <span className="docs-tag">/dashboard</span></div>
 

@@ -1,4 +1,6 @@
+'use client'
 import Link from "next/link";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 export default function Docs() {
     return (
@@ -21,9 +23,14 @@ export default function Docs() {
 
             <h2 className="docs-title-xl">Start a local server</h2>
 
-            <div className="mockup-code bg-base-800  mb-6">
-                <pre data-prefix="$"><code>npm i daisyui</code></pre>
-            </div>
+            <CopyBlock
+                language={'jsx'}
+                text={`npm i daisyui`}
+                showLineNumbers
+                theme={dracula}
+                codeBlock
+            />
+
 
             <div className="docs-content">1. In your terminal, run the following commands <span className="docs-content font-semibold">one-by-one</span>: </div>
 
@@ -31,9 +38,14 @@ export default function Docs() {
 
             <div className="docs-content">2. Rename <span className="docs-tag" >.env.example</span> to <span className="docs-tag">.env.local</span></div>
 
-            <div className="mockup-code bg-base-800 mb-6">
-                <pre data-prefix="$"><code>npm i daisyui</code></pre>
-            </div>
+            <CopyBlock
+                language={'jsx'}
+                text={`npm i daisyui`}
+                showLineNumbers
+                theme={dracula}
+                codeBlock
+            />
+
 
             <div className="docs-content">3. Go to the Supabase dashboard, create a new project and paste your 2 Supabase environment variables <span className="docs-tag">NEXT_PUBLIC_SUPABASE_URL</span> <span className="docs-tag">NEXT_PUBLIC_SUPABASE_ANON_KEY</span> in <span className="docs-tag">.env.local</span></div>
 
@@ -52,12 +64,17 @@ export default function Docs() {
 
             <h2 className="docs-title-xl">.env file</h2>
 
-            <div className="mockup-code bg-base-800  mb-6">
-                <pre data-prefix="$"><code>npm i daisyui</code></pre>
-            </div>
+            <CopyBlock
+                language={'tsx'}
+                text={`npm i daisyui`}
+                showLineNumbers
+                theme={dracula}
+                codeBlock
+            />
 
 
-            <div  className="docs-content">Rename the .env.example file to <span>.env.local</span>. Change <span>NEXTAUTH_SECRET</span> to anything else. The file content should look like this:</div>
+
+            <div className="docs-content">Rename the .env.example file to <span>.env.local</span>. Change <span>NEXTAUTH_SECRET</span> to anything else. The file content should look like this:</div>
 
             <div className="docs-content">Now go ahead and follow <Link href='/' className="link link-primary">this tutorial</Link> to get your startup live within 5 minutes!</div>
 

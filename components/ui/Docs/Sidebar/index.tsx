@@ -11,13 +11,13 @@ export default function Sidebar({ classes }: SidebarProps) {
             {/* Sidebar content here */}
             <ul className="menu bg-base-200 w-56 rounded-box gap-3 ">
                 <li><a>ShipFast</a></li>
-                <Link href="/get-started" className="flex flex-start items-center gap-3">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
+                <div className="flex justify-start items-center gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                         <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
                     </svg>
                     <p>Get Started</p>
-                </Link>
 
+                </div>
                 <li>
                     <details open>
                         <summary>
@@ -83,7 +83,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                         </summary>
                         <ul>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/features/seo" className="flex justify-start items-center gap-3">
                                     <p>SEO</p>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-5">
                                         <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd" />
@@ -92,37 +92,37 @@ export default function Sidebar({ classes }: SidebarProps) {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/features/database" className="flex justify-start items-center gap-3">
                                     <p>Database</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/features/emails" className="flex justify-start items-center gap-3">
                                     <p>Emails</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/features/payments" className="flex justify-start items-center gap-3">
                                     <p>Payments</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/features/google-oauth" className="flex justify-start items-center gap-3">
                                     <p>Google OAuth</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/features/customer-support" className="flex justify-start items-center gap-3">
                                     <p>Customer support</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/features/error-handling" className="flex justify-start items-center gap-3">
                                     <p>Error handling</p>
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/" className="flex justify-start items-center gap-3">
+                                <Link href="/docs/features/analytics" className="flex justify-start items-center gap-3">
                                     <p>Analytics</p>
                                 </Link>
                             </li>

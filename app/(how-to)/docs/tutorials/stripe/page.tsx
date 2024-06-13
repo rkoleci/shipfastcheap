@@ -1,4 +1,6 @@
+'use client'
 import Link from "next/link";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 export default function Stripe() {
     return (
@@ -20,10 +22,10 @@ export default function Stripe() {
 
             <div className="docs-content">You need to have <Link href="" className="link link-primary">Stripe</Link> and a <Link href="" className="link link-primary">database</Link> set up.</div>
 
-            <div className="docs-title">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent/80"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-                Setup</div>
-
+            <div className="docs-title flex flex-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-primary"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                Setup
+            </div>
             <div className="docs-content">In your <Link href="" className="link link-primary">Stripe dashboard</Link>, Click [More +] > [Product Catalog] > [+ Add Product]. Set a name and a monthly price (or anything according to your business model). Then click [Save Product].</div>
 
 
@@ -31,34 +33,39 @@ export default function Stripe() {
 
             <div className="docs-content">3.In <span className="docs-tag">/dashboard/page.js</span>, paste this:</div>
 
-            <div className="mockup-code bg-base-800  mb-6">
-                <pre data-prefix="$"><code>{`import ButtonAccount from "@/components/ButtonAccount";
-import ButtonCheckout from "@/components/ButtonCheckout";
-import config from "@/config";
 
-export const dynamic = "force-dynamic";
-
-export default async function Dashboard() {
-  return (
-    <main className="min-h-screen p-8 pb-24">
-      <section className="max-w-xl mx-auto space-y-8">
-        <ButtonAccount />
-
-        <h1 className="text-3xl md:text-4xl font-extrabold">
-          Subscribe to get access:
-        </h1>
-
-        <ButtonCheckout
-          mode="subscription"
-          priceId={config.stripe.plans[0].priceId}
-        />
-      </section>
-    </main>
-  );
-}
-
-`}</code></pre>
-            </div>
+            <CopyBlock
+                language={`tsx`}
+                text={`import ButtonAccount from "@/components/ButtonAccount";
+                import ButtonCheckout from "@/components/ButtonCheckout";
+                import config from "@/config";
+                
+                export const dynamic = "force-dynamic";
+                
+                export default async function Dashboard() {
+                  return (
+                    <main className="min-h-screen p-8 pb-24">
+                      <section className="max-w-xl mx-auto space-y-8">
+                        <ButtonAccount />
+                
+                        <h1 className="text-3xl md:text-4xl font-extrabold">
+                          Subscribe to get access:
+                        </h1>
+                
+                        <ButtonCheckout
+                          mode="subscription"
+                          priceId={config.stripe.plans[0].priceId}
+                        />
+                      </section>
+                    </main>
+                  );
+                }
+                `}
+                showLineNumbers
+                theme={dracula}
+                codeBlock
+            />
+ 
 
             <div className="docs-content">Open <span className="docs-tag">http://localhost:3000/dashboard</span> in your browser, log-in and click the button to make a payment with the credit card number <span className="docs-tag">4242 4242 4242 4242</span>.</div>
 

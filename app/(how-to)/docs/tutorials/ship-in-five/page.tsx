@@ -1,4 +1,6 @@
+'use client'
 import Link from "next/link";
+import { CopyBlock, dracula } from "react-code-blocks";
 
 export default function ShipIn5() {
     return (
@@ -28,37 +30,43 @@ export default function ShipIn5() {
 
             <h2 className="docs-title-xl">Start a local server</h2>
 
-            <div className="mockup-code bg-base-800  mb-6">
-                <pre data-prefix="$"><code>{`import { Suspense } from 'react'
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Problem from "@/components/Problem";
-import FeaturesAccordion from "@/components/FeaturesAccordion";
-import Pricing from "@/components/Pricing";
-import FAQ from "@/components/FAQ";
-import CTA from "@/components/CTA";
-import Footer from "@/components/Footer";
 
-export default function Home() {
-  return (
-    <>
-      <Suspense>
-        <Header />
-      </Suspense>
-      <main>
-        <Hero />
-        <Problem />
-        <FeaturesAccordion />
-        <Pricing />
-        <FAQ />
-        <CTA />
-      </main>
-      <Footer />
-    </>
-  );
-}`}</code></pre>
-            </div>
+  <CopyBlock
+                language={`tsx`}
+                text={`import { Suspense } from 'react'
+                import Header from "@/components/Header";
+                import Hero from "@/components/Hero";
+                import Problem from "@/components/Problem";
+                import FeaturesAccordion from "@/components/FeaturesAccordion";
+                import Pricing from "@/components/Pricing";
+                import FAQ from "@/components/FAQ";
+                import CTA from "@/components/CTA";
+                import Footer from "@/components/Footer";
+                
+                export default function Home() {
+                  return (
+                    <>
+                      <Suspense>
+                        <Header />
+                      </Suspense>
+                      <main>
+                        <Hero />
+                        <Problem />
+                        <FeaturesAccordion />
+                        <Pricing />
+                        <FAQ />
+                        <CTA />
+                      </main>
+                      <Footer />
+                    </>
+                  );
+                }`}
+                showLineNumbers
+                theme={dracula}
+                codeBlock
+            />
 
+ 
 
 
             <div className="docs-content">Edit the copy to fit your business logic. Each component has tips to help you write copy that sells—see <Link href="/docs/components" className="link link-primary">components section</Link>. Congrats you have a beautiful landing page to show!</div>
@@ -67,22 +75,27 @@ export default function Home() {
 
             <div className="docs-content">(Optional) Replace the main call-to-action button in <span>Hero</span>, <span>Pricing</span> with this:</div>
 
-            <div className="mockup-code bg-base-800 mb-6">
-                <pre data-prefix="$"><code>{`import ButtonLead from "@/components/ButtonLead";
 
-...
-</div>
+            <CopyBlock
+                language={`tsx`}
+                text={`import ButtonLead from "@/components/ButtonLead";
 
-{/* For the Hero & CTA use this 👇 */}
-<ButtonLead />
-
-{/* For the Pricing use this instead 👇 */}
-<ButtonLead extraStyle="!max-w-none !w-full" />
-
-<div>
-...`}</code></pre>
-            </div>
-
+                ...
+                </div>
+                
+                {/* For the Hero & CTA use this 👇 */}
+                <ButtonLead />
+                
+                {/* For the Pricing use this instead 👇 */}
+                <ButtonLead extraStyle="!max-w-none !w-full" />
+                
+                <div>
+                ...`}
+                showLineNumbers
+                theme={dracula}
+                codeBlock
+            />
+ 
 
             <div className="docs-content">It's time to deploy! If you need help, here's a simple tutorial</div>
 

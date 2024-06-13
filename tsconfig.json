@@ -26,6 +26,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/mailgun", "utils/config.js", "app/not-found.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "utils/mailgun", "utils/config.js", "app/not-found.js", "app/(how-to)/docs/features"],
   "exclude": ["node_modules"]
 }
