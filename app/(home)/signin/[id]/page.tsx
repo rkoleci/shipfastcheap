@@ -48,11 +48,11 @@ export default async function SignIn({
     data: { user }
   } = await supabase.auth.getUser();
 
-  if (user && viewProp !== 'update_password') {
-    return redirect('/');
-  } else if (!user && viewProp === 'update_password') {
-    return redirect('/signin');
-  }
+  // if (user && viewProp !== 'update_password') {
+  //   return redirect('/');
+  // } else if (!user && viewProp === 'update_password') {
+  //   return redirect('/signin');
+  // }
 
   return (
     <div className="flex justify-center height-screen-helper">
@@ -71,7 +71,7 @@ export default async function SignIn({
                   : 'Sign In'
           }
         >
-          {viewProp === 'password_signin' && (
+          {/* {viewProp === 'password_signin' && (
             <PasswordSignIn
               allowEmail={allowEmail}
               redirectMethod={redirectMethod}
@@ -96,14 +96,20 @@ export default async function SignIn({
           )}
           {viewProp === 'signup' && (
             <SignUp allowEmail={allowEmail} redirectMethod={redirectMethod} />
-          )}
-          {viewProp !== 'update_password' &&
+          )} */}
+          {/* {viewProp !== 'update_password' &&
             viewProp !== 'signup' &&
             allowOauth && (
               <>
                 <Separator text="Third-party sign-in" />
                 <OauthSignIn />
               </>
+            )} */}
+            {allowOauth && (
+               <>
+               <Separator text="Third-party sign-in" />
+               <OauthSignIn />
+             </>
             )}
         </Card>
       </div>

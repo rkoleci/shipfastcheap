@@ -112,6 +112,11 @@ export default function Sidebar({ classes }: SidebarProps) {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/docs/features/magic-links" className="flex justify-start items-center gap-3">
+                                    <p className="text-accent-main/80 font-medium leading-relaxed">Magic Links</p>
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/docs/features/customer-support" className="flex justify-start items-center gap-3">
                                     <p className="text-accent-main/80 font-medium leading-relaxed">Customer support</p>
                                 </Link>

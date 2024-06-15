@@ -5,7 +5,7 @@ import shipfastAvatar2 from '../../public/shipfast_avatar_2.webp'
 import Rating from '@components/ui/Rating'
 import PricingCTA from "../server/PricingCTA";
 
-export default function Hero() {
+export default function Hero({ sessionId }: { sessionId: string}) {
     return (
         <section className="w-full bg-base-100 flex justify-center">
             <div className="bg-base-100 flex flex-between gap-8 flex-col lg:flex-row max-w-7xl px-8 py-16">
@@ -13,7 +13,7 @@ export default function Hero() {
                     <Rating />
                     <h1 className="text-accent-main  font-extrabold text-4xl lg:text-6xl tracking-tight md:-mb-4 flex flex-col gap-3 items-center lg:items-start"><span className="relative ">Ship your startup</span><span className="whitespace-nowrap relative "><span className="mr-3 sm:mr-4 md:mr-5">in days,</span><span className=" relative whitespace-nowrap"><span className="absolute bg-[#d2cbc6] -left-2 -top-1 -bottom-1 -right-2 md:-left-3 md:-top-0 md:-bottom-0 md:-right-3 -rotate-1"></span><span className=" relative text-base-600">not weeks</span></span></span></h1>
                     <p className="text-lg text-center lg:text-left opacity-80 leading-relaxed my-3">The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app and make your first $ online fast.</p>
-                    <PricingCTA extraClasses="items-center lg:items-start" />
+                    <PricingCTA sessionId={sessionId} extraClasses="items-center lg:items-start" />
                     <div className="flex flex-col lg:flex-row flex-start gap-16 lg:gap-4 bg-base-100 ">
                         <div className="relative  w-[160px]  bg-base-100">
                             <div className="rounded-full absolute left-0 top-0 bg-base-100  pl-1 ">

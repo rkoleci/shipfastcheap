@@ -15,7 +15,7 @@ export default async function Dashboard() {
 
     return (
         <div className='bg-base-100'>
-            <h1>Welcome to Dashboad! {user?.email} </h1>
+            <h1 className='p-2 text-accent-main/80 leading-relaxed font-medium'>Welcome to Dashboad! {user?.email} </h1>
         </div>
     )
 }

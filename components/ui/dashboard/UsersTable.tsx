@@ -11,6 +11,7 @@ export default function UsersTable({ data }: { data: Array<UsersRow> }) {
                         <th></th>
                         <th>ID</th>
                         <th>Fullname</th>
+                        <th>Role</th>
                         <th>Payment Method</th>
                         <th>Billing Address</th>
                     </tr>
@@ -21,6 +22,7 @@ export default function UsersTable({ data }: { data: Array<UsersRow> }) {
                             <th>{index + 1}</th>
                             <td>{item.id}</td>
                             <td>{item.full_name}</td>
+                            <td>{item.role}</td>
                             <td>{item.payment_method?.toString()}</td>
                             <td>{item.payment_method?.toString()}</td>
                         </tr>

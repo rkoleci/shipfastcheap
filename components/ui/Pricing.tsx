@@ -2,8 +2,6 @@
 
 import Image from "next/image";
 import shipfastAvatar2 from '../../public/shipfast_avatar_2.webp'
-import Button from '@/components/ui/Button';
-import LogoCloud from '@/components/ui/LogoCloud';
 import type { Tables } from '@/types_db';
 import { getStripe } from '@/utils/stripe/client';
 import { checkoutWithStripe } from '@/utils/stripe/server';
@@ -11,74 +9,20 @@ import { getErrorRedirect } from '@/utils/helpers';
 import { User } from '@supabase/supabase-js';
 import { useRouter, usePathname } from 'next/navigation';
 import { useState } from 'react';
-
-type Product = Tables<'products'>;
-type Price = Tables<'prices'>;
-interface ProductWithPrices extends Product {
-    prices: Price[];
-}
-interface PriceWithProduct extends Price {
-    products: Product | null;
-}
+import { ProductWithPrices } from "@/app/(home)/page";
 
 interface Props {
-    user: User | null | undefined;
-    products: ProductWithPrices[];
+    product: ProductWithPrices;
+    sessionId: string;
+    sessionIdSecondPlan: string
 }
 
-type BillingInterval = 'lifetime' | 'year' | 'month';
+export default function PricingUI({ product, sessionId, sessionIdSecondPlan }: Props) {
 
-export default function PricingUI({ user, products }: Props) {
-
-    const intervals = Array.from(
-        new Set(
-            products.flatMap((product) =>
-                product?.prices?.map((price) => price?.interval)
-            )
-        )
-    );
-    const product = products[0]
-    if (!product) return null
-    const router = useRouter();
-    const [billingInterval, setBillingInterval] =
-        useState<BillingInterval>('month');
-    const [priceIdLoading, setPriceIdLoading] = useState<string>();
-    const currentPath = usePathname();
-
-    const handleStripeCheckout = async (price: Price) => {
-        setPriceIdLoading(price.id);
-
-        if (!user) {
-            setPriceIdLoading(undefined);
-            return router.push('/signin/signup');
-        }
-
-        const { errorRedirect, sessionId } = await checkoutWithStripe(
-            price,
-            currentPath
-        );
-
-        if (errorRedirect) {
-            setPriceIdLoading(undefined);
-            return router.push(errorRedirect);
-        }
-
-        if (!sessionId) {
-            setPriceIdLoading(undefined);
-            return router.push(
-                getErrorRedirect(
-                    currentPath,
-                    'An unknown error occurred.',
-                    'Please try again later or contact a system administrator.'
-                )
-            );
-        }
-
+    const handleStripeCheckout = async (id: string) => {
         const stripe = await getStripe();
-        stripe?.redirectToCheckout({ sessionId });
-
-        setPriceIdLoading(undefined);
-    };
+        stripe?.redirectToCheckout({ sessionId: id });
+    }
 
     return (
         <section id="pricing" className="bg-base-400 py-24 px-8 flex flex-col justify-start items-center">
@@ -103,7 +47,7 @@ export default function PricingUI({ user, products }: Props) {
                                 {product?.prices[0]?.unit_amount && product?.prices[0]?.currency && <p className="text-5xl tracking-tight font-extrabold">{formatPrice(product?.prices[0]?.unit_amount, product?.prices[0]?.currency)}</p>}
                             </div>
                             <ul className="space-y-2.5 leading-relaxed text-base flex-1"><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg><span className="">NextJS boilerplate</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg><span className="">SEO &amp; Blog</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg><span className="">Mailgun emails</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg><span className="">Stripe</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg><span className="">Supabase</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg><span className="">Google Oauth</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg><span className="">Components &amp; animations</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-base-content/30 shrink-0"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path></svg><span className="text-base-content/30">ChatGPT prompts for terms &amp; privacy</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-base-content/30 shrink-0"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path></svg><span className="text-base-content/30">Leaderboard</span></li><li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-base-content/30 shrink-0"><path d="M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z"></path></svg><span className="text-base-content/30">Lifetime updates</span></li></ul><div className="space-y-2">
-                                <button onClick={() => handleStripeCheckout(product?.prices[0])} className="btn btn-primary group btn-block plausible-event-name=Checkout" title="Go to ShipFast Checkout"><svg className="w-5 h-5 fill-primary-content group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-200 ease-in-out" viewBox="0 0 375 509" xmlns="http://www.w3.org/2000/svg"><path d="M249.685 14.125C249.685 11.5046 248.913 8.94218 247.465 6.75675C246.017 4.57133 243.957 2.85951 241.542 1.83453C239.126 0.809546 236.463 0.516683 233.882 0.992419C231.301 1.46815 228.917 2.69147 227.028 4.50999L179.466 50.1812C108.664 118.158 48.8369 196.677 2.11373 282.944C0.964078 284.975 0.367442 287.272 0.38324 289.605C0.399039 291.938 1.02672 294.226 2.20377 296.241C3.38082 298.257 5.06616 299.929 7.09195 301.092C9.11775 302.255 11.4133 302.867 13.75 302.869H129.042V494.875C129.039 497.466 129.791 500.001 131.205 502.173C132.62 504.345 134.637 506.059 137.01 507.106C139.383 508.153 142.01 508.489 144.571 508.072C147.131 507.655 149.516 506.503 151.432 504.757L172.698 485.394C247.19 417.643 310.406 338.487 359.975 250.894L373.136 227.658C374.292 225.626 374.894 223.327 374.882 220.99C374.87 218.653 374.243 216.361 373.065 214.341C371.887 212.322 370.199 210.646 368.17 209.482C366.141 208.318 363.841 207.706 361.5 207.707H249.685V14.125Z"></path></svg>Get ShipFast</button><p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">Pay once. Build unlimited projects!</p>
+                                <button onClick={() => handleStripeCheckout(sessionId)} className="btn btn-primary group btn-block plausible-event-name=Checkout" title="Go to ShipFast Checkout"><svg className="w-5 h-5 fill-primary-content group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-200 ease-in-out" viewBox="0 0 375 509" xmlns="http://www.w3.org/2000/svg"><path d="M249.685 14.125C249.685 11.5046 248.913 8.94218 247.465 6.75675C246.017 4.57133 243.957 2.85951 241.542 1.83453C239.126 0.809546 236.463 0.516683 233.882 0.992419C231.301 1.46815 228.917 2.69147 227.028 4.50999L179.466 50.1812C108.664 118.158 48.8369 196.677 2.11373 282.944C0.964078 284.975 0.367442 287.272 0.38324 289.605C0.399039 291.938 1.02672 294.226 2.20377 296.241C3.38082 298.257 5.06616 299.929 7.09195 301.092C9.11775 302.255 11.4133 302.867 13.75 302.869H129.042V494.875C129.039 497.466 129.791 500.001 131.205 502.173C132.62 504.345 134.637 506.059 137.01 507.106C139.383 508.153 142.01 508.489 144.571 508.072C147.131 507.655 149.516 506.503 151.432 504.757L172.698 485.394C247.19 417.643 310.406 338.487 359.975 250.894L373.136 227.658C374.292 225.626 374.894 223.327 374.882 220.99C374.87 218.653 374.243 216.361 373.065 214.341C371.887 212.322 370.199 210.646 368.17 209.482C366.141 208.318 363.841 207.706 361.5 207.707H249.685V14.125Z"></path></svg>Get ShipFast</button><p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">Pay once. Build unlimited projects!</p>
                             </div>
                         </div>
                     </div>
@@ -163,7 +107,9 @@ export default function PricingUI({ user, products }: Props) {
                                 </li> */}
                                 <li className="flex items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-[18px] h-[18px] opacity-80 shrink-0"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"></path></svg>
                                     <span className="">Lifetime updates<span className="badge badge-accent select-none cursor-pointer ml-1" data-tooltip-id="tooltip" data-tooltip-html="<div className=&quot;text-gray-300&quot;><div className=&quot;mb-1.5 &quot;>Latest updates on ShipFast:</div><ul><li>- <span className=&quot;text-gray-50 font-medium&quot;>(new) Features Grid component 🧱</span> <span className=&quot;badge badge-sm&quot;>1 week ago</span></li><li>- <span className=&quot;text-gray-50 font-medium&quot;>(new) Compete for the Leaderboards 🥇</span> <span className=&quot;badge badge-sm&quot;>1 month ago</span></li><li>- <span className=&quot;text-gray-50 font-medium&quot;>Merge remote-tracking branch &amp;#x27;refs/remotes/ship-fast-org/main&amp;#x27;</span> <span className=&quot;badge badge-sm&quot;>1 month ago</span></li></ul></div>">Updated 1 week ago</span></span></li></ul><div className="space-y-2">
-                                        <button onClick={() => handleStripeCheckout(product?.prices[1])} className="btn btn-primary group btn-block plausible-event-name=Checkout" title="Go to ShipFast Checkout"><svg className="w-5 h-5 fill-primary-content group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-200 ease-in-out" viewBox="0 0 375 509" xmlns="http://www.w3.org/2000/svg"><path d="M249.685 14.125C249.685 11.5046 248.913 8.94218 247.465 6.75675C246.017 4.57133 243.957 2.85951 241.542 1.83453C239.126 0.809546 236.463 0.516683 233.882 0.992419C231.301 1.46815 228.917 2.69147 227.028 4.50999L179.466 50.1812C108.664 118.158 48.8369 196.677 2.11373 282.944C0.964078 284.975 0.367442 287.272 0.38324 289.605C0.399039 291.938 1.02672 294.226 2.20377 296.241C3.38082 298.257 5.06616 299.929 7.09195 301.092C9.11775 302.255 11.4133 302.867 13.75 302.869H129.042V494.875C129.039 497.466 129.791 500.001 131.205 502.173C132.62 504.345 134.637 506.059 137.01 507.106C139.383 508.153 142.01 508.489 144.571 508.072C147.131 507.655 149.516 506.503 151.432 504.757L172.698 485.394C247.19 417.643 310.406 338.487 359.975 250.894L373.136 227.658C374.292 225.626 374.894 223.327 374.882 220.99C374.87 218.653 374.243 216.361 373.065 214.341C371.887 212.322 370.199 210.646 368.17 209.482C366.141 208.318 363.841 207.706 361.5 207.707H249.685V14.125Z"></path></svg>Get ShipFast</button><p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">Pay once. Build unlimited projects!</p>
+                                <button onClick={() => handleStripeCheckout(sessionIdSecondPlan)} className="btn btn-primary group btn-block plausible-event-name=Checkout" title="Go to ShipFast Checkout"><svg className="w-5 h-5 fill-primary-content group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-200 ease-in-out" viewBox="0 0 375 509" xmlns="http://www.w3.org/2000/svg"><path d="M249.685 14.125C249.685 11.5046 248.913 8.94218 247.465 6.75675C246.017 4.57133 243.957 2.85951 241.542 1.83453C239.126 0.809546 236.463 0.516683 233.882 0.992419C231.301 1.46815 228.917 2.69147 227.028 4.50999L179.466 50.1812C108.664 118.158 48.8369 196.677 2.11373 282.944C0.964078 284.975 0.367442 287.272 0.38324 289.605C0.399039 291.938 1.02672 294.226 2.20377 296.241C3.38082 298.257 5.06616 299.929 7.09195 301.092C9.11775 302.255 11.4133 302.867 13.75 302.869H129.042V494.875C129.039 497.466 129.791 500.001 131.205 502.173C132.62 504.345 134.637 506.059 137.01 507.106C139.383 508.153 142.01 508.489 144.571 508.072C147.131 507.655 149.516 506.503 151.432 504.757L172.698 485.394C247.19 417.643 310.406 338.487 359.975 250.894L373.136 227.658C374.292 225.626 374.894 223.327 374.882 220.99C374.87 218.653 374.243 216.361 373.065 214.341C371.887 212.322 370.199 210.646 368.17 209.482C366.141 208.318 363.841 207.706 361.5 207.707H249.685V14.125Z"></path></svg>
+                                    Get ShipFast</button>
+                                <p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">Pay once. Build unlimited projects!</p>
                             </div>
                         </div>
                     </div>
@@ -198,9 +144,9 @@ export default function PricingUI({ user, products }: Props) {
 export const formatPrice = (unit_amount: number, currency: string) => {
     if (currency === 'usd') {
         return new Intl.NumberFormat('en-US', {
-          style: 'currency',
-          currency: 'usd',
-          minimumFractionDigits: 0
+            style: 'currency',
+            currency: 'usd',
+            minimumFractionDigits: 0
         }).format((unit_amount || 0) / 100);
     }
 

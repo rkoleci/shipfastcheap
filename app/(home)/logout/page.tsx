@@ -9,7 +9,7 @@ export default async function Logout() {
         return null
     }
 
-    return <RedirectAction url="logout" />
+    return <RedirectAction url="signin" />
 
 }
 

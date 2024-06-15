@@ -196,6 +196,7 @@ You can make changes to the database schema in your local Supabase Studio and ru
 
 ```bash
 pnpm supabase:generate-types
+npx supabase gen types typescript --project-id ${PROJECT_ID} --schema public > types_db.ts
 ```
 
 You can also automatically generate a migration file with all the changes you've made to your local database schema with the following command:

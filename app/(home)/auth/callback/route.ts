@@ -8,9 +8,10 @@ export async function GET(request: NextRequest) {
   // by the `@supabase/ssr` package. It exchanges an auth code for the user's session.
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get('code');
+  const supabase = createClient();
 
   if (code) {
-    const supabase = createClient();
+
 
     const { error } = await supabase.auth.exchangeCodeForSession(code);
 
@@ -25,10 +26,51 @@ export async function GET(request: NextRequest) {
     }
   }
 
+  const { data: auth } = await supabase.auth.getUser()
+  if (!auth) {
+    return NextResponse.redirect(
+      getErrorRedirect(
+        `${requestUrl.origin}/signin`,
+        'auth',
+        "Sorry, we weren't able to log you in. Please try again."
+      )
+    );
+  }
+
+
+  // TODO redirect to dashboard for admin
+  const { data: user } = await supabase
+    .from('users')
+    .select('*')
+    .eq('id', auth.user?.id as string)
+    .single();
+  if (!user) {
+    return NextResponse.redirect(
+      getErrorRedirect(
+        `${requestUrl.origin}/signin`,
+        'auth',
+        "Sorry, we weren't able to log you in. Please try again."
+      )
+    );
+  }
+
+
+
+  if (user?.role === 'admin') {
+    return NextResponse.redirect(
+      getStatusRedirect(
+        `${requestUrl.origin}/dashboard`,
+        'Success!',
+        'You are now signed in.'
+      )
+    );
+  }
+
+
   // URL to redirect to after sign in process completes
   return NextResponse.redirect(
     getStatusRedirect(
-      `${requestUrl.origin}/account`,
+      `${requestUrl.origin}/saas`,
       'Success!',
       'You are now signed in.'
     )

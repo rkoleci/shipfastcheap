@@ -5,7 +5,7 @@ import { createClient } from "@/utils/supabase/server";
 export default async function Users() {
     const supabase = createClient();
 
-    const { data, error } = await supabase.from('users').select()
+    const { data, error } = await supabase.from('users').select("*")
 
     if (error) {
         throw new Error(error.message)

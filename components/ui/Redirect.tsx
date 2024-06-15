@@ -9,7 +9,6 @@ export default function RedirectAction ({ url}: Props) {
     const router = useRouter()
 
     router.push(`/${url}`)
-    window.location.reload()
     return <></>
 
 }

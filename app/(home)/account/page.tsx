@@ -2,16 +2,13 @@ import CustomerPortalForm from '@/components/ui/AccountForms/CustomerPortalForm'
 import { createClient } from '@/utils/supabase/server';
 import { redirect } from 'next/navigation';
 
-export default async function Account() { 
+export default async function Account() {
   const supabase = createClient();
 
   const {
     data: { user }
   } = await supabase.auth.getUser();
-  
-  if (!user) {
-    return redirect('/signin');
-  }
+  console.log(111, 'user', user)
 
   const { data: subscription, error } = await supabase
     .from('subscriptions')
@@ -34,15 +31,21 @@ export default async function Account() {
             Account
           </h1>
           <p className="max-w-2xl m-auto mt-5 text-xl text-zinc-200 sm:text-center sm:text-2xl">
-           Thank you for your puchase!
+            Thank you for your puchase!
           </p>
         </div>
       </div>
 
       {hasSubscription && (
-        <div className='text-primary leading-relaxed font-medium'>You will receive an email at ({user?.email}) with the purchased product with 24 hours.</div>
+        <>
+          <div role="alert" className="alert alert-success w-fit">
+            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+            <span>Your purchase has been confirmed!</span>
+          </div>
+          <p className='text-accent-main/80 leading-relaxed font-medium'>You will receive an email at ({user?.email}) with the purchased product with 24 hours.</p></>
+
       )}
-      
+
       <div className="p-4">
         {subscription[0] && <CustomerPortalForm subscription={subscription[0]} />}
       </div>

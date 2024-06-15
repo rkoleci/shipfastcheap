@@ -19,7 +19,7 @@ export default function CustomersTable({ data }: { data: Array<CustomerRow> }) {
                         <tr className="bg-base-100">
                             <th>{index + 1}</th>
                             <td>{item.id}</td>
-                            <td>{item.users.full_name}</td>
+                            <td>{item.users?.full_name}</td>
                             <td>{item.stripe_customer_id}</td>
                         </tr>
                     ))}
