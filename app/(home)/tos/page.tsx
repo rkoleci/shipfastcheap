@@ -1,4 +1,4 @@
-import getSEOTags from "@/utils/config";
+import getSEOTags from "@/utils/seo";
 
 export const metadata = getSEOTags({
     title: "Terms and Conditions | ShipFast",

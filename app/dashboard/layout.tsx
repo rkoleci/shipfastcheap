@@ -4,7 +4,7 @@ import '../../globals.css'
 import { getURL } from '@/utils/helpers';
 import { Metadata } from 'next';
 import { Bricolage_Grotesque } from 'next/font/google'
-import getSEOTags from '@/utils/config';
+import getSEOTags from '@/utils/seo';
 import Sidebar from '@/components/ui/dashboard/Sidebar';
 
 const seoTags = getSEOTags()

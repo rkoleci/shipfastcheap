@@ -1,3 +1,4 @@
+import { appName } from "@/utils/config";
 import Link from "next/link";
 
 interface SidebarProps {
@@ -10,14 +11,16 @@ export default function Sidebar({ classes }: SidebarProps) {
         <ul className={`menu p-4 w-64  max-h-screen bg-base-100 ${classes} overflow-y-scroll fixed `}>
             {/* Sidebar content here */}
             <ul className="menu bg-base-100 w-56 rounded-box gap-3 ">
-                <li><a>ShipFast</a></li>
-                <div className="flex justify-start items-center gap-3">
+                <li>
+                    <Link href="/">{appName}</Link>
+                </li>
+                <Link href='/docs' className="flex justify-start items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-accent-main size-5">
                         <path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.841Z" />
                     </svg>
                     <p className="text-accent-main/80 font-medium leading-relaxed">Get Started</p>
 
-                </div>
+                </Link>
                 <li>
                     <details open>
                         <summary>

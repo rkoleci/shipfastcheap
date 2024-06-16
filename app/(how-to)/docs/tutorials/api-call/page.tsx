@@ -22,103 +22,74 @@ export default function StaticPage() {
 
       <div className="docs-content">Any file named route.js in the /app/api folder is an API endpoint. Use the helper /libs/api.js (axios instance with interceptors) to simplify API calls:</div>
 
-      <ul className="list-inside list-disc space-y-1 leading-relaxed ml-4"><li className="list-item">Automatically display error messages</li><li className="list-item">Redirect to login page upon error 401</li><li className="list-item">Add <code className="text-sm bg-base-100 font-mono rounded px-1.5 py-1 text-base-content select-all break-words ">/api</code> as a base URL: <span className="line-through">/api/user/posts</span> → <span>/user/posts</span></li></ul>
+      <ul className="list-inside list-disc space-y-1 leading-relaxed ml-4"><li className="list-item">Automatically display error messages</li>
+      <li className="list-item">Redirect to login page upon error 401</li>
+      </ul>
 
       <div className="docs-title">Protected API calls</div>
 
-      <div className="docs-content">Supabase automatically handles the authentication with cookies. Just make a normal API call on the front-end like this:</div>
-
-      <div className="docs-content">A simple landing page can done like this:</div>
-
+      <div className="docs-content">1. API call:</div>
 
       <CopyBlock
         language={`tsx`}
         text={`"use client"
-
-                import { useState } from "react";
-                import apiClient from "@/libs/api";
-                
-                const UserProfile = () => {
-                  const [isLoading, setIsLoading] = useState(false);
-                
-                  const saveUser = async () => {
-                    setIsLoading(true);
-                
-                    try {
-                      const { data } = await apiClient.post("/user", {
-                        email: "new@gmail.com",
-                      });
-                
-                      console.log(data);
-                    } catch (e) {
-                      console.error(e?.message);
-                    } finally {
-                      setIsLoading(false);
-                    }
-                  };
-                
-                  return (
-                    <button className="btn btn-primary" onClick={() => saveUser()}>
-                      {isLoading && (
-                        <span className="loading loading-spinner loading-sm"></span>
-                      )}
-                      Save
-                    </button>
-                  );
-                };
-                
-                export default UserProfile;`}
+  import { useState } from "react";
+  
+  const UserProfile = () => {
+    const [isLoading, setIsLoading] = useState(false);
+  
+    const remindUser = async (to: string, subject: string, text: string) => {
+      setIsLoading(true);
+  
+      try {
+        const { data } = await fetch('/send-email', { to, subject, text }));
+        console.log(data);
+      } catch (e) {
+        console.error(e?.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+  
+    return (
+      <button className="btn btn-primary" onClick={() => remindUser('john@gmail.com', 'Hello', 'This email is ...')}>
+        {isLoading && (
+          <span className="loading loading-spinner loading-sm"></span>
+        )}
+        Save
+      </button>
+    );
+  };
+  
+  export default UserProfile;`}
         showLineNumbers
         theme={dracula}
         codeBlock
       />
 
+      
 
-
-      <div className="docs-content">In the backend, we get the session and we can use it to retrieve the user from the database. You have to configure the database first. The API file should look like this:</div>
+      <div className="docs-content">2 In the backend, we get the session and we can use it to retrieve the user from the database. You have to configure the database first. The API file should look like this:</div>
 
 
       <CopyBlock
         language={'tsx'}
-        text={`import { createRouteHandlerClient } from "@supabase/auth-helpers-nextjs";
-                import { NextResponse } from "next/server";
-                import { cookies } from "next/headers";
-                
-                export const dynamic = "force-dynamic";
-                
-                export async function POST(req) {
-                  const supabase = createRouteHandlerClient({ cookies });
-                  const { data } = await supabase.auth.getSession();
-                  const { session } = data;
-                
-                  if (session) {
-                    const body = await req.json();
-                
-                    if (!body.email) {
-                      return NextResponse.json({ error: "Email is required" }, { status: 400 });
-                    }
-                
-                    try {
-                      // This call will fail if you haven't created a table named "users" in your database
-                      const { data } = await supabase
-                        .from("users")
-                        .insert({ email: body.email })
-                        .select();
-                
-                      return NextResponse.json({ data }, { status: 200 });
-                    } catch (e) {
-                      console.error(e);
-                      return NextResponse.json(
-                        { error: "Something went wrong" },
-                        { status: 500 }
-                      );
-                    }
-                  } else {
-                    // Not Signed in
-                    NextResponse.json({ error: "Not signed in" }, { status: 401 });
-                  }
-                }
-                `}
+        text={`import { sendEmail } from '@/utils/mailgun';
+export default async function handler(req: any, res: any) {
+  if (req.method === 'POST') {
+    const { to, subject, text } = req.body;
+
+    try {
+      const result = await sendEmail(to, subject, text);
+      res.status(200).json({ success: true, result });
+    } catch (error) {
+      res.status(500).json({ success: false, error: (error as Error).message });
+    }
+  } else {
+    res.status(405).json({ message: 'Method Not Allowed' });
+  }
+}
+`}
         showLineNumbers
         theme={dracula}
         codeBlock

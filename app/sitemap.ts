@@ -1,4 +1,4 @@
-import getSEOTags from '@/utils/config'
+import getSEOTags from '@/utils/seo'
 import { MetadataRoute } from 'next'
 
 const seoTags = getSEOTags()

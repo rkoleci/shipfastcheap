@@ -8,7 +8,7 @@ import SupabaseClientProvider from '@/components/context/SupabaseClient';
 import '../../globals.css'
 import Navbar from '@/components/ui/Navbar';
 import PlausibleProvider from 'next-plausible'
-import getSeoTags from '@utils/config'
+import getSeoTags from '@utils/seo'
 
 const seoTags = getSeoTags()
 
@@ -71,7 +71,9 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       <body>
         <SupabaseClientProvider>
           <UserProvider>
+            <Suspense>
             <Navbar />
+            </Suspense>
             <main
               id="skip"
               className={`min-h-[calc(100dvh-4rem)] md:min-h[calc(100dvh-5rem)] ${font.className}`}

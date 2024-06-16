@@ -1,5 +1,4 @@
 import { sendEmail } from '@/utils/mailgun';
-import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: any, res: any) {
   if (req.method === 'POST') {
