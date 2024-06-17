@@ -56,7 +56,7 @@ export default SigninButton;`}
 
 
 
-            <div className="mb-4 relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: shipfastUsersTable }}>
+            <div className="mb-4 relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
                 <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
                 <div className="relative p-6 flex items-center justify-center h-full">
                     <h1 className="text-white text-2xl font-bold">Your Text Here</h1>

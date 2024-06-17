@@ -4,7 +4,7 @@ export type Json =
   | boolean
   | null
   | { [key: string]: Json | undefined }
-  | Json[]
+  | Json[] 
 
 export type Database = {
   public: {
@@ -354,3 +354,22 @@ export type Enums<
   : PublicEnumNameOrOptions extends keyof PublicSchema["Enums"]
     ? PublicSchema["Enums"][PublicEnumNameOrOptions]
     : never
+
+    export type WaitlistRow = Tables<"waitlist">
+export type UsersRow = Tables<"users">
+type Customer = Tables<"customers">
+export type ProductRow = Tables<"products">
+export type Price = Tables<"prices">
+type Subscription = Tables<"subscriptions">
+
+export type PriceRow = Price & {
+  products: ProductRow
+}
+
+export type CustomerRow = Customer & {
+  users: UsersRow
+}
+export type SubscriptionRow = Subscription & {
+  users: UsersRow
+  prices: Price
+}

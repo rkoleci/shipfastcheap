@@ -47,7 +47,7 @@ export default function Stripe() {
 
       <div className="docs-title">Create a product</div>
 
-      <div className="docs-content">In your <Link href="https://dashboard.stripe.com/test/products?active=true" className="link link-accent-main/80">Stripe dashboard</Link>, Click [More +] > [Product Catalog] > [+ Add Product]. Set a name and a monthly price (or anything according to your business model). Then click [Save Product].</div>
+      <div className="docs-content">In your <Link href="https://dashboard.stripe.com/test/products?active=true" className="link link-accent-main/80">Stripe dashboard</Link>, Click [More +] {'->'} [Product Catalog] {'->'} [+ Add Product]. Set a name and a monthly price (or anything according to your business model). Then click [Save Product].</div>
 
       <div className="docs-hint">When you create a product in Stripe dashboard, it will be automatically added in supabase table <span className="docs-tag">products</span>.</div>
       <div className="docs-title">Collect payment</div>

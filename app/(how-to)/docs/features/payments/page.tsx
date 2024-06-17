@@ -39,7 +39,7 @@ export default function Features() {
 
             <div className="docs-content">In your [Settings], [Customer Portal], activate link to customer portal (in case you need later)</div>
 
-            <div className="docs-content">In the search box, type 'rules' and click [Fraud Prevention > Rules] , make sure the first 3DS rule is enabled. I also turn on the second one (recommended). Make sure to block payments if CVC fails (check below)</div>
+            <div className="docs-content">In the search box, type 'rules' and click [Fraud Prevention {'>'} Rules] , make sure the first 3DS rule is enabled. I also turn on the second one (recommended). Make sure to block payments if CVC fails (check below)</div>
 
             <div className="docs-content">Turn ON Test Mode</div>
 

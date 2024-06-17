@@ -42,7 +42,7 @@ const upsertPriceRecord = async (
   retryCount = 0,
   maxRetries = 3
 ) => {
-  const priceData: Price = {
+  const priceData: any = {
     id: price.id,
     product_id: typeof price.product === 'string' ? price.product : '',
     active: price.active,
@@ -287,7 +287,7 @@ const manageSubscriptionStatusChange = async (
     id: subscription.id,
     user_id: uuid,
     metadata: subscription.metadata,
-    status: subscription.status,
+    status: subscription.status as any,
     price_id: subscription.items.data[0].price.id,
     //TODO check quantity on subscription
     // @ts-ignore

@@ -1,4 +1,4 @@
-const getSEOTags = (customPageTags) => ({
+const getSEOTags = (customPageTags?: any) => ({
     appName: "ShipFast",
     appDescription: 'This is the best boilerplate',
     domainName: 'wwww.shipfast.com',
