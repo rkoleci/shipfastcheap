@@ -34,9 +34,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                             <li>
                                 <Link href="/docs/tutorials/ship-in-five" className="flex justify-start items-center gap-3">
                                     <p className="text-accent-main/80 font-medium leading-relaxed">Ship in 5 minutes</p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-accent-main size-5">
-                                        <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd" />
-                                    </svg>
+                                
 
                                 </Link>
                             </li>
@@ -88,9 +86,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                             <li>
                                 <Link href="/docs/features/seo" className="flex justify-start items-center gap-3">
                                     <p className="text-accent-main/80 font-medium leading-relaxed">SEO</p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-accent-main size-5">
-                                        <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd" />
-                                    </svg>
+                                  
 
                                 </Link>
                             </li>
@@ -103,12 +99,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                                 <Link href="/docs/features/emails" className="flex justify-start items-center gap-3">
                                     <p className="text-accent-main/80 font-medium leading-relaxed">Emails</p>
                                 </Link>
-                            </li>
-                            <li>
-                                <Link href="/docs/features/payments" className="flex justify-start items-center gap-3">
-                                    <p className="text-accent-main/80 font-medium leading-relaxed">Payments</p>
-                                </Link>
-                            </li>
+                            </li> 
                             <li>
                                 <Link href="/docs/features/google-oauth" className="flex justify-start items-center gap-3">
                                     <p className="text-accent-main/80 font-medium leading-relaxed">Google OAuth</p>
@@ -117,11 +108,6 @@ export default function Sidebar({ classes }: SidebarProps) {
                             <li>
                                 <Link href="/docs/features/magic-links" className="flex justify-start items-center gap-3">
                                     <p className="text-accent-main/80 font-medium leading-relaxed">Magic Links</p>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/docs/features/customer-support" className="flex justify-start items-center gap-3">
-                                    <p className="text-accent-main/80 font-medium leading-relaxed">Customer support</p>
                                 </Link>
                             </li>
                             <li>
@@ -152,9 +138,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                             <li>
                                 <Link href="/docs/components/header" className="flex justify-start items-center gap-3">
                                     <p className="text-accent-main/80 font-medium leading-relaxed">Header</p>
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-accent-main size-5">
-                                        <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd" />
-                                    </svg>
+                                 
 
                                 </Link>
                             </li>
@@ -183,11 +167,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                                 </Link>
                             </li>
 
-                            <li>
-                                <Link href="/docs/components/features-accordion" className="flex justify-start items-center gap-3">
-                                    <p className="text-accent-main/80 font-medium leading-relaxed">Features Accordion</p>
-                                </Link>
-                            </li>
+                         
 
                             <li>
                                 <Link href="/docs/components/pricing" className="flex justify-start items-center gap-3">
@@ -195,11 +175,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                                 </Link>
                             </li>
 
-                            <li>
-                                <Link href="/docs/components/blog" className="flex justify-start items-center gap-3">
-                                    <p className="text-accent-main/80 font-medium leading-relaxed">Blog</p>
-                                </Link>
-                            </li>
+                          
 
                             <li>
                                 <Link href="/docs/components/faq" className="flex justify-start items-center gap-3">
@@ -237,11 +213,7 @@ export default function Sidebar({ classes }: SidebarProps) {
                                 </Link>
                             </li>
 
-                            <li>
-                                <Link href="/docs/components/button-sign-in" className="flex justify-start items-center gap-3">
-                                    <p className="text-accent-main/80 font-medium leading-relaxed">Button Sign-in</p>
-                                </Link>
-                            </li>
+                        
 
                             <li>
                                 <Link href="/docs/components/button-account" className="flex justify-start items-center gap-3">
@@ -273,20 +245,24 @@ export default function Sidebar({ classes }: SidebarProps) {
 
                 <li>
                     <Link href="/docs/deployments" className="flex justify-start items-center gap-3">
-                        <p className="text-accent-main/80 font-medium leading-relaxed">Deployments</p>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-accent-main size-5">
-                            <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd" />
-                        </svg>
+  <path fill-rule="evenodd" d="M4.606 12.97a.75.75 0 0 1-.134 1.051 2.494 2.494 0 0 0-.93 2.437 2.494 2.494 0 0 0 2.437-.93.75.75 0 1 1 1.186.918 3.995 3.995 0 0 1-4.482 1.332.75.75 0 0 1-.461-.461 3.994 3.994 0 0 1 1.332-4.482.75.75 0 0 1 1.052.134Z" clip-rule="evenodd" />
+  <path fill-rule="evenodd" d="M5.752 12A13.07 13.07 0 0 0 8 14.248v4.002c0 .414.336.75.75.75a5 5 0 0 0 4.797-6.414 12.984 12.984 0 0 0 5.45-10.848.75.75 0 0 0-.735-.735 12.984 12.984 0 0 0-10.849 5.45A5 5 0 0 0 1 11.25c.001.414.337.75.751.75h4.002ZM13 9a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" clip-rule="evenodd" />
+</svg>
+                        <p className="text-accent-main/80 font-medium leading-relaxed">Deployments</p>
+
 
                     </Link>
                 </li>
 
                 <li>
                     <Link href="/docs/extras" className="flex justify-start items-center gap-3">
-                        <p className="text-accent-main/80 font-medium leading-relaxed">Extras</p>
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-accent-main size-5">
-                            <path fill-rule="evenodd" d="M2 4.25A2.25 2.25 0 0 1 4.25 2h11.5A2.25 2.25 0 0 1 18 4.25v8.5A2.25 2.25 0 0 1 15.75 15h-3.105a3.501 3.501 0 0 0 1.1 1.677A.75.75 0 0 1 13.26 18H6.74a.75.75 0 0 1-.484-1.323A3.501 3.501 0 0 0 7.355 15H4.25A2.25 2.25 0 0 1 2 12.75v-8.5Zm1.5 0a.75.75 0 0 1 .75-.75h11.5a.75.75 0 0 1 .75.75v7.5a.75.75 0 0 1-.75.75H4.25a.75.75 0 0 1-.75-.75v-7.5Z" clip-rule="evenodd" />
-                        </svg>
+  <path fill-rule="evenodd" d="M14.5 10a4.5 4.5 0 0 0 4.284-5.882c-.105-.324-.51-.391-.752-.15L15.34 6.66a.454.454 0 0 1-.493.11 3.01 3.01 0 0 1-1.618-1.616.455.455 0 0 1 .11-.494l2.694-2.692c.24-.241.174-.647-.15-.752a4.5 4.5 0 0 0-5.873 4.575c.055.873-.128 1.808-.8 2.368l-7.23 6.024a2.724 2.724 0 1 0 3.837 3.837l6.024-7.23c.56-.672 1.495-.855 2.368-.8.096.007.193.01.291.01ZM5 16a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" clip-rule="evenodd" />
+  <path d="M14.5 11.5c.173 0 .345-.007.514-.022l3.754 3.754a2.5 2.5 0 0 1-3.536 3.536l-4.41-4.41 2.172-2.607c.052-.063.147-.138.342-.196.202-.06.469-.087.777-.067.128.008.257.012.387.012ZM6 4.586l2.33 2.33a.452.452 0 0 1-.08.09L6.8 8.214 4.586 6H3.309a.5.5 0 0 1-.447-.276l-1.7-3.402a.5.5 0 0 1 .093-.577l.49-.49a.5.5 0 0 1 .577-.094l3.402 1.7A.5.5 0 0 1 6 3.31v1.277Z" />
+</svg>
+                        <p className="text-accent-main/80 font-medium leading-relaxed">Extras</p>
+
 
                     </Link>
                 </li>

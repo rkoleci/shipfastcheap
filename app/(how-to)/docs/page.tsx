@@ -104,7 +104,7 @@ NEXT_PUBLIC_MAILGUN_SUPPORT_EMAIL=`}
                 theme={dracula}
                 codeBlock
             />
-            <div className="docs-content">Now go ahead and follow <Link href='/docs/tutorials/ship-in-five' className="link link-primary">this tutorial</Link> to get your startup live within 5 minutes!</div>
+            <div className="docs-content mt-4">Now go ahead and follow <Link href='/docs/tutorials/ship-in-five' className="link link-primary">this tutorial</Link> to get your startup live within 5 minutes!</div>
 
 
 

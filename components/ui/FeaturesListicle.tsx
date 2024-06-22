@@ -1,4 +1,5 @@
 'use client'
+import { appName } from "@/utils/config";
 import { useEffect, useState, useRef } from "react"
 
 const MAX_ELEMENTS = 7
@@ -41,7 +42,7 @@ export default function FeaturesListicle() {
             <div className="mb-16 text-center flex gap-1 justify-center items-center text-sm opacity-80"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5"><path fill-rule="evenodd" d="M10 5a.75.75 0 01.75.75v6.638l1.96-2.158a.75.75 0 111.08 1.04l-3.25 3.5a.75.75 0 01-1.08 0l-3.25-3.5a.75.75 0 111.08-1.04l1.96 2.158V5.75A.75.75 0 0110 5z" clip-rule="evenodd"></path></svg><p className="s">There's an easier way</p></div>
 
             <div className="bg-base-100  px-8 md:px-4   max-w-3xl">
-                <p className="text-primary font-medium text-sm font-mono mb-3">const launch_time = "07:41 AM";</p><h2 className="font-bold text-3xl lg:text-5xl tracking-tight mb-8 text-accent-main">Supercharge your app instantly, launch faster, make $</h2><div className="text-base-content/80 leading-relaxed mb-8 lg:text-lg text-accent-main">Login users, process payments and send emails at lightspeed. Spend your time building your startup, not integrating APIs. ShipFast provides you with the boilerplate code you need to launch, FAST.</div>
+                <p className="text-primary font-medium text-sm font-mono mb-3">const launch_time = "07:41 AM";</p><h2 className="font-bold text-3xl lg:text-5xl tracking-tight mb-8 text-accent-main">Supercharge your app instantly, launch faster, make $</h2><div className="text-base-content/80 leading-relaxed mb-8 lg:text-lg text-accent-main">Login users, process payments and send emails at lightspeed. Spend your time building your startup, not integrating APIs. {appName} provides you with the boilerplate code you need to launch, FAST.</div>
 
                 <div className="grid grid-cols-4 md:flex justify-start gap-4 md:gap-12 max-md:px-8 max-w-3xl mx-auto mb-8">
                     <span onClick={() => onClick(0)} className={`flex flex-col items-center justify-center gap-3 select-none cursor-pointer p-2 duration-100 ${active == 0 ? 'text-primary' : 'text-base-content/50'} `}><span className=""><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" className="w-8 h-8"><path stroke-linecap="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25"></path></svg></span><span className="font-medium text-sm">Emails</span></span>

@@ -16,60 +16,32 @@ export default function DocsPage() {
                 </div>
             </ul>
 
-            <div className="docs-content">You don't have to use Mailgun, but you'll need an email tool to to setup magic login links, abandoned carts emails, etc...</div>
+            <div className="docs-content">1. Commit your code, switch to the main git branch and merge supabase:</div>
 
-            <div className="docs-hint">Mailgun silently removed their "pay-as-you-go" flex tier from their pricing page, but it's still there. Start a free trial for the 35$ tier, then cancel it. You'll be downgraded to the "pay as you go" free tier. If you send 1000 emails/mo you"ll pay 1$/mo.
-
-                Prefer to use Resend? Here's an excellent tutorial made by our top community member, Bill.</div>
+           
 
             <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
+                language={'terminal'}
+                text={`git add .
+git commit –m "Time to ship"
+git checkout main
+git merge supabase `}
                 showLineNumbers
                 theme={dracula}
                 codeBlock
             />
 
-            <div className="docs-content">Go to the new profiles table and add 2 RLS policies:
-                - Enable read access for authenticated users only
-                - Enable insert access for authenticated users only</div>
-
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
-                </div>
+            <div className="docs-content mt-4">2. Use your favorite hosting provider (Vercel for me) to create a new project based on the GitHub repo. You can deploy your app anywhere NextJS is supported: Vercel, Netlify, Render, etc.</div>
+            <div className="docs-content">3. Set the right .env file on your deployement as the .env.local is not committed.</div>
+            <div className="docs-content">4. Using Google Oauth? Follow the <Link href="/docs/features/google-oauth" className="link underline">production checklist</Link>  (scroll down on the page)</div>
+            <div className="docs-content">5. Using Stripe? Follow the <Link href="/docs/tutorials/stripe" className="link underline">production checklist</Link> (scroll down on the page)</div>
+            
+            <div className="docs-content ">
+                Congrats on making it that far, legend!
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-primary"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path></svg>
             </div>
-
-            <div className="docs-content">
-                (Optional )If you want to collect leads with ButtonLead, create a new table called leads and add a RLS policy with insert access for anyone:
-            </div>
-
-            <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
-                showLineNumbers
-                theme={dracula}
-                codeBlock
-            />
+            <div className="docs-content">--Rei Koleci</div>
+           
         </div>
     )
 

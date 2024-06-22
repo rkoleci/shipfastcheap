@@ -29,10 +29,10 @@ export default function EmailSignIn({
   };
 
   return (
-    <div className="my-8">
+    <div className="my-8 bg-base-100">
       <form
         noValidate={true}
-        className="mb-4"
+        className="mb-4 border-none"
         onSubmit={(e) => handleSubmit(e)}
       >
         <div className="grid gap-2">

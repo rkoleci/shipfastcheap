@@ -36,7 +36,7 @@ export default function Features() {
                 codeBlock
             />
 
-            <div className="docs-content">Create a new site on Plausible</div>
+            <div className="docs-content mt-4"><Link href="https://plausible.io/" className="link underline">Create a new site on Plausible</Link> </div>
 
             <div className="docs-hint">(optional) Some adblockers block Plausible. To fix this, proxy the script through the nextjs /api.
 First add this to next.config.js:</div>
@@ -59,7 +59,7 @@ First add this to next.config.js:</div>
             />
 
 
-            <div className="docs-content">I use Plausible for traffic analytics & custom events. If you want to use another tool, remove the Plausible script in the layout.js file.
+            <div className="docs-content mt-4">I use Plausible for traffic analytics & custom events. If you want to use another tool, remove the Plausible script in the layout.js file.
 
             </div>
             <div className="docs-content"></div>

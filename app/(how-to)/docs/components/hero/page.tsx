@@ -1,12 +1,13 @@
 'use client'
+import HintIcon from "@/components/ui/HintIcon";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-export default function DocsPage() {
+export default function ComponentItem() {
     return (
         <div>
 
-<ul>
+            <ul>
                 <div className="text-3xl text-accent-main font-bold  flex flex-row justify-start items-center gap-1 mb-10">
                     <li>
                         <Link href="/docs/components" className="mb-8">Components</Link>
@@ -20,60 +21,34 @@ export default function DocsPage() {
                 </div>
             </ul>
 
-            <div className="docs-content">You don't have to use Mailgun, but you'll need an email tool to to setup magic login links, abandoned carts emails, etc...</div>
-
-            <div className="docs-hint">Mailgun silently removed their "pay-as-you-go" flex tier from their pricing page, but it's still there. Start a free trial for the 35$ tier, then cancel it. You'll be downgraded to the "pay as you go" free tier. If you send 1000 emails/mo you"ll pay 1$/mo.
-
-                Prefer to use Resend? Here's an excellent tutorial made by our top community member, Bill.</div>
-
+            <div className="docs-content">A beautiful hero section with a title, a supporting headline, image, social proof and CTA.
+            </div>
+             
             <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
+                language={'tsx'}
+                text={`import Hero from "@/components/hero";`}
                 showLineNumbers
                 theme={dracula}
                 codeBlock
             />
+            <div className="docs-title mt-4">Tips</div>
+            <ul>
+                <li><div className="docs-content">Your should answer this question in less than 10 words: "Why should a random visitor stay on your site for more than 10 seconds?".
+                    Write about the pain it's relieving, the problem it's solving, or the pleasure it's giving.</div></li>
+                <li><div className="docs-content">The supporting headline explain how you deliver what your promise in the title.
+                </div></li>
+                <li><div className="docs-content">Social proof = trust = more conversions. Offer the product to a few people for free in exchange for a genuine testimonial.
+                </div></li>
+                <li><div className="docs-content">The image is a like YouTube thumbnail. It should be super easy to understand what your product does just by looking at it.
+                </div></li>
+                <li><div className="docs-content">The <span className="docs-tag">{'<Problem />'}</span> section should follow this Hero section
+                </div></li>
+            </ul>
+            <div className="docs-content text-sm">Updated on: Tuesday, September 12, 2023</div>
+            <div className="docs-divider"></div>
+            <HintIcon />
+            <div className="docs-content mt-2">Looking for UI-only components like buttons, inputs, etc? It's all available with daisyUI. See <Link href="/docs/components" className="link underline">this guide</Link> for more info.</div>
 
-            <div className="docs-content">Go to the new profiles table and add 2 RLS policies:
-                - Enable read access for authenticated users only
-                - Enable insert access for authenticated users only</div>
-
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
-                </div>
-            </div>
-
-            <div className="docs-content">
-                (Optional )If you want to collect leads with ButtonLead, create a new table called leads and add a RLS policy with insert access for anyone:
-            </div>
-
-            <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
-                showLineNumbers
-                theme={dracula}
-                codeBlock
-            />
         </div>
     )
 

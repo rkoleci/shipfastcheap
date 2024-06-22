@@ -28,7 +28,7 @@ export default function Emails() {
                 Setup
             </div>
 
-            <div className="docs-content">Create a new account on <Link href="" className="link link-primary">Mailgun</Link></div>
+            <div className="docs-content">Create a new account on <Link href="https://www.mailgun.com/" className="link link-primary">Mailgun</Link></div>
 
             <div className="docs-content">In [Sending] click [Domains] then [Add New Domain]. It's recommended to add a subdomain like mail.yourdomain.com. </div>
 

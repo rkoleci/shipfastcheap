@@ -45,6 +45,8 @@ module.exports = {
         "base-400": "#0F0F0F",
         "red-100": "#B0A8A0",
         "red-400": '#f87171',
+        "red-600": '#F88379',
+        'green-200': '#49796B'
       }
     }
   },
@@ -92,9 +94,7 @@ module.exports = {
       },
       "dark",
       "cupcake",
-      "retro",
-      "emerald",
-      "wireframe"
+      "retro", 
     ],
     darkTheme: "dark", // name of one of the included themes for dark mode
     base: false, // applies background color and foreground color for root element by default

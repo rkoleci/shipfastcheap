@@ -1,8 +1,11 @@
 'use client'
+import BetterIcon from "@/components/ui/BetterIcon";
+import HintIcon from "@/components/ui/HintIcon";
+import Navbar from "@/components/ui/Navbar";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-export default function DocsPage() {
+export default function ComponentItem() {
     return (
         <div>
 
@@ -15,65 +18,31 @@ export default function DocsPage() {
                         <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                     </svg>
                     <li>
-                        <Link href="/docs/components/hero" className="mb-8">Header</Link>
+                        <Link href="/docs/components/header" className="mb-8">Header</Link>
                     </li>
                 </div>
             </ul>
 
-            <div className="docs-content">You don't have to use Mailgun, but you'll need an email tool to to setup magic login links, abandoned carts emails, etc...</div>
-
-            <div className="docs-hint">Mailgun silently removed their "pay-as-you-go" flex tier from their pricing page, but it's still there. Start a free trial for the 35$ tier, then cancel it. You'll be downgraded to the "pay as you go" free tier. If you send 1000 emails/mo you"ll pay 1$/mo.
-
-                Prefer to use Resend? Here's an excellent tutorial made by our top community member, Bill.</div>
-
+           <div className="docs-content">A responsive header with your logo (left), links (center) and a CTA (right). Links and CTA are hidden on mobile and accessible with a burger menu. Add your own logo in the <span className="docs-tag">/app</span> folder. Make sure to match the file name in <span className="docs-tag">{'<Header />'}</span> component (currently icon.png)</div>
+            
+        
             <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
+                language={'tsx'}
+                text={`import Header from "@/components/header";`}
                 showLineNumbers
                 theme={dracula}
                 codeBlock
             />
+            <div className="docs-title mt-4">Tips</div>
+            <ul>
+                <li><div className="docs-content">Unless you're Nike or Apple, visitors have no idea who you are. Keep your brand name small.</div></li>
+                <li><div className="docs-content">Try to always have a Pricing link in your header. No matter what you sell, people will look for it.</div></li>
+            </ul>
+            <div className="docs-content text-sm">Updated on: Tuesday, September 12, 2023</div>
+            <div className="docs-divider"></div>
+            <HintIcon />
+            <div className="docs-content mt-2">Looking for UI-only components like buttons, inputs, etc? It's all available with daisyUI. See <Link href="/docs/components" className="link underline">this guide</Link> for more info.</div>
 
-            <div className="docs-content">Go to the new profiles table and add 2 RLS policies:
-                - Enable read access for authenticated users only
-                - Enable insert access for authenticated users only</div>
-
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
-                </div>
-            </div>
-
-            <div className="docs-content">
-                (Optional )If you want to collect leads with ButtonLead, create a new table called leads and add a RLS policy with insert access for anyone:
-            </div>
-
-            <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
-                showLineNumbers
-                theme={dracula}
-                codeBlock
-            />
         </div>
     )
 

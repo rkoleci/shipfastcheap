@@ -15,6 +15,8 @@ import { getStripe } from '@/utils/stripe/client';
 import { checkoutWithStripe } from '@/utils/stripe/server';
 import { getErrorRedirect } from '@/utils/helpers';
 import { User } from '@supabase/supabase-js';
+import WithWithout from '@/components/ui/WithWithout'
+import TestimonialSmall from '@/components/ui/TestimonialSmall'
 
 type Product = Tables<'products'>;
 type Price = Tables<'prices'>;
@@ -71,8 +73,9 @@ export default async function Landing() {
     return (
         <main>
             <Hero sessionId={sessionIdSecondPlan!} />
+            <WithWithout />
             <Problem />
-            <TestimonialTriple />
+            <TestimonialSmall />
             <FeaturedOn />
             <FeaturesListicle />
             <Intro />

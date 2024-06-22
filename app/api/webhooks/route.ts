@@ -41,7 +41,6 @@ export async function POST(req: Request) {
   }
 
   if (relevantEvents.has(event.type)) {
-    console.log(111,'Event', event.type,event.data.object)
     try {
       switch (event.type) {
         case 'product.created':

@@ -66,6 +66,25 @@ export async function GET(request: NextRequest) {
     );
   }
 
+  // Check if user has subscription
+  const { data: subscription, error } = await supabase
+  .from('subscriptions')
+  .select('*, prices(*, products(*))')
+  .eq('user_id', auth.user?.id as string)
+  .in('status', ['trialing', 'active'])
+  .select()
+
+  console.log(111, 'subscr', auth.user?.id,   subscription)
+
+  if (!subscription?.length || (subscription && subscription[0] && subscription[0]?.status !== 'active')) {
+    return NextResponse.redirect(
+      getStatusRedirect(
+        `${requestUrl.origin}/#pricing`,
+        'Success!',
+        'You are now signed in.'
+      )
+    );
+  }
 
   // URL to redirect to after sign in process completes
   return NextResponse.redirect(

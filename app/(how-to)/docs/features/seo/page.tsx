@@ -48,7 +48,7 @@ export default function SEO() {
                 codeBlock
             />
 
-            <div className="docs-hint">I recommend setting title andcanonicalUrlRelative for each pages.</div>
+            <div className="docs-hint mt-4">I recommend setting title andcanonicalUrlRelative for each pages.</div>
 
             <div className="docs-content">When relevant, add Structured Data to a page using the renderSchemaTags() function in /libs/seo.js. It helps Google understand better your website and can get you a rich snippet. Open the component for more documentation. Here's an example:</div>
 

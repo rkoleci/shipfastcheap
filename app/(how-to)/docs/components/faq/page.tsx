@@ -1,11 +1,15 @@
 'use client'
+import BetterIcon from "@/components/ui/BetterIcon";
+import FAQ from "@/components/ui/FAQ";
+import HintIcon from "@/components/ui/HintIcon";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-export default function DocsPage() {
+export default function ComponentItem() {
     return (
         <div>
-    <ul>
+
+            <ul>
                 <div className="text-3xl text-accent-main font-bold  flex flex-row justify-start items-center gap-1 mb-10">
                     <li>
                         <Link href="/docs/components" className="mb-8">Components</Link>
@@ -19,60 +23,35 @@ export default function DocsPage() {
                 </div>
             </ul>
 
-            <div className="docs-content">You don't have to use Mailgun, but you'll need an email tool to to setup magic login links, abandoned carts emails, etc...</div>
-
-            <div className="docs-hint">Mailgun silently removed their "pay-as-you-go" flex tier from their pricing page, but it's still there. Start a free trial for the 35$ tier, then cancel it. You'll be downgraded to the "pay as you go" free tier. If you send 1000 emails/mo you"ll pay 1$/mo.
-
-                Prefer to use Resend? Here's an excellent tutorial made by our top community member, Bill.</div>
-
+            <div className="docs-content">A list of questions/answers to answer the most commonly asked questions.
+            </div>
+       
+            <ul>
+                <li><div className="docs-content">The text is clickable and displays the feature description when clicked.
+                </div></li>
+                <li><div className="docs-content">The media could be a video or an image (or nothing). Videos are set to autoplay for the best UX.
+                </div></li>
+            </ul>
             <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
+                language={'tsx'}
+                text={`import FAQ from "@/components/faq";                `}
                 showLineNumbers
                 theme={dracula}
                 codeBlock
             />
+            <div className="docs-title mt-4">Tips</div>
+            <ul>
+                <li><div className="docs-content">Try to cover an potential objections your visitors might have. For instance, if you're selling a course, you might want to add a question about the refund policy.
 
-            <div className="docs-content">Go to the new profiles table and add 2 RLS policies:
-                - Enable read access for authenticated users only
-                - Enable insert access for authenticated users only</div>
 
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
-                </div>
-            </div>
+                </div></li>
 
-            <div className="docs-content">
-                (Optional )If you want to collect leads with ButtonLead, create a new table called leads and add a RLS policy with insert access for anyone:
-            </div>
+            </ul>
+            <div className="docs-content text-sm">Updated on: Tuesday, June 21, 2024</div>
+            <div className="docs-divider"></div>
+            <HintIcon />
+            <div className="docs-content mt-2">Looking for UI-only components like buttons, inputs, etc? It's all available with daisyUI. See <Link href="/docs/components" className="link underline">this guide</Link> for more info.</div>
 
-            <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
-                showLineNumbers
-                theme={dracula}
-                codeBlock
-            />
         </div>
     )
 

@@ -53,7 +53,7 @@ export default function ShipIn5() {
 
 
 
-      <div className="docs-content">3. Edit the copy to fit your business logic. <span className="text-white">Each component has tips to help you write copy that sells</span> —see <Link href="/docs/components/header" className="link link-primary">components section</Link>. Congrats you have a beautiful landing page to show!</div>
+      <div className="docs-content mt-4">3. Edit the copy to fit your business logic. <span className="text-white">Each component has tips to help you write copy that sells</span> —see <Link href="/docs/components" className="link link-primary">components section</Link>. Congrats you have a beautiful landing page to show!</div>
 
       <div className="docs-content">4. (Optional) To collect emails for a waitlist, <Link href="/docs/features/database" className="link link-primary">set up a database</Link>.</div>
 
@@ -69,7 +69,7 @@ export default function ShipIn5() {
       />
 
 
-      <div className="docs-content">It's time to deploy! If you need help, here's <Link href='/docs/deployments' className="link link-primary">a simple tutorial</Link></div>
+      <div className="docs-content mt-4">It's time to deploy! If you need help, here's <Link href='/docs/deployments' className="link link-primary">a simple tutorial</Link></div>
 
       <div className="docs-divider"></div>
 

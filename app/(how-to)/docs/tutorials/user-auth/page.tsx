@@ -22,11 +22,10 @@ export default function UseAuthenticationPage() {
             </ul>
 
 
-            <div className="docs-content">There are 2 built-in ways to authenticate users with ShipFast: Magic Links & <Link href="/" className="link link-primary">Google Oauth</Link>.</div>
+            <div className="docs-content">There are 2 built-in ways to authenticate users with ShipFast: Magic Links & <Link href="/docs/features/google-oauth" className="link link-primary">Google Oauth</Link>.</div>
 
             <div className="docs-content">Once you've completed at least one of the tutorials above, you send users to the signin/signup page like this:</div>
 
-            <div className="docs-content">A simple landing page can done like this:</div>
 
 
             <CopyBlock
@@ -49,7 +48,7 @@ export default SigninButton;`}
                 codeBlock
             />
 
-            <div className="docs-hint">If the user has  <span className="docs-tag">role: admin</span> in database table <span>users</span>, he will be redirected to <span className="docs-tag">/dashboard</span></div>
+            <div className="docs-hint mt-4">If the user has  <span className="docs-tag">role: admin</span> in database table <span>users</span>, he will be redirected to <span className="docs-tag">/dashboard</span></div>
             <div className="docs-hint">If the user has  <span className="docs-tag">role: user</span>, he will be redirected to <span className="docs-tag">/saas</span></div>
 
             <div className="docs-content">To create an admin (you), sign up and manually edit the user record in users table supabase by settings role: admin.</div>
@@ -63,7 +62,7 @@ export default SigninButton;`}
                 </div>
             </div>
 
-            <div className="docs-hint">All new users have <span className="docs-tag">role: user</span> by default. </div>
+            <div className="docs-hint mt-4">All new users have <span className="docs-tag">role: user</span> by default. </div>
 
 
         </div>

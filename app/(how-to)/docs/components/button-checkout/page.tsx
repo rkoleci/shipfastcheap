@@ -1,12 +1,15 @@
 'use client'
+import BetterIcon from "@/components/ui/BetterIcon";
+import HintIcon from "@/components/ui/HintIcon";
+import PricingUICTA from "@/components/ui/PricingCTA";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-export default function DocsPage() {
+export default function ComponentItem() {
     return (
         <div>
 
-<ul>
+            <ul>
                 <div className="text-3xl text-accent-main font-bold  flex flex-row justify-start items-center gap-1 mb-10">
                     <li>
                         <Link href="/docs/components" className="mb-8">Components</Link>
@@ -15,65 +18,40 @@ export default function DocsPage() {
                         <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                     </svg>
                     <li>
-                        <Link href="/docs/components/button-checkout" className="mb-8">Button checkout</Link>
+                        <Link href="/docs/components/button-checkout" className="mb-8">Button Checkout</Link>
                     </li>
                 </div>
             </ul>
 
-            <div className="docs-content">You don't have to use Mailgun, but you'll need an email tool to to setup magic login links, abandoned carts emails, etc...</div>
+            <div className="docs-content">Opens a Stripe Checkout session. Perfect for a one-time payment or a subscription.
+            </div>
 
-            <div className="docs-hint">Mailgun silently removed their "pay-as-you-go" flex tier from their pricing page, but it's still there. Start a free trial for the 35$ tier, then cancel it. You'll be downgraded to the "pay as you go" free tier. If you send 1000 emails/mo you"ll pay 1$/mo.
+            <div className="docs-content">Set <span className="docs-tag">mode="payment"</span> for one-time payments or <span className="docs-tag">mode="subscription"</span> for recurring payments like a monthly membership.</div>
+            <div className="docs-hint">By default the user must be logged in to checkout to prevent potential disputes like a fraudulent payment with a fake email. You can change that in the <span className="docs-tag">/stripe/server.ts</span>.
+</div>
+<div className="docs-component mb-4">This component is used to create <Link href="/docs/tutorials/stripe" className="link link-primary">Stripe subscriptions and one-time payments</Link>.</div>
 
-                Prefer to use Resend? Here's an excellent tutorial made by our top community member, Bill.</div>
-
+            <div className="pointer-events-none"><PricingUICTA sessionId="" /></div>
             <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
+                language={'tsx'}
+                text={`import ButtonCheckout from "@/components/button-checkout";                `}
                 showLineNumbers
                 theme={dracula}
                 codeBlock
             />
+            <div className="docs-title">Tips</div>
+            <ul>
+                <li><div className="docs-content">Try to cover an potential objections your visitors might have. For instance, if you're selling a course, you might want to add a question about the refund policy.
 
-            <div className="docs-content">Go to the new profiles table and add 2 RLS policies:
-                - Enable read access for authenticated users only
-                - Enable insert access for authenticated users only</div>
 
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
-                </div>
-            </div>
+                </div></li>
 
-            <div className="docs-content">
-                (Optional )If you want to collect leads with ButtonLead, create a new table called leads and add a RLS policy with insert access for anyone:
-            </div>
+            </ul>
+            <div className="docs-content text-sm">Updated on: Tuesday, June 21, 2024</div>
+            <div className="docs-divider"></div>
+            <HintIcon />
+            <div className="docs-content mt-2">Looking for UI-only components like buttons, inputs, etc? It's all available with daisyUI. See <Link href="/docs/components" className="link underline">this guide</Link> for more info.</div>
 
-            <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
-                showLineNumbers
-                theme={dracula}
-                codeBlock
-            />
         </div>
     )
 

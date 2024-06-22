@@ -25,7 +25,7 @@ export default function Stripe() {
 
       <div className="docs-content">Let's create a Stripe Checkout to set up a subscription and let our webhook handle the logic to provision access to the user.</div>
 
-      <div className="docs-content">You need to have <Link href="/docs/features/payments" className="link link-primary">Stripe</Link> and a <Link href="/docs/features/database" className="link link-primary">database</Link> set up.</div>
+      <div className="docs-content">You need to have <Link href="/docs/tutorials/stripe" className="link link-primary">Stripe</Link> and a <Link href="/docs/features/database" className="link link-primary">database</Link> set up.</div>
 
       <div className="docs-title flex flex-start gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-primary"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
@@ -70,7 +70,7 @@ export default function Stripe() {
 
      
 
-      <div className="docs-content">Our webhook <span className="docs-tag">/api/webhooks/route.ts</span> listens to Stripe events and will handle the logic to provision access (or not) to the user.</div>
+      <div className="docs-content mt-4">Our webhook <span className="docs-tag">/api/webhooks/route.ts</span> listens to Stripe events and will handle the logic to provision access (or not) to the user.</div>
 
       <div className="docs-hint">You need to have a <Link href='#ngrok' className="link">Stripe local endpoint</Link> running on your computer for this to work in dev mode. See <span className="docs-tag">ngrok</span> above.</div>
 

@@ -1,6 +1,9 @@
 'use client'
+import Image from "next/image";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
+import shipfastAvatar from '../../../../../public/shipfast_avatar.webp'
+import shipfastAvatar2 from '../../../../../public/shipfast_avatar_2.webp'
 
 export default function Database() {
     return (
@@ -43,18 +46,19 @@ export default function Database() {
                 codeBlock
             />
 
-            <div className="docs-content">Go to the new profiles table and add 2 RLS policies:
+            <div className="docs-content mt-4">Go to the new profiles table and add 2 RLS policies:
                 - Enable read access for authenticated users only
                 - Enable insert access for authenticated users only</div>
 
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
+            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
+                <Image alt="" src={shipfastAvatar} style={{width: '100%', height: '100%'}} />
                 <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
                 <div className="relative p-6 flex items-center justify-center h-full">
                     <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
                 </div>
             </div>
 
-            <div className="docs-content">
+            <div className="docs-content mt-4">
                 (Optional )If you want to collect leads with ButtonLead, create a new table called leads and add a RLS policy with insert access for anyone:
             </div>
 

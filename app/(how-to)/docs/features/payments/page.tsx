@@ -17,7 +17,7 @@ export default function Features() {
                 </div>
             </ul>
 
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
+            <div className="mb-4 relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
                 <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
                 <div className="relative p-6 flex items-center justify-center h-full">
                     <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
@@ -41,7 +41,7 @@ export default function Features() {
 
             <div className="docs-content">In the search box, type 'rules' and click [Fraud Prevention {'>'} Rules] , make sure the first 3DS rule is enabled. I also turn on the second one (recommended). Make sure to block payments if CVC fails (check below)</div>
 
-            <div className="docs-content">Turn ON Test Mode</div>
+            <div className="docs-title">Turn ON Test Mode</div>
 
             <div className="docs-content">Create a new product and copy the price ID (price_1ju5GD464564) in config.stripe.plans[0].priceId in the config.js file.</div>
 
@@ -68,23 +68,11 @@ export default function Features() {
 
             <div className="docs-title">Stripe webhooks & subscription handling</div>
 
-            <div className="docs content">Our API listens to Stripe selected webhooks events & update the user accordingly. It turns boolean hasAccess (or has_access in Supabase) to true/false based on whether the user should have access to a paid resource or not.</div>
+            <div className="docs-content ">Our API listens to Stripe selected webhooks events & update the user accordingly. It turns boolean hasAccess (or has_access in Supabase) to true/false based on whether the user should have access to a paid resource or not.</div>
 
             <div className="docs-content">You can add your own business logic to the /api/webhook/stripe API endpoint (add credits to a user, send email with a paid e-book etc.)</div>
 
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
-                </div>
-            </div>
-
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
-                </div>
-            </div>
+             
         </div>
     )
 }

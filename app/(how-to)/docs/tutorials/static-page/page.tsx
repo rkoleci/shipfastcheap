@@ -25,7 +25,6 @@ export default function StaticPage() {
 
             <div className="docs-content">The <span className="docs-tag">/components</span> folder contains all you need (hero, pricing, FAQ sections). Here's the list of <Link href='/docs/components' className="link link-primary">all the components</Link> & themes.</div>
 
-            <div className="docs-content">A simple landing page can done like this:</div>
 
             <CopyBlock
                 language={`tsx`}

@@ -1,16 +1,15 @@
 'use client'
-
 import BetterIcon from "@/components/ui/BetterIcon";
 import ButtonLead from "@/components/ui/ButtonLead";
+import HintIcon from "@/components/ui/HintIcon";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
 
-export default function Components() {
-
-
+export default function ComponentItem() {
     return (
         <div>
-                <ul>
+
+            <ul>
                 <div className="text-3xl text-accent-main font-bold  flex flex-row justify-start items-center gap-1 mb-10">
                     <li>
                         <Link href="/docs/components" className="mb-8">Components</Link>
@@ -19,36 +18,41 @@ export default function Components() {
                         <path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
                     </svg>
                     <li>
-                        <Link href="/docs/components/button-lead" className="mb-8">Button lead</Link>
+                        <Link href="/docs/components/button-lead" className="mb-8">Button Lead</Link>
                     </li>
                 </div>
             </ul>
 
-            <p className="docs-content">Collect emails and automatically save them in the database. Perfect for a waitlist (if your product isn't ready yet) or a lead generation popup.</p>
+            <div className="docs-content">Collect emails and automatically save them in the database. Perfect for a waitlist (if your product isn't ready yet) or a lead generation popup.
+ 
+            </div>
 
-            <p className="docs-content">It stores email in <span className="docs-tag">{` waitlist table `}</span> in the database.</p>
+            
 
-            <div className="docs-hint">A database is required.</div>
-
-            <div className="py-10 max-w-xs pointer-events-none"><ButtonLead /></div>
-
+            <div className="docs-content">It inserts <span className="docs-tag">email</span> into<span className="docs-tag">waitlist table</span>.</div>
+            <div className="docs-hint">A <Link className="link underline" href="/docs/features/database">database</Link> is required.</div>
+            <div className="pointer-events-none"><ButtonLead /></div>
             <CopyBlock
-                language={'jsx'}
-                text={`import ButtonLead from "@/components/ButtonLead";`}
-                
+                language={'tsx'}
+                text={`import ButtonLead from "@/components/button-lead";                `}
+                showLineNumbers
                 theme={dracula}
                 codeBlock
             />
+            <div className="docs-title mt-4">Tips</div>
+            <ul>
+                <li><div className="docs-content">Try to cover an potential objections your visitors might have. For instance, if you're selling a course, you might want to add a question about the refund policy.
 
 
+                </div></li>
+
+            </ul>
+            <div className="docs-content text-sm">Updated on: Tuesday, June 21, 2024</div>
             <div className="docs-divider"></div>
-
-            <BetterIcon />
-
-            <p className="docs-content">Looking for UI-only components like buttons, inputs, etc? It's all available with daisyUI. See this guide for more info.</p>
-
-
+            <HintIcon />
+            <div className="docs-content mt-2">Looking for UI-only components like buttons, inputs, etc? It's all available with daisyUI. See <Link href="/docs/components" className="link underline">this guide</Link> for more info.</div>
 
         </div>
     )
+
 }

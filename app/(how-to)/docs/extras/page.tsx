@@ -11,65 +11,41 @@ export default function DocsPage() {
                     <li>
                         <Link href="/docs/extras" className="mb-8">Extras</Link>
                     </li>
-
                 </div>
             </ul>
 
-            <div className="docs-content">You don't have to use Mailgun, but you'll need an email tool to to setup magic login links, abandoned carts emails, etc...</div>
-
-            <div className="docs-hint">Mailgun silently removed their "pay-as-you-go" flex tier from their pricing page, but it's still there. Start a free trial for the 35$ tier, then cancel it. You'll be downgraded to the "pay as you go" free tier. If you send 1000 emails/mo you"ll pay 1$/mo.
-
-                Prefer to use Resend? Here's an excellent tutorial made by our top community member, Bill.</div>
-
-            <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
-                showLineNumbers
-                theme={dracula}
-                codeBlock
-            />
-
-            <div className="docs-content">Go to the new profiles table and add 2 RLS policies:
-                - Enable read access for authenticated users only
-                - Enable insert access for authenticated users only</div>
-
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
-                </div>
+            <div className="docs-title flex flex-start gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-primary"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                Setup
             </div>
 
-            <div className="docs-content">
-                (Optional )If you want to collect leads with ButtonLead, create a new table called leads and add a RLS policy with insert access for anyone:
-            </div>
+            <div className="docs-content">1. Add your own logo in the /app folder and name it icon.png.</div>
+            <div className="docs-hint">Not using .png extension? Update components that use icon.png like the Header</div>
+            <div className="docs-content">2. Create your site favicon with this free <Link className="link underline" href="https://realfavicongenerator.net/">Favicon Generator</Link> . Download the zip file and put this 2 files in the <span className="docs-tag">/app</span> folder</div>
+            <ul>
+                <li>
+                    <div className="docs-content"><span className="docs-tag">apple-touch-icon.png</span> (rename it <span className="docs-tag">apple-icon.png</span>)</div>
+                </li>
+                <li>
+                    <div className="docs-content"><span className="docs-tag">favicon.ico</span></div>
+                </li>
+            </ul>
+            <div className="docs-content">NextJS will automatically reference them in the <span className="docs-tag">{'<head />'}</span> of your HTML page. Read more about <Link href="https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons#icon" className="link underline">metadata file convention</Link>.</div>
+            <div className="docs-content">Create a rectangle logo with your name like the one below. Name it <span className="docs-tag">logoAndName.png</span> and add it to the <span className="docs-tag">/public</span> folder. </div>
+                <div className="docs-content">Create two 1200x660 images for social media sharing. Name the first <span className="docs-tag">opengraph-image.png</span> and the second <span className="docs-tag">twitter-image.png</span> and add them to the /app folder.</div>
+                <div className="docs-content">NextJS will automatically reference them in the <span className="docs-tag">{'<head />'}</span> of your HTML page. Read more about metadata file convention.</div>
 
-            <CopyBlock
-                language={'sql'}
-                text={`create table public.leads (
-                    id uuid default gen_random_uuid(),
-                    email text,
-                    created_at timestamp with time zone default timezone('utc'::text, now()) not null,
-                  
-                    primary key (id)
-                  );
-                  
-                  alter table public.leads enable row level security;
-                  `}
-                showLineNumbers
-                theme={dracula}
-                codeBlock
-            />
-        </div>
-    )
+                <div className="docs-title">Useful ressources</div>
+                <div className="docs-content mb-1">1.If you need a logo, you can use <Link href="https://logofa.st/" className="link underline">LogoFast</Link></div>
+                <div className="docs-content mb-1">2.If you need SVG illustrations, you can use <Link href="https://undraw.co/search" className="link underline">Undraw</Link></div>
+                <div className="docs-content mb-1">3.If you need SVG background patterns, you can use <Link href="https://heropatterns.com/" className="link underline">HeroPatterns</Link></div>
+                <div className="docs-content mb-1">4.f you need icons, you can use <Link href="https://heroicons.com/" className="link underline">Heroicons</Link></div>
+                <div className="docs-content mb-1">5.If you need SVG blobs, you can use <Link href="https://app.haikei.app/" className="link underline">Haikei</Link></div>
+                <div className="docs-content mb-1">6.If you need Tailwind Snippets , you can use <Link href="" className="link underline"></Link></div>
+                <div className="docs-content mb-1">7.If you need Notion-like icons, you can use <Link href="https://snippets.alexandru.so/" className="link underline">Snippets</Link></div>
+                <div className="docs-content mb-1">8.Use <Link href="https://www.overflow.design/ni.html?ref=producthunt" className="link underline">Overflow</Link></div>
+                <div className="docs-content mb-1">1.If you need cute SVG doodles, you can use <Link href="https://www.figma.com/community/file/1019353050314527791/doodle-icons" className="link underline">Figma Doodles</Link></div>
+            </div>
+            )
 
 }

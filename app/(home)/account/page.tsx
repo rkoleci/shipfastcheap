@@ -7,8 +7,7 @@ export default async function Account() {
 
   const {
     data: { user }
-  } = await supabase.auth.getUser();
-  console.log(111, 'user', user)
+  } = await supabase.auth.getUser(); 
 
   const { data: subscription, error } = await supabase
     .from('subscriptions')

@@ -22,8 +22,9 @@ export default function StaticPage() {
 
       <div className="docs-content">Any file named route.js in the /app/api folder is an API endpoint. Use the helper /libs/api.js (axios instance with interceptors) to simplify API calls:</div>
 
-      <ul className="list-inside list-disc space-y-1 leading-relaxed ml-4"><li className="list-item">Automatically display error messages</li>
-      <li className="list-item">Redirect to login page upon error 401</li>
+      <ul className="list-inside list-disc  leading-relaxed ml-4 mb-4">
+        <li className="list-item docs-content">Automatically display error messages</li>
+        <li className="list-item  docs-content">Redirect to login page upon error 401</li>
       </ul>
 
       <div className="docs-title">Protected API calls</div>
@@ -69,7 +70,7 @@ export default function StaticPage() {
 
       
 
-      <div className="docs-content">2 In the backend, we get the session and we can use it to retrieve the user from the database. You have to configure the database first. The API file should look like this:</div>
+      <div className="docs-content mt-4">2. In the backend, we get the session and we can use it to retrieve the user from the database. You have to configure the database first. The API file should look like this:</div>
 
 
       <CopyBlock

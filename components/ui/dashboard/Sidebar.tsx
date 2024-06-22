@@ -1,5 +1,6 @@
 import Link from "next/link";
 import DashboardButtonAccount from "../ButtonAccount/DashboardButtonAccounts";
+import { appName } from "@/utils/config";
 interface SidebarProps {
     classes?: string;
 }
@@ -8,7 +9,7 @@ export default function Sidebar({ classes }: SidebarProps) {
 
     return (
         <ul className={`menu p-4 w-64 min-h-screen max-h-screen bg-base-100 ${classes} overflow-y-scroll fixed `}>
-            <div className="mb-8">Shipfast</div>
+            <div className="mb-8">{appName}</div>
             <li>
                 <details open>
                     <summary>
