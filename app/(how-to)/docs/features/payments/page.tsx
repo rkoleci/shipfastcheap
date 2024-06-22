@@ -1,4 +1,5 @@
-import Link from "next/link";
+import Image from "next/image";
+import Link from "next/link"; 
 
 export default function Features() {
     return (
@@ -17,10 +18,11 @@ export default function Features() {
                 </div>
             </ul>
 
+
             <div className="mb-4 relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300" style={{ backgroundImage: "url('https://images.squarespace-cdn.com/content/v1/6058f3b0dbb27b03bbd36be9/1616442358690-OQOD2XFTAP3I4PYM9QLR/Screen+Shot+2021-02-23+at+9.35.43+PM.png')" }}>
                 <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
                 <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
+                    
                 </div>
             </div>
 

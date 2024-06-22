@@ -17,6 +17,8 @@ import { getErrorRedirect } from '@/utils/helpers';
 import { User } from '@supabase/supabase-js';
 import WithWithout from '@/components/ui/WithWithout'
 import TestimonialSmall from '@/components/ui/TestimonialSmall'
+import LogoAndName from '@/components/ui/LogoAndName'
+import { appName } from '@/utils/config'
 
 type Product = Tables<'products'>;
 type Price = Tables<'prices'>;
@@ -74,8 +76,6 @@ export default async function Landing() {
         <main>
             <Hero sessionId={sessionIdSecondPlan!} />
             <WithWithout />
-            <Problem />
-            <TestimonialSmall />
             <FeaturedOn />
             <FeaturesListicle />
             <Intro />

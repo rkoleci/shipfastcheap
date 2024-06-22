@@ -1,7 +1,9 @@
 'use client'
 import { appName } from "@/utils/config";
+import Image from "next/image";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
+import image from '../../../../../public/stripe.webp'
 
 export default function Stripe() {
   return (
@@ -20,6 +22,15 @@ export default function Stripe() {
           </li>
         </div>
       </ul>
+
+
+      <div className="mb-6 relative w-full h-[650px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
+                <Image alt="" src={image} style={{width: '100%', height: '100%'}} />
+                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
+                <div className="relative p-6 flex items-center justify-center h-full">
+                    
+                </div>
+            </div>
 
       <div className="docs-hint">The flow is the same for one-time payments</div>
 

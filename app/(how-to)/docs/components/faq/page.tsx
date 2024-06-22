@@ -2,8 +2,10 @@
 import BetterIcon from "@/components/ui/BetterIcon";
 import FAQ from "@/components/ui/FAQ";
 import HintIcon from "@/components/ui/HintIcon";
+import Image from "next/image";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
+import image from '../../../../../public/faq.webp'
 
 export default function ComponentItem() {
     return (
@@ -24,6 +26,12 @@ export default function ComponentItem() {
             </ul>
 
             <div className="docs-content">A list of questions/answers to answer the most commonly asked questions.
+            </div>
+
+            <div className="relative w-full h-[300px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
+                <Image alt="problem" src={image} style={{width: '100%', height: '100%'}} />
+                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
+            
             </div>
        
             <ul>

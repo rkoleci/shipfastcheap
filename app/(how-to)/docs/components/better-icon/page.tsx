@@ -32,8 +32,7 @@ export default function ComponentItem() {
 
             <CopyBlock
                 language={'tsx'}
-                text={`import BetterIcon from "@/components/better-icon";
-                `}
+                text={`import BetterIcon from "@/components/better-icon";`}
                 showLineNumbers
                 theme={dracula}
                 codeBlock

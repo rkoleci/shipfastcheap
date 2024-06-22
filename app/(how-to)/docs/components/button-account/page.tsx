@@ -2,8 +2,10 @@
 import BetterIcon from "@/components/ui/BetterIcon";
 import ButtonAccount from "@/components/ui/ButtonAccount";
 import HintIcon from "@/components/ui/HintIcon";
+import Image from "next/image";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
+import image from '../../../../../public/account.webp'
 
 export default function ComponentItem() {
     return (
@@ -26,7 +28,12 @@ export default function ComponentItem() {
             <div className="docs-content">A button with a dropdown menu to manage user account:
             </div>
 
-       
+            <div className="mb-6 relative w-[200px] h-[150px]   mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
+                <Image alt="account" src={image} style={{width: '100%', height: '100%'}} />
+                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
+            
+            </div>
+         
             <ul>
                 <li>
                     <div className="docs-content"><span className="docs-title text-base">Billing</span>: Open a Stripe Customer Portal to manage their billing (cancel subscription, update payment method, etc.). You have to manually activate the Customer Portal in your <Link href="https://dashboard.stripe.com/test/settings/billing/portal" className="link underline">Stripe Dashboard</Link>. This is only available if the customer has a customerId (they made a purchase previously)</div>

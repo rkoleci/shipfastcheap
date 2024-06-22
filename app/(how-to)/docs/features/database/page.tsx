@@ -50,11 +50,11 @@ export default function Database() {
                 - Enable read access for authenticated users only
                 - Enable insert access for authenticated users only</div>
 
-            <div className="relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
+            <div className="mb-6 relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
                 <Image alt="" src={shipfastAvatar} style={{width: '100%', height: '100%'}} />
                 <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
                 <div className="relative p-6 flex items-center justify-center h-full">
-                    <h1 className="text-white text-2xl font-bold">Your Text Here</h1>
+                    
                 </div>
             </div>
 

@@ -2,8 +2,10 @@
 import BetterIcon from "@/components/ui/BetterIcon";
 import HintIcon from "@/components/ui/HintIcon";
 import Pricing from "@/components/ui/Pricing/Pricing";
+import Image from "next/image";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
+import image from '../../../../../public/pricing.webp'
 
 export default function ComponentItem() {
     return (
@@ -26,6 +28,14 @@ export default function ComponentItem() {
             <div className="docs-content">A pricing section with ability to feature a plan. Just add a plan to your config.js file to show more.
 
 </div>
+
+<div className="mb-6 relative w-full h-[400px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
+                <Image alt="modal" src={image} style={{width: '100%', height: '100%'}} />
+                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
+                <div className="relative p-6 flex items-center justify-center h-full">
+                    
+                </div>
+            </div>
  
 <ul>
     <li><div className="docs-content">The text is clickable and displays the feature description when clicked.

@@ -2,8 +2,10 @@
 import BetterIcon from "@/components/ui/BetterIcon";
 import HintIcon from "@/components/ui/HintIcon";
 import Navbar from "@/components/ui/Navbar";
+import Image from "next/image";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
+import image from '../../../../../public/header.webp'
 
 export default function ComponentItem() {
     return (
@@ -25,6 +27,11 @@ export default function ComponentItem() {
 
            <div className="docs-content">A responsive header with your logo (left), links (center) and a CTA (right). Links and CTA are hidden on mobile and accessible with a burger menu. Add your own logo in the <span className="docs-tag">/app</span> folder. Make sure to match the file name in <span className="docs-tag">{'<Header />'}</span> component (currently icon.png)</div>
             
+           <div className=" mb-6 relative w-full h-[60px]   mx-auto   bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
+                <Image alt="" src={image} style={{width: '100%', height: '100%'}} />
+                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
+               
+            </div>
         
             <CopyBlock
                 language={'tsx'}

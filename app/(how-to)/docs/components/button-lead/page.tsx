@@ -2,8 +2,9 @@
 import BetterIcon from "@/components/ui/BetterIcon";
 import ButtonLead from "@/components/ui/ButtonLead";
 import HintIcon from "@/components/ui/HintIcon";
+import Image from "next/image";
 import Link from "next/link";
-import { CopyBlock, dracula } from "react-code-blocks";
+import { CopyBlock, dracula } from "react-code-blocks"; 
 
 export default function ComponentItem() {
     return (
@@ -26,12 +27,11 @@ export default function ComponentItem() {
             <div className="docs-content">Collect emails and automatically save them in the database. Perfect for a waitlist (if your product isn't ready yet) or a lead generation popup.
  
             </div>
-
             
 
             <div className="docs-content">It inserts <span className="docs-tag">email</span> into<span className="docs-tag">waitlist table</span>.</div>
             <div className="docs-hint">A <Link className="link underline" href="/docs/features/database">database</Link> is required.</div>
-            <div className="pointer-events-none"><ButtonLead /></div>
+            <div className="pointer-events-none mb-6 "><ButtonLead /></div>
             <CopyBlock
                 language={'tsx'}
                 text={`import ButtonLead from "@/components/button-lead";                `}

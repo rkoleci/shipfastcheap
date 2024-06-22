@@ -2,8 +2,11 @@
 import BetterIcon from "@/components/ui/BetterIcon";
 import HintIcon from "@/components/ui/HintIcon";
 import Problem from "@/components/ui/Problem";
+import Image from "next/image";
 import Link from "next/link";
 import { CopyBlock, dracula } from "react-code-blocks";
+import image from '../../../../../public/problem.webp'
+ 
 
 export default function ComponentItem() {
     return (
@@ -27,7 +30,13 @@ export default function ComponentItem() {
             <div className="docs-content">This section explains the consequences of not taking care of the problem your startup promises to fix.</div>
             <div className="docs-content">It goes under your Hero section, and above your Features section. A crucial, yet overlooked, component for a landing page that sells.</div>
 
-            <div className="mb-4"><Problem /></div>
+            <div className="mb-6 relative w-full h-[350px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
+                <Image alt="problem" src={image} style={{width: '100%', height: '100%'}} />
+                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
+                <div className="relative p-6 flex items-center justify-center h-full">
+                    
+                </div>
+            </div>
 
             <CopyBlock
                 language={'tsx'}
