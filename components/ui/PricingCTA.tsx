@@ -1,24 +1,16 @@
 'use client';
 
-import Image from "next/image";
-import shipfastAvatar2 from '../../public/shipfast_avatar_2.webp'
-import Button from '@/components/ui/Button';
-import LogoCloud from '@/components/ui/LogoCloud';
-import type { Tables } from '@/types_db';
 import { getStripe } from '@/utils/stripe/client';
-import { checkoutWithStripe } from '@/utils/stripe/server';
-import { getErrorRedirect } from '@/utils/helpers';
-import { User } from '@supabase/supabase-js';
 import { appName } from "@/utils/config";
 import { useRouter } from "next/navigation";
-
+import { usePlanStore } from '../context/usePlanStore';
 interface Props {
-    sessionId: string;
     extraClasses?: string
 }
 
-export default function PricingUICTA({ sessionId, extraClasses }: Props) {
+export default function PricingUICTA({ extraClasses }: Props) {
     const router = useRouter();
+    const {  plans: [basicPlan, premiumPLan] } = usePlanStore() 
    
     const handleStripeCheckout = async (sessionId: string) => {
         const stripe = await getStripe();
@@ -26,8 +18,8 @@ export default function PricingUICTA({ sessionId, extraClasses }: Props) {
     };
 
     const handleClick = () => {
-        if (sessionId) {
-            handleStripeCheckout(sessionId)
+        if (premiumPLan) {
+            handleStripeCheckout(premiumPLan)
         } else {
             router.push('/signin/email_signin');
         }

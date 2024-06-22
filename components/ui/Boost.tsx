@@ -1,6 +1,6 @@
 import PricingCTA from "../server/PricingCTA";
 
-export default function Boost({ sessionId }: { sessionId: string }) {
+export default function Boost() {
 
     return (
         <section className="w-full bg-base-400 flex justify-center">
@@ -11,7 +11,7 @@ export default function Boost({ sessionId }: { sessionId: string }) {
                         <h2 className="relative font-bold text-3xl md:text-5xl tracking-tight mt-4 mb-4 md:mb-8 ">Boost your app, launch, earn</h2>
                         <p className="relative text-lg text-accent-main text-base-content/80">Don't waste time on Stripe subscriptions or designing a pricing section...</p>
                     </div>
-                    <PricingCTA sessionId={sessionId} extraClasses=' items-center lg:items-center' />
+                    <PricingCTA extraClasses=' items-center lg:items-center' />
                 </div>
             </div>
         </section>

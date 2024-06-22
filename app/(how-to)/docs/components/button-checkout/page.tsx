@@ -31,7 +31,7 @@ export default function ComponentItem() {
 </div>
 <div className="docs-component mb-4">This component is used to create <Link href="/docs/tutorials/stripe" className="link link-primary">Stripe subscriptions and one-time payments</Link>.</div>
 
-            <div className="pointer-events-none"><PricingUICTA sessionId="" /></div>
+            <div className="pointer-events-none"><PricingUICTA basicPlan="" /></div>
             <CopyBlock
                 language={'tsx'}
                 text={`import ButtonCheckout from "@/components/button-checkout";                `}
