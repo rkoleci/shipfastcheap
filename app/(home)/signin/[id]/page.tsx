@@ -16,6 +16,7 @@ import OauthSignIn from '@/components/ui/AuthForms/OauthSignIn';
 import ForgotPassword from '@/components/ui/AuthForms/ForgotPassword';
 import UpdatePassword from '@/components/ui/AuthForms/UpdatePassword';
 import SignUp from '@/components/ui/AuthForms/Signup';
+import LogoAndName from '@/components/ui/LogoAndName';
 
 export default async function SignIn({
   params,
@@ -55,10 +56,10 @@ export default async function SignIn({
   // }
 
   return (
-    <div className="flex justify-center height-screen-helper bg-base-100">
-      <div className="flex flex-col justify-between max-w-lg p-3 m-auto w-80 ">
+    <section className="bg-base-400 py-24 min-h-screen px-8 flex flex-col justify-start items-center">
+    <div className="max-w-5xl w-full lg:[w-30%]  flex-col items-center gap-4">
         <div className="flex justify-center pb-12 ">
-         logo here
+         <LogoAndName />
         </div>
         <Card
           title={
@@ -113,6 +114,6 @@ export default async function SignIn({
             )}
         </Card>
       </div>
-    </div>
+    </section>
   );
 }

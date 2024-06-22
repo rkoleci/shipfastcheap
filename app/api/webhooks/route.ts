@@ -42,6 +42,7 @@ export async function POST(req: Request) {
 
   if (relevantEvents.has(event.type)) {
     try {
+      console.log(111,event.type)
       switch (event.type) {
         case 'product.created':
         case 'product.updated':
@@ -77,17 +78,25 @@ export async function POST(req: Request) {
               checkoutSession.customer as string,
               true
             );
+            return new Response(JSON.stringify({ redirectUrl: '/saas' }), {
+              status: 200,
+              headers: { 'Content-Type': 'application/json' }
+            });
           }
           if (checkoutSession.mode === 'payment') {
             const lineItems = await stripe.checkout.sessions.listLineItems(checkoutSession.id);
               await managePaymentCompleted(
                 lineItems?.data,
                 checkoutSession.customer as string)
+                return new Response(JSON.stringify({ redirectUrl: '/saas' }), {
+                  status: 200,
+                  headers: { 'Content-Type': 'application/json' }
+                });
           }
           break;
           case 'charge.succeeded':
             console.log(111, 'SUCESS')
-            const redirectUrl = '/docs'; // Replace with your desired redirect URL
+            const redirectUrl = '/saas'; // Replace with your desired redirect URL
             return new Response(JSON.stringify({ redirectUrl }), {
               status: 200,
               headers: { 'Content-Type': 'application/json' }

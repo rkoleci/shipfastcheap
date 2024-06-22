@@ -1,7 +1,9 @@
+import { appName, domain } from "../config"
+
 const getSEOTags = (customPageTags?: any) => ({
-    appName: "ShipFast",
+    appName: {appName},
     appDescription: 'This is the best boilerplate',
-    domainName: 'wwww.shipfast.com',
+    domainName: domain,
     ...customPageTags
 })
 

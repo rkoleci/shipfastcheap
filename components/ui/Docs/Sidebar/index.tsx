@@ -1,5 +1,6 @@
 import { appName } from "@/utils/config";
 import Link from "next/link";
+import LogoAndName from "../../LogoAndName";
 
 interface SidebarProps {
     classes?: string;
@@ -12,7 +13,9 @@ export default function Sidebar({ classes }: SidebarProps) {
             {/* Sidebar content here */}
             <ul className="menu bg-base-100 w-56 rounded-box gap-3 ">
                 <li>
-                    <Link href="/">{appName}</Link>
+                    <Link href="/">
+                        <LogoAndName />
+                    </Link>
                 </li>
                 <Link href='/docs' className="flex justify-start items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="text-accent-main size-5">
@@ -100,6 +103,11 @@ export default function Sidebar({ classes }: SidebarProps) {
                                     <p className="text-accent-main/80 font-medium leading-relaxed">Emails</p>
                                 </Link>
                             </li> 
+                            <li>
+                                <Link href="/docs/features/payments" className="flex justify-start items-center gap-3">
+                                    <p className="text-accent-main/80 font-medium leading-relaxed">Payments</p>
+                                </Link>
+                            </li>
                             <li>
                                 <Link href="/docs/features/google-oauth" className="flex justify-start items-center gap-3">
                                     <p className="text-accent-main/80 font-medium leading-relaxed">Google OAuth</p>

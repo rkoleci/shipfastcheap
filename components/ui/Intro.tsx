@@ -5,7 +5,7 @@ import shipfastAvatar2 from '../../public/shipfast_avatar_2.webp'
 export default function Intro() {
 
     return (
-        <section className="bg-base-100   flex flex-col justify-center items-center">
+        <section id="demo" className="bg-base-100   flex flex-col justify-center items-center">
             <div className="bg-base-100 p-16  flex flex-col items-center rounded-lg mb-8">
 
                 <div className="leading-relaxed text-base-content/80 mb-12 max-w-xl  ">

@@ -81,6 +81,7 @@ export default async function Landing() {
             <Intro />
             <Pricing product={product} sessionId={sessionId!} sessionIdSecondPlan={sessionIdSecondPlan!} />
             <FAQ />
+            <TestimonialTriple />
             <Boost sessionId={sessionIdSecondPlan!} />
             <Footer />
         </main>

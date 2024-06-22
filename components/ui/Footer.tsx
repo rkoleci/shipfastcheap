@@ -1,6 +1,10 @@
 'use client'
 
 import Link from "next/link";
+import LogoAndName from "./LogoAndName";
+import { appName } from "@/utils/config";
+import Image from "next/image";
+import icon from '../../public/icon.png'
 
 export default function Footer() {
 
@@ -14,21 +18,7 @@ export default function Footer() {
                             className="flex gap-2 justify-center md:justify-start items-center"
                             href="/#"
                         >
-                            <img
-                                alt="ShipFast logo"
-                                fetchPriority="high"
-                                width="24"
-                                height="24"
-                                decoding="async"
-                                data-nimg="1"
-                                className="w-6 h-6"
-                                style={{ color: 'transparent' }}
-                                srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_transparent.2aa1e5a5.png&w=32&q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_transparent.2aa1e5a5.png&w=48&q=75 2x"
-                                src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_transparent.2aa1e5a5.png&w=48&q=75"
-                            />
-                            <strong className="font-extrabold tracking-tight text-base md:text-lg text-accent-main">
-                                ShipFast
-                            </strong>
+                           <LogoAndName />
                         </Link>
                         <p className="mt-3 text-sm text-accent-main/80 leading-relaxed text-accent-main">
                             Ship your startup in days, not weeks
@@ -42,19 +32,8 @@ export default function Footer() {
                             <div className="flex gap-1 items-center">
                                 <span className="text-accent-main">Built with</span>
                                 <span className="font-bold text-accent-main flex gap-0.5 items-center tracking-tight">
-                                    <img
-                                        alt="ShipFast logo"
-                                        fetchPriority="high"
-                                        width="20"
-                                        height="20"
-                                        decoding="async"
-                                        data-nimg="1"
-                                        className="w-5 h-5 text-accent-main"
-                                        style={{ color: 'transparent' }}
-                                        srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_transparent.2aa1e5a5.png&w=32&q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_transparent.2aa1e5a5.png&w=48&q=75 2x"
-                                        src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_transparent.2aa1e5a5.png&w=48&q=75"
-                                    />
-                                    ShipFast
+                                <Image alt="icon" src={icon} width={20} height={20} />
+            {appName}
                                 </span>
                             </div>
                         </Link>
@@ -85,7 +64,7 @@ export default function Footer() {
                             </div>
                             <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
                                 <Link className="link link-hover text-accent-main text-accent-main" href="#pricing">Pricing</Link>
-                                <Link className="link link-hover text-accent-main text-accent-main" href="/leaderboard">Leaderboard</Link>
+                                {/* <Link className="link link-hover text-accent-main text-accent-main" href="/leaderboard">Leaderboard</Link> */}
                                 <Link className="link link-hover text-accent-main text-accent-main" href="/docs">Documentation</Link>
                                 <a href={`mailto:${process.env.NEXT_PUBLIC_MAILGUN_SUPPORT_EMAIL}`}  target="_blank" className="link link-hove text-accent-main">Support</a>
                                 <Link className="link link-hover text-accent-main text-accent-main" href="/affiliates">Affiliates — Earn up to $99 per sale</Link>
@@ -137,62 +116,13 @@ export default function Footer() {
                                 MORE
                             </div>
                             <div className="flex flex-col justify-center items-center md:items-start gap-2 mb-10 text-sm">
-                                <Link
-                                    href="https://marclou.beehiiv.com/"
+                            <Link
+                                    href="https://x.com/reikoleci"
                                     target="_blank"
                                     className="link link-hover text-accent-main"
                                     rel="noopener noreferrer"
                                 >
-                                    Newsletter for makers
-                                </Link>
-                                <Link
-                                    href="https://byedispute.com/"
-                                    target="_blank"
-                                    className="link link-hover text-accent-main"
-                                    rel="noopener noreferrer"
-                                >
-                                    ByeDispute
-                                </Link>
-                                <Link
-                                    href="https://indiepa.ge/"
-                                    target="_blank"
-                                    className="link link-hover text-accent-main"
-                                    rel="noopener noreferrer"
-                                >
-                                    IndiePage
-                                </Link>
-                                <Link
-                                    href="https://zenvoice.io/"
-                                    target="_blank"
-                                    className="link link-hover text-accent-main"
-                                    rel="noopener noreferrer"
-                                >
-                                    ZenVoice
-                                </Link>
-                                <Link
-                                    href="https://gamifylist.com/"
-                                    target="_blank"
-                                    className="link link-hover text-accent-main"
-                                    rel="noopener noreferrer"
-                                >
-                                    GamifyList
-                                </Link>
-                                <Link
-                                    href="https://poopup.co/"
-                                    target="_blank"
-                                    className="link link-hover text-accent-main"
-                                    rel="noopener noreferrer"
-                                >
-                                    PoopUp
-                                </Link>
-                                <Link className="link link-hover text-accent-main" href="/tools/fake-it-till-you-make-it">
-                                    Fake It Till You Make It
-                                </Link>
-                                <Link className="link link-hover text-accent-main" href="/tools/logo-fast">
-                                    LogoFast
-                                </Link>
-                                <Link className="link link-hover text-accent-main" href="/logo-idea">
-                                    Logo inspiration
+                                    Twitter
                                 </Link>
                             </div>
                         </div>

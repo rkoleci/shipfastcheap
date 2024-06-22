@@ -37,10 +37,7 @@ export default function DocsPage() {
             <div className="docs-content">NextJS will automatically reference them in the <span className="docs-tag">{'<head />'}</span> of your HTML page. Read more about <Link href="https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons#icon" className="link underline">metadata file convention</Link>.</div>
             <div className="docs-content">Create a rectangle logo with your name like the one below. Name it <span className="docs-tag">logoAndName.png</span> and add it to the <span className="docs-tag">/public</span> folder. </div>
            <div className="pt-2 pb-6">
-           <LogoAndName name={appName} logo={<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="size-6 text-primary">
-                <path d="M11.983 1.907a.75.75 0 0 0-1.292-.657l-8.5 9.5A.75.75 0 0 0 2.75 12h6.572l-1.305 6.093a.75.75 0 0 0 1.292.657l8.5-9.5A.75.75 0 0 0 17.25 8h-6.572l1.305-6.093Z" />
-            </svg>
-            } />
+           <LogoAndName    />
            </div>
             <div className="docs-content">Create two 1200x660 images for social media sharing. Name the first <span className="docs-tag">opengraph-image.png</span> and the second <span className="docs-tag">twitter-image.png</span> and add them to the /app folder.</div>
             <div className="docs-content">NextJS will automatically reference them in the <span className="docs-tag">{'<head />'}</span> of your HTML page. Read more about metadata file convention.</div>

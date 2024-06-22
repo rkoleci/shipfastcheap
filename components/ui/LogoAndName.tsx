@@ -1,11 +1,16 @@
+import { appName } from "@/utils/config";
+import icon from '../../public/icon.png'
+import Image from "next/image";
 
 
-export default function LogoAndName({ logo, name }:{ logo: React.ReactNode, name: string}) {
+
+export default function LogoAndName() {
 
     return (
-        <div className="flex justify-start items-center gap-1 px-1 bg-white w-fit">
-            {logo}
-            <div className="text-black text-base font-semibold leading-relaxed">{name}</div>
+        <div className="flex justify-start items-center gap-1 px-1   w-fit">
+            <Image alt="icon" src={icon} width={42} height={42} />
+
+            <div className="text-accent-main/80 text-lg font-semibold leading-relaxed">{appName}</div>
         </div>
     )
 }

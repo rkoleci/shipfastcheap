@@ -107,7 +107,28 @@ NEXT_PUBLIC_MAILGUN_SUPPORT_EMAIL=`}
             <div className="docs-content mt-4">Now go ahead and follow <Link href='/docs/tutorials/ship-in-five' className="link link-primary">this tutorial</Link> to get your startup live within 5 minutes!</div>
 
 
+            <h2 className="docs-title-xl">Database setup</h2>
 
+<ul className="list-inside list-disc  leading-relaxed ml-4 mb-4">
+  <li className="list-item docs-content">In your [Supabase] go to [Database]</li>
+  <li className="list-item  docs-content">Go to [Functions] on the left panel</li>
+  <li className="list-item  docs-content">Click [Create new function]</li>
+  <li className="list-item  docs-content">Name the function <span className="docs-tag">handle_new_user</span></li>
+  <li className="list-item  docs-content">Paste below code</li>
+  <CopyBlock
+  language={`tsx`}
+  text={`begin
+  insert into public.users (id, full_name, avatar_url, role)
+  values (new.id, new.raw_user_meta_data->>'full_name', new.raw_user_meta_data->>'avatar_url', 'user');
+  return new;
+end;`}
+  showLineNumbers
+  theme={dracula}
+  codeBlock
+/>
+  <li className="list-item  docs-content mt-4">Hit [Confirm]</li>
+</ul>
+<div className="docs-hint">Now, everytime a new user logs in, a new record will be stores in table <span className="docs-tag">users</span>.</div>
 
         </div>
     )

@@ -43,6 +43,7 @@ export default function Stripe() {
         Setup
       </div>
      
+   
 
       <div className="docs-title" id="ngrok">Connect to Stripe webhook</div>
 

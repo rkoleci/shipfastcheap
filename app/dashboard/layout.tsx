@@ -12,7 +12,7 @@ const seoTags = getSEOTags()
 const meta = {
   title: `${seoTags.appName} Docs`,
   description: `It is where you configure your app. Each key is documented to know how and why it's used. Have a thorough look at it: it is the backbone of the app.`,
-  cardImage: '/og.png',
+  cardImage: '/hero.webp',
   robots: 'follow, index',
   favicon: '/favicon.ico',
   url: getURL()
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: meta.description,
     referrer: 'origin-when-cross-origin',
     keywords: ['Vercel', 'Supabase', 'Next.js', 'Stripe', 'Subscription'],
-    authors: [{ name: 'Vercel', url: 'https://vercel.com/' }],
+    authors: [{ name: 'Rei Koleci', url: 'https://github.com/rkoleci' }],
     creator: 'Vercel',
     publisher: 'Vercel',
     robots: meta.robots,

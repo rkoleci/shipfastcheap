@@ -9,13 +9,16 @@ import '../../globals.css'
 import Navbar from '@/components/ui/Navbar';
 import PlausibleProvider from 'next-plausible'
 import getSeoTags from '@utils/seo'
+import { appName, domain } from '@/utils/config';
 
-const seoTags = getSeoTags()
+const seoTags = getSeoTags({
+  title: `Launch Your Startup in Days, not Weeks | ${appName}`
+})
 
 const meta = {
   title: seoTags.title,
   description: seoTags.appDescription,
-  cardImage: '/og.png',
+  cardImage: '/hero.webp',
   robots: 'follow, index',
   favicon: '/favicon.ico',
   url: getURL(),
@@ -32,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description: meta.description,
     referrer: 'origin-when-cross-origin',
     keywords: ['Vercel', 'Supabase', 'Next.js', 'Stripe', 'Subscription'],
-    authors: [{ name: 'Vercel', url: 'https://vercel.com/' }],
+    authors: [{ name: 'Rei Koleci', url: 'https://github.com/rkoleci' }],
     creator: 'Vercel',
     publisher: 'Vercel',
     robots: meta.robots,
@@ -67,7 +70,7 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       <head>
         <PlausibleProvider domain="yourdomain.com" />
       </head>
-      <link rel="canonical" href={`https://www.shipfast.com${meta.canonicalUrlRelative}`} />
+      <link rel="canonical" href={`${domain}${meta.canonicalUrlRelative}`} />
       <body>
         <SupabaseClientProvider>
           <UserProvider>
