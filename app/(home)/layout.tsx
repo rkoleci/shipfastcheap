@@ -10,6 +10,7 @@ import Navbar from '@/components/ui/Navbar';
 import PlausibleProvider from 'next-plausible'
 import getSeoTags from '@utils/seo'
 import { appName, domain } from '@/utils/config';
+import Script from 'next/script';
 
 const seoTags = getSeoTags({
   title: `Launch Your Startup in Days, not Weeks | ${appName}`
@@ -69,13 +70,23 @@ export default async function RootLayout({ children }: PropsWithChildren) {
     <html lang="en" data-theme="shipfast">
       <head>
         <PlausibleProvider domain="yourdomain.com" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TXVC25NF9H"></Script>
+        <Script id="google-analytics">
+          {
+            `window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-TXVC25NF9H');`
+          }
+        </Script>
       </head>
       <link rel="canonical" href={`${domain}${meta.canonicalUrlRelative}`} />
       <body>
         <SupabaseClientProvider>
           <UserProvider>
             <Suspense>
-            <Navbar />
+              <Navbar />
             </Suspense>
             <main
               id="skip"
