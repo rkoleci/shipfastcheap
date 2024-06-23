@@ -5,10 +5,11 @@ import LogoAndName from "./LogoAndName";
 import { appName } from "@/utils/config";
 import Image from "next/image";
 import icon from '../../public/icon.png'
+import { getURL } from "@/utils/helpers";
 
 export default function Footer() {
 
-    console.log(111, 'env', process?.env?.NEXT_PUBLIC_SITE_URL)
+    console.log(111, 'env', process?.env?.NEXT_PUBLIC_SITE_URL, getURL('/auth/callback'))
     return (
         <section className="bg-base-400 border-t border-gray-700">
             <div className="max-w-7xl mx-auto px-8 py-24  ">
