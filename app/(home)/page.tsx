@@ -9,7 +9,7 @@ import Pricing from '@/components/server/Pricing'
 import TestimonialTriple from '@/components/ui/TestimonialTriple'
 
 export default async function Landing() {
-   
+    console.log(111, 'env', process?.env?.NEXT_PUBLIC_SITE_URL)
     return (
         <main>
             <Hero />
