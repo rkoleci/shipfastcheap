@@ -71,14 +71,14 @@ export default async function RootLayout({ children }: PropsWithChildren) {
       <head>
         <PlausibleProvider domain="yourdomain.com" />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-TXVC25NF9H"></Script>
-        <Script id="google-analytics">
-          {
-            `window.dataLayer = window.dataLayer || [];
+        <Script id="google-analytics" dangerouslySetInnerHTML={{
+          __html: `window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-TXVC25NF9H');`
-          }
+        }}>
+          
         </Script>
       </head>
       <link rel="canonical" href={`${domain}${meta.canonicalUrlRelative}`} />
