@@ -251,6 +251,18 @@ pnpm stripe:listen
 
 Running this Stripe command will print a webhook secret (such as, `whsec_***`) to the console. Set `STRIPE_WEBHOOK_SECRET` to this value in your `.env.local` file. If you haven't already, you should also set `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` and `STRIPE_SECRET_KEY` in your `.env.local` file using the **test mode**(!) keys from your Stripe dashboard.
 
+
+### Use ngrok to test webhooks (easier)
+
+1. Install ngrok - follow [this tutorial](https://www.youtube.com/watch?v=-kXrLMnh90s)
+2. Go to folder where ngrok is downloaded/extracted & run 
+```./ngrok http http://localhost:3000```
+3. Copy the address that ngrok shows in terminal
+4. Go to Stripe dashboard, Developer, Add webhook and paste:
+
+example ``` https://e714-79-106-126-185.ngrok-free.app/api/webhooks```
+5. Get the webhook secret (reveal secret) from Stripe and put it in .env.local
+
 ### Run the Next.js client
 
 In a separate terminal, run the following command to start the development server:
@@ -280,7 +292,7 @@ Afterward, you will need to rebuild your production deployment for the changes t
 To verify you are running in production mode, test checking out with the [Stripe test card](https://stripe.com/docs/testing). The test card should not work.
 
 
-### Privacy Policy prompt
+ 
 Generate a privacy policy for a fictional company, "ShipFast", that respects user privacy regarding information collected across its website and other sites it owns. The policy should include the following elements:
 
 Information Collection: Explain the conditions under which personal information is requested, emphasizing fair and lawful collection, user knowledge, and consent. Include an example of a signup method, such as using a Google account, and specify what data is collected (e.g., username and public profile picture).

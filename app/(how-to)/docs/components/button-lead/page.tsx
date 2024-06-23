@@ -4,7 +4,7 @@ import ButtonLead from "@/components/ui/ButtonLead";
 import HintIcon from "@/components/ui/HintIcon";
 import Image from "next/image";
 import Link from "next/link";
-import { CopyBlock, dracula } from "react-code-blocks"; 
+import { CopyBlock, dracula } from "react-code-blocks";
 
 export default function ComponentItem() {
     return (
@@ -25,13 +25,13 @@ export default function ComponentItem() {
             </ul>
 
             <div className="docs-content">Collect emails and automatically save them in the database. Perfect for a waitlist (if your product isn't ready yet) or a lead generation popup.
- 
+
             </div>
-            
+
 
             <div className="docs-content">It inserts <span className="docs-tag">email</span> into<span className="docs-tag">waitlist table</span>.</div>
-            <div className="docs-hint">A <Link className="link underline" href="/docs/features/database">database</Link> is required.</div>
-            <div className="pointer-events-none mb-6 "><ButtonLead /></div>
+            <div className="docs-hint mb-6">A <Link className="link underline" href="/docs/features/database">database</Link> is required.</div>
+            <div className="pointer-events-none mb-6 w-[50%] "><ButtonLead /></div>
             <CopyBlock
                 language={'tsx'}
                 text={`import ButtonLead from "@/components/button-lead";                `}
@@ -39,6 +39,21 @@ export default function ComponentItem() {
                 theme={dracula}
                 codeBlock
             />
+
+
+            <div className="docs-title flex flex-start gap-2 mt-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="text-primary"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                Setup
+            </div>
+
+            <div className="docs-content">
+                1. Go to Supabase Database and create a new table named <span className="docs-tag">waitlist</span>.
+            </div>
+            <div className="docs-content">
+                2. Create columns: <span className="docs-tag">id: uuid</span>, <span className="docs-tag">created_at: timestamp</span> and <span className="docs-tag">email: varchar</span>.
+            </div>
+            <div className="docs-content">That's it. Now you can collect user emails.</div>
+
             <div className="docs-title mt-4">Tips</div>
             <ul>
                 <li><div className="docs-content">Try to cover an potential objections your visitors might have. For instance, if you're selling a course, you might want to add a question about the refund policy.

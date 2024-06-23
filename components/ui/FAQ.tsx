@@ -10,7 +10,7 @@ export default function FAQ() {
         <section className="w-full bg-base-400 flex justify-center">
             <div className="bg-base-400 flex flex-col lg:flex-row flex-between gap-8 max-w-7xl px-8 py-16">
                 <div className="flex flex-col text-left basis-1/2">
-                    <p className="text-accent-main sm:text-4xl text-3xl max-w-full lg:max-w-[70%] font-extrabold text-lg-content mb-8">Frequently Asked Questions</p>
+                    <p className="text-accent-main sm:text-4xl text-3xl max-w-full lg:max-w-[70%] font-extrabold text-lg-content mb-8 leading-none">Frequently Asked Questions</p>
                     <div className="text-accent-main text-lg-content/80">
                         Have another question? Contact me on <a className="link text-lg-content" target="_blank" href="https://x.com/reikoleci">Twitter</a> or by <a href="mailto:rkoleci14@gmail.com" target="_blank" className="link text-lg-content">email</a>.
                     </div>

@@ -50,13 +50,6 @@ export default function Database() {
                 - Enable read access for authenticated users only
                 - Enable insert access for authenticated users only</div>
 
-            <div className="mb-6 relative w-full h-[250px]  mx-auto bg-cover bg-center bg-no-repeat rounded-lg border-[2px] border-dashed border-gray-300"  >
-                <Image alt="" src={shipfastAvatar} style={{width: '100%', height: '100%'}} />
-                <div className="absolute inset-0 bg-base-100 opacity-60 rounded-lg"></div>
-                <div className="relative p-6 flex items-center justify-center h-full">
-                    
-                </div>
-            </div>
 
             <div className="docs-content mt-4">
                 (Optional )If you want to collect leads with ButtonLead, create a new table called leads and add a RLS policy with insert access for anyone:

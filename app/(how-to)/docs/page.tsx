@@ -30,7 +30,7 @@ export default function Docs() {
             <div className="docs-content">1. In your terminal, run the following commands <span className="docs-content font-semibold">one-by-one</span>: </div>
 
             <CopyBlock
-                language={'code'}
+                language={'bash'}
                 text={`git clone https://github.com/Marc-Lou-Org/ship-fast-ts.git  [YOUR_APP_NAME]
                 cd [YOUR_APP_NAME]
                 npm install

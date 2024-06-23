@@ -15,7 +15,7 @@ export default function TestimonialTriple() {
                 <div className="bg-base-100 h-0.5"></div>
                 <div className="flex justify-between items-center pt-8">
                     <div>
-                        <div className="font-medium text-accent-main md:mb-0.5 text-center">Terri P</div>
+                        <div className="font-medium text-accent-main md:mb-0.5 text-left">Terri P</div>
                         <p className="text-accent-main/80 text-sm  text-center">Building <Link href="https://sensora.io/" target='_blank' className="link underline">sensora.io</Link> </p>
 
                     </div>
@@ -33,7 +33,7 @@ export default function TestimonialTriple() {
                 <div className="bg-base-100 h-0.5"></div>
                 <div className="flex justify-between items-center pt-8">
                     <div>
-                        <div className="font-medium text-accent-main md:mb-0.5 text-center">Arsalan Najm</div>
+                        <div className="font-medium text-accent-main md:mb-0.5 text-left">Arsalan Najm</div>
                         <p className="text-accent-main/80 text-sm  text-center">Building <Link href="https://jenni.ai/" target='_blank' className="link underline">Jenny AI</Link> </p>
                     </div>
                     <Image
@@ -50,7 +50,7 @@ export default function TestimonialTriple() {
                 <div className="bg-base-100 h-0.5"></div>
                 <div className="flex justify-between items-center pt-8">
                     <div>
-                        <div className="font-medium text-accent-main md:mb-0.5 text-center">Nico Troia </div>
+                        <div className="font-medium text-accent-main md:mb-0.5 text-left">Nico Troia </div>
                         <p className="text-accent-main/80 text-sm  text-center">Building <Link href="https://www.guidejar.com/" target='_blank' className="link underline">GuideJar</Link> </p>
 
                     </div>
