@@ -17,7 +17,7 @@ export default function PrivacyPolicy() {
                         <br />
                         We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we're collecting it and how it will be used.<br />
                         <br />
-                        You can sign up with your Google account so your  <div className="docs-content">
+                        You can sign up with your Google account so your  
                         <br />
                         We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we'll protect within commercially acceptable means to prevent loss and theft, as well as unauthorised access, disclosure, copying, use or modification.<br />
                         <br />
