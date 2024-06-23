@@ -17,13 +17,13 @@ export default function PrivacyPolicy() {
                         <br />
                         We only ask for personal information when we truly need it to provide a service to you. We collect it by fair and lawful means, with your knowledge and consent. We also let you know why we're collecting it and how it will be used.<br />
                         <br />
-                        You can sign up with your Google account so your  <div className="docs-content">Open <span className="docs-tag">http://localhost:3000/</span> in your browser, log-in and click the button <span className="docs-tag">{appName}</span> to make a payment with the credit card number <span className="docs-tag">4242 4242 4242 4242</span>.</div>'s account username will be prefilled with your name and your public profile picture.<br />
+                        You can sign up with your Google account so your  <div className="docs-content">
                         <br />
                         We only retain collected information for as long as necessary to provide you with your requested service. What data we store, we'll protect within commercially acceptable means to prevent loss and theft, as well as unauthorised access, disclosure, copying, use or modification.<br />
                         <br />
                         We don't share any personally identifying information publicly or with third-parties, except when required to by law.<br />
                         <br />
-                        We act in the capacity of a data controller and a data processor with regard to the personal data processed through  <div className="docs-content">Open <span className="docs-tag">http://localhost:3000/</span> in your browser, log-in and click the button <span className="docs-tag">{appName}</span> to make a payment with the credit card number <span className="docs-tag">4242 4242 4242 4242</span>.</div> and the services in terms of the applicable data protection laws, including the EU General Data Protection Regulation (GDPR).<br />
+                        We act in the capacity of a data controller and a data processor with regard to the personal data processed through  
                         <br />
                         Our website may link to external sites that are not operated by us. Please be aware that we have no control over the content and practices of these sites, and cannot accept responsibility or liability for their respective privacy policies.<br />
                         <br />
