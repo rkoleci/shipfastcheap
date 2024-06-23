@@ -21,7 +21,7 @@ export const getURL = (path: string = '') => {
   url = url.includes('http') ? url : `https://${url}`;
   // Ensure path starts without a slash to avoid double slashes in the final URL.
   path = path.replace(/^\/+/, '');
-  console.log(111, 'url',  path ? `${url}/${path}` : url;)
+  console.log(111, 'url',  path ? `${url}/${path}` : url)
   // Concatenate the URL and the path.
   return path ? `${url}/${path}` : url;
 };
