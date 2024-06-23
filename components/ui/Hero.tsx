@@ -4,6 +4,11 @@ import shipfastAvatar from '../../public/shipfast_avatar.webp'
 import shipfastAvatar2 from '../../public/shipfast_avatar_2.webp'
 import Rating from '@components/ui/Rating'
 import PricingCTA from "../server/PricingCTA";
+import av1 from '../../public/av1.webp'
+import av2 from '../../public/av2.webp'
+import av3 from '../../public/av3.webp'
+import av4 from '../../public/av4.webp'
+import av5 from '../../public/av5.webp'
 
 export default function Hero() {
     return (
@@ -24,7 +29,7 @@ export default function Hero() {
                                     className="rounded-full   "
                                     height={40}
                                     width={40}
-                                    src={shipfastAvatar2}
+                                    src={av1}
                                     alt="Avatar"
                                 />
                             </div>
@@ -33,7 +38,7 @@ export default function Hero() {
                                     className="rounded-full  "
                                     height={40}
                                     width={40}
-                                    src={shipfastAvatar}
+                                    src={av2}
                                     alt="Avatar"
                                 />
                             </div>
@@ -42,7 +47,7 @@ export default function Hero() {
                                     className="rounded-full   "
                                     height={40}
                                     width={40}
-                                    src={shipfastAvatar2}
+                                    src={av3}
                                     alt="Avatar"
                                 />
                             </div>
@@ -51,7 +56,7 @@ export default function Hero() {
                                     className="rounded-full   "
                                     height={40}
                                     width={40}
-                                    src={shipfastAvatar2}
+                                    src={av4}
                                     alt="Avatar"
                                 />
                             </div>
@@ -60,7 +65,7 @@ export default function Hero() {
                                     className="rounded-full   "
                                     height={40}
                                     width={40}
-                                    src={shipfastAvatar2}
+                                    src={av5}
                                     alt="Avatar"
                                 />
                             </div>
