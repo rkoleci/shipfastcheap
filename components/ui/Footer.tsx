@@ -8,6 +8,7 @@ import icon from '../../public/icon.png'
 
 export default function Footer() {
 
+    console.log(111, 'env', process?.env?.NEXT_PUBLIC_SITE_URL)
     return (
         <section className="bg-base-400 border-t border-gray-700">
             <div className="max-w-7xl mx-auto px-8 py-24  ">
