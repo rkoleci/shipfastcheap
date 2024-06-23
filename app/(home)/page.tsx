@@ -7,14 +7,12 @@ import Hero from '@/components/ui/Hero'
 import Intro from '@/components/ui/Intro'
 import Pricing from '@/components/server/Pricing'
 import TestimonialTriple from '@/components/ui/TestimonialTriple'
-import WithWithout from '@/components/ui/WithWithout'
 
 export default async function Landing() {
    
     return (
         <main>
             <Hero />
-            <WithWithout />
             <FeaturedOn />
             <FeaturesListicle />
             <Intro />
