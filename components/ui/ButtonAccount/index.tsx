@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { createClient } from '@/utils/supabase/server';
 import BillingPortal from './BillingPortalButton';
 
+export const dynamic = 'force-dynamic'
+
 export default async function ButtonAccount() {
     const supabase = await createClient()
     const {

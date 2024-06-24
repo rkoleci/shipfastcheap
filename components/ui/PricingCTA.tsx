@@ -17,7 +17,14 @@ export default function PricingUICTA({ extraClasses }: Props) {
         stripe?.redirectToCheckout({ sessionId });
     };
 
-    const handleClick = () => {
+    const handleClick = async () => {
+        /* Paypal */
+        if (process.env.NEXT_PUBLIC_PAYPAL_CHECKOUT_LINK_2) {
+            window.open(process.env.NEXT_PUBLIC_PAYPAL_CHECKOUT_LINK_2, `_blank`)
+            return 
+        }
+           
+        /* Stripe */
         if (premiumPLan) {
             handleStripeCheckout(premiumPLan)
         } else {
