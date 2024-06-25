@@ -9,7 +9,7 @@ export default function Docs() {
             <div className="max-w-xs  text-5xl text-accent-main font-bold leading-[3rem] breadcrumbs ">
                 <ul>
                     <li>
-                        <Link href="/docs" className="mb-8">Docs</Link>
+                        <Link href="/docs" className="mb-8">Get Started</Link>
                     </li>
                 </ul>
             </div>

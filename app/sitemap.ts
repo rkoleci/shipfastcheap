@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
-      url: `${seoTags.domain || 'https://shipfast.cheap'}/about`,
+      url: `${seoTags.domain || 'https://shipfast.cheap'}/docs`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
