@@ -9,7 +9,7 @@ import { getURL } from "@/utils/helpers";
 
 export default function Footer() {
 
-    console.log(111, 'env', process?.env?.NEXT_PUBLIC_SITE_URL, 'geturl ',getURL('/auth/callback'))
+    console.log(111, 'env', process?.env?.GOOGLE_CLIENT_ID, 'process?.env?.GOOGLE_CLIENT_SECRET ',process?.env?.GOOGLE_CLIENT_SECRET)
     return (
         <section className="bg-base-400 border-t border-gray-700">
             <div className="max-w-7xl mx-auto px-8 py-24  ">
