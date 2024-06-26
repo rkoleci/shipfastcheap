@@ -16,9 +16,8 @@ export default function ButtonLead() {
   };
   
   return (
-    <form id="waitlistForm" onSubmit={(e) => handleSubmit(e)}>
+    <form id="waitlistForm" onSubmit={(e) => handleSubmit(e)} className='w-full'>
       <div className="flex flex-col gap-4">
-
         <input type="text" name="email" maxLength={64} placeholder="tom@cruise.com" className="input rounded-lg input-border text-accent-main/80 w-full  border border-slate-600" />
         <button type="submit" className="btn btn-primary rounded-lg font-medium text-accent-secondary w-full">
           Join Waitlist
