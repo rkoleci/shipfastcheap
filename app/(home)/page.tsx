@@ -9,6 +9,7 @@ import Pricing from '@/components/server/Pricing'
 import TestimonialTriple from '@/components/ui/TestimonialTriple'
 import ButtonLead from '@/components/ui/ButtonLead'
 import Freemium from '@/components/ui/Freemium'
+import { Suspense } from 'react'
 
 export default async function Landing() {
 
@@ -19,6 +20,7 @@ export default async function Landing() {
             <FeaturesListicle />
             <Intro />
             <Pricing />
+            <Suspense>
             <Freemium>
                 <section className="bg-base-400 py-8 px-8 flex flex-col justify-start items-center">
                     <div className="max-w-md w-full flex flex-col items-center gap-4">
@@ -28,6 +30,7 @@ export default async function Landing() {
                     </div>
                 </section>
             </Freemium>
+            </Suspense>
             <FAQ />
             <TestimonialTriple />
             <Boost />
