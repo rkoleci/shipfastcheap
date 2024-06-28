@@ -35,7 +35,7 @@ export default function PricingUI({ product, basicPlan, premiumPlan }: Props) {
         stripe?.redirectToCheckout({ sessionId: id });
     }
 
-    /* Stripe */
+    /* Stripe */ 
     const handleClick = (sid: string) => {
         if (sid) {
             handleStripeCheckout(sid)
